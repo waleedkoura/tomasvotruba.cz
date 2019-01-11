@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>Hidden Gems of PHP Packages: Symfony\Finder and SplFileInfo | Tomas Votruba</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    
+    <link rel="alternate" type="application/rss+xml" title="Tomas Votruba Blog RSS" href="/rss.xml">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
+
+        <link href="/assets/bootstrap/bootstrap.min.css?v=1581768294" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/prism/prism.css?v=476969140" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/style.css?v=1269992108" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/gifplayer/gifplayer.css" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/checklist.css?v=1780308181" rel="stylesheet" type="text/css" />
+
+    <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/assets/gifplayer/jquery.gifplayer.js"></script>
+    <script src="/assets/js/checklist.js" async defer></script>
+</head>
+    <body>
+        <!-- post_id: 131 -->
+
+        <div class="hidden-sm-down">
+    <nav class="navbar">
+        <div class="container-fluid">
+            <ul>
+                <li id="logo">
+                    <img src="https://avatars1.githubusercontent.com/u/924196?s=60&v=4" class="avatar">
+                    Tomas Votruba
+                </li>
+                <li class="active">
+                    <a href="/">Blog</a>
+                </li>
+                <li class="">
+                    <a href="/clusters/">Clusters</a>
+                </li>
+                <li class="">
+                    <a href="/mission/">Mission</a>
+                </li>
+                <li class="">
+                    <a href="/talks/">Talks</a>
+                </li>
+                <li class="">
+                    <a href="/contact/">Contact</a>
+                </li>
+                <li id="top-menu-search">
+                    <form method="get" action="https://www.google.com/search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction">
+                        <meta itemprop="target" content="https://www.google.com/search?q={q}"/>
+                        <input name="sitesearch" value="tomasvotruba.cz" type="hidden"/>
+                        <input itemprop="query-input" type="text" id="search-query" class="form-control" required="required" name="q" placeholder="Search..." autocomplete="off"/>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="hidden-md-up">
+    <nav class="navbar" id="mobile-menu">
+        <div class="container">
+            <a href="/" class="col-3 col-sm-3 active">
+                <em class="fas fa-book"></em>
+                <br>
+                PHP Blog
+            </a>
+            <a href="/clusters/" class="col-3 col-sm-3 ">
+                <em class="fas fa-share-alt"></em>
+                <br>
+                Clusters
+            </a>
+            <a href="/mission/" class="col-3 col-sm-3 ">
+                <em class="fas fa-heartbeat"></em>
+                <br>
+                Mission
+            </a>
+            <a href="/contact/" class="col-3 col-sm-3 ">
+                <em class="fas fa-phone"></em>
+                <br>
+                Contact
+            </a>
+        </div>
+    </nav>
+
+    <div class="hidden-md-up text-center row" id="top-menu-search-mobile">
+        <!-- inspired and taken from: https://github.com/yegor256/blog/blob/master/_layouts/default.html -->
+        <form method="get" action="https://www.google.com/search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction" class="col-md-12">
+            <meta itemprop="target" content="https://www.google.com/search?q={q}"/>
+            <input name="sitesearch" value="tomasvotruba.cz" type="hidden"/>
+            <input itemprop="query-input" type="text" id="search-query" class="form-control" required="required" name="q" placeholder="Search with Google..." autocomplete="off"/>
+        </form>
+    </div>
+</div>
+
+        <div class="mainContent">
+            <div class="container-fluid" id="post">
+                <h1 id="hidden-gems-of-php-packages-symfony-finder-and-splfileinfo"><a href="#hidden-gems-of-php-packages-symfony-finder-and-splfileinfo">Hidden Gems of PHP Packages: Symfony\Finder and SplFileInfo</a></h1>
+
+                <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-08-Mon">Mon, Aug 13, 2018</time>
+    </li>
+
+            <li class="list-inline-item mr-3">
+            <em class="fas fa-fw fa-comments"></em>
+            <a href="https://www.tomasvotruba.cz/blog/2018/08/13/hidden-gems-of-php-packages-symfony-finder-and-spl-file-info/#disqus_thread">X</a> comments
+        </li>
+    
+            <li class="list-inline-item">
+            <em class="fas fa-fw fa-edit"></em>
+            <a href="https://github.com/TomasVotruba/tomasvotruba.cz/edit/master/source/_posts/2018/2018-08-13-hidden-gems-of-php-packages-symfony-finder-and-spl-file-info.md">Typo? Fix me, please</a>
+        </li>
+    
+            <li class="list-inline-item pull-right">
+                        <a href="https://github.com/TomasVotruba/tomasvotruba.cz/tree/master/tests/Posts/Year2018/SymfonyFinder" class="badge badge-success">
+                <em class="fas fa-fw fa-thumbs-up"></em> Tested
+            </a>
+        </li>
+    </ul>
+
+                
+                
+                <div class="card card-bigger">
+                    <div class="card-body">
+                        The series on not-so-well-known packages that might save your ass more than you think continues.
+Today we look on <strong>files as objects</strong>.
+                    </div>
+                </div>
+
+                
+                <h2 id="why-i-use-it"><a href="#why-i-use-it">Why I Use it?</a></h2>
+<ol>
+<li>
+<p>Do you work with files in 5 different places in your application in a single way and you miss consistent naming?</p>
+<pre><code class="language-php">&lt;?php declare(strict_types=1);
+
+function processFile(string $file) {
+     // is absolute?
+     // relative to what?
+}
+
+function processFile(string $fileAbsolute) {}
+function processFile(string $filePath) {}
+function processFile(string $absoluteFile) {}
+function processFile(string $relativePath) {}
+function processFile(string $filename) {}</code></pre>
+</li>
+<li>
+<p>Do you need to test file paths on various CI machines?</p>
+<pre><code class="language-diff">Expected test string didn't match:
+-Error was found in: /home/im-very-cool-guy/my-website/www/my-home-porn-web/public/index.php
++Error was found in: /travic-ci/travis-directory-for-this-web/public/index.php</code></pre>
+</li>
+<li>
+<p>Do you want to report the user the relative path instead of hard to read absolute one?</p>
+<pre><code class="language-diff">-Error was found in: /home/im-very-cool-guy/my-website/www/my-home-porn-web/public/index.php
++Error was found in: public/index.php</code></pre>
+</li>
+<li>
+<p>Do you want to forget all those <code>file_*</code> functions and just work with the file instead?</p>
+<pre><code class="language-php">&lt;?php declare(strict_types=1);
+
+file_exists($file);
+is_file($file);
+is_directory($file); // actually: is_dir($file);
+is_readable($file);
+is_absolute($file); // well, you have to create this one yourself, and don't forget the Windows and Linux differences!</code></pre>
+</li>
+</ol>
+<p><strong>Thanks to Symfony\Finder and its custom <code>SplFileInfo</code> I can be lazy, use object API and work safer and faster</strong> in all these cases above and more. Actually, I started to using <code>SplFileInfo</code> over <em>stringly</em> file paths/names after too many bugs appeared in my code and I'm happier and more relaxed ever since.</p>
+<p>What is <a href="http://php.net/manual/en/class.splfileinfo.php"><em>splFileInfo</em></a>? It's native object in PHP - like <code>DateTime</code> - that wraps the file and provides nice object API for it. The Symfony\Finder package adds 3 extra methods that make work with files just a bit smoother. They go very well together since the package creates all the <code>splFileInfo</code> instances for you.</p>
+<h2 id="how-to-install"><a href="#how-to-install">How to Install</a></h2>
+<pre><code class="language-bash">composer require symfony/finder</code></pre>
+<h2 id="how-i-use-it"><a href="#how-i-use-it">How I Use it</a></h2>
+<p>We'll find all available feature in <a href="https://symfony.com/doc/current/components/finder.html">the documentation</a>, but basic usage it like this:</p>
+<pre><code class="language-php">&lt;?php declare(strict_types=1);
+
+use Symfony\Component\Finder\Finder;
+
+$finder = Finder::create()
+    -&gt;files()
+    -&gt;in(__DIR__)
+    -&gt;name('composer.json')
+    -&gt;getIterator();
+
+foreach ($finder as $splFileInfo) {
+    var_dump($splFileInfo); // instance of "Symfony\Component\Finder\SplFileInfo"
+}</code></pre>
+<h2 id="code-symfony-component-finder-finder-code"><a href="#code-symfony-component-finder-finder-code"><code>Symfony\Component\Finder\Finder</code></a></h2>
+<h3 id="code-name-code"><a href="#code-name-code"><code>name()</code></a></h3>
+<p>This method accepts also regular expressions. Do you want to find all YAML files?</p>
+<pre><code class="language-php">&lt;?php declare(strict_types=1);
+
+use Symfony\Component\Finder\Finder;
+
+$finder = Finder::create();
+$finder-&gt;name('#\.(yaml|yml)$#');</code></pre>
+<h3 id="code-append-code"><a href="#code-append-code"><code>append()</code></a></h3>
+<p>Do you want to add just a single file that finder criteria would not find? Normally, you'd have to create <code>SplFileInfo</code> manually, think of relative/absolute paths etc. So much work. Instead, you can just append it and Finder will add it for you.</p>
+<pre><code class="language-php">&lt;?php declare(strict_types=1);
+
+use Symfony\Component\Finder\Finder;
+
+return Finder::create()
+    -&gt;name('#\.php$#')
+    -&gt;in(__DIR__ . '/Source')
+    -&gt;append([__DIR__ . '/Source/SomeClass.twig']);</code></pre>
+<h3 id="code-notpath-code-or-code-exclude-code"><a href="#code-notpath-code-or-code-exclude-code"><code>notPath()</code> or <code>exclude()</code></a></h3>
+<p>It's common and bad practice to put tests files into <code>/src</code>. It's historical reason mostly, but we still have to deal with that.
+You don't want to work with 3rd party code tests, right?</p>
+<pre><code class="language-php">&lt;?php declare(strict_types=1);
+
+use Symfony\Component\Finder\Finder;
+
+$finder = Finder::create()
+    // directories
+    -&gt;exclude('spec')
+    -&gt;exclude('test')
+    -&gt;exclude('Tests')
+    -&gt;exclude('tests')
+    -&gt;exclude('Behat')
+    -&gt;name('*.php');
+
+// or match path name
+$finder-&gt;notPath('#tests#');</code></pre>
+<h2 id="code-symfony-component-finder-splfileinfo-code"><a href="#code-symfony-component-finder-splfileinfo-code"><code>Symfony\Component\Finder\SplFileInfo</code></a></h2>
+<h3 id="code-getrelativepath-code"><a href="#code-getrelativepath-code"><code>getRelativePath()</code></a></h3>
+<p>Let's get back to the <code>composer.json</code> example above (from in <a href="https://github.com/Symplify/MonorepoBuilder/blob/71d81fe279b43b3353d107560198fd5cf52d487c/src/PackageComposerFinder.php#L23-L38">MonorepoBuilder</a>). This is how we get relative <strong>directory</strong>:</p>
+<pre><code class="language-php">&lt;?php declare(strict_types=1);
+
+/** @var \Symfony\Component\Finder\SplFileInfo $splFileInfo */
+$splFileInfo-&gt;getRelativePath(); // "/"</code></pre>
+<h3 id="code-getrelativepathname-code"><a href="#code-getrelativepathname-code"><code>getRelativePathname()</code></a></h3>
+<p>This method is bit different - it returns <strong>relative filename</strong>:</p>
+<pre><code class="language-php">&lt;?php declare(strict_types=1);
+
+/** @var \Symfony\Component\Finder\SplFileInfo $splFileInfo */
+$splFileInfo-&gt;getRelativePath(); // "composer.json"</code></pre>
+<p>This is very handy for output reporting in PHP CLI Apps like ECS, PHP CS Fixer, PHP_CodeSniffer or PHPStan. Compare yourself - the computer absolute scope:</p>
+<pre><code class="language-diff">An error was found in /home/im-very-cool-guy/my-website/www/my-home-porn-web/public/index.php</code></pre>
+<p>and human relative scope:</p>
+<pre><code class="language-diff">An error was found in public/index.php</code></pre>
+<h3 id="honorable-mentions"><a href="#honorable-mentions">Honorable Mentions</a></h3>
+<p>There are few more methods that I use from time to time:</p>
+<pre><code class="language-php">&lt;?php declare(strict_types=1);
+
+/** @var \Symfony\Component\Finder\SplFileInfo $splFileInfo */
+$splFileInfo-&gt;getRealPath();
+// absolute path - returns "/var/www/this-post/composer.json"
+
+$splFileInfo-&gt;getContents();
+// gets the content of file with error propagated to an exception - very nice!
+
+$splFileInfo-&gt;getBasename('.' . $splFileInfo-&gt;getExtension());
+// returns "composer"</code></pre>
+<p><br></p>
+<p>Do you like it? <strong>Go and give <a href="https://github.com/symfony/finder">Symfony\Finder</a> or at least <a href="http://php.net/manual/en/class.splfileinfo.php"><code>SplFileInfo</code></a> a try</strong>.</p>
+<p>Happy coding!</p>
+
+                <br>
+
+                                    <div class="mt-1 mb-5 card">
+                        <div class="card-header text-center">
+                            <h3 class="text-center mt-2">
+                                <em class="fas fa-check text-success"></em>
+                                &nbsp;
+                                Travis Knowns the Code Works
+                            </h3>
+                        </div>
+
+                        <div class="card-body">
+                            
+                            <p>
+                                The code used in this post is tested daily with Travis CI. You can <a href="https://github.com/TomasVotruba/tomasvotruba.cz/tree/master/tests/Posts/Year2018/SymfonyFinder">see tests on Github</a>.
+                            </p>
+
+                            <p>
+                                Thanks to tests this post:
+                                <ul>
+                                    <li>always run against the most recent dependencies</li>
+                                <li><strong>gets updates and stays relevant for many years</strong> even when new <a href="https://semver.org/#spec-item-8">major version</a> of PHP or Symfony is released</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                
+                <div class="card mb-5">
+                    <div class="card-body text-center">
+                        <a href="https://github.com/TomasVotruba/tomasvotruba.cz/edit/master/source/_posts/2018/2018-08-13-hidden-gems-of-php-packages-symfony-finder-and-spl-file-info.md" class="btn btn-info btn-sm">
+                            <em class="fas fa-fw fa-edit"></em>
+                            Typo? Fix it, please
+                        </a>
+                        &nbsp;and join <a href="/thank-you">56 people</a> who build this website
+                    </div>
+                </div>
+
+                <a name="comments"></a>
+
+                <div id="disqus_thread"></div>
+
+<script type="text/javascript">
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//' + 'itsworthsharing' + '.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+            </div>
+
+            <script id="dsq-count-scr" src="https://itsworthsharing.disqus.com/count.js" async defer></script>
+        </div>
+
+        <script>
+    ga=function(){ ga.q.push(arguments) };
+    ga.q=[];
+    ga.l=+new Date;
+    ga('create', 'UA-46082345-1', 'auto');
+    ga('send','pageview');
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+<script src="/assets/prism/prism.js"></script>
+
+<script>
+    $('.gifplayer').gifplayer();
+</script>
+
+<div class="text-center mt-5" id="footer">
+    <div class="row">
+        <div class="col-12">
+            Join 17 000 PHP developers every month: <a href="/rss.xml">RSS</a>&nbsp;or&nbsp;<a href="https://twitter.com/votrubaT">@votrubaT</a>
+
+            <span class="pl-2 pr-2 hidden-sm-down">•</span>
+
+            <span class="hidden-sm-down">
+                Watch my <a href="https://github.com/tomasvotruba">open-source addiction</a>
+            </span>
+        </div>
+    </div>
+
+    <p>
+        Build by <a href="/thank-you/">56 people</a>
+
+        <span class="pl-2 pr-2">•</span>
+
+        Runs on <a href="https://www.statie.org/">Statie</a>
+
+        <span class="pl-2 pr-2">•</span>
+
+        <a href="/now/">Now</a>
+
+        <span class="hidden-sm-down">
+            <span class="pl-2 pr-2">•</span>
+            Hosted on <a href="https://github.com/tomasvotruba/tomasvotruba.cz">GitHub</a>
+        </span>
+    </p>
+</div>
+    </body>
+</html>
+
+        <meta property="og:type" content="article" />
+    <meta property="og:title" content="Hidden Gems of PHP Packages: Symfony\Finder and SplFileInfo" />
+    <meta property="og:description" content="The series on not-so-well-known packages that might save your ass more than you think continues.
+Today we look on files as objects." />
+    <meta property="og:url" content="https://www.tomasvotruba.cz/blog/2018/08/13/hidden-gems-of-php-packages-symfony-finder-and-spl-file-info" />
+
+        <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@votrubaT">
+    <meta name="twitter:title" content="Hidden Gems of PHP Packages: Symfony\Finder and SplFileInfo" />
+    <meta name="twitter:description" content="The series on not-so-well-known packages that might save your ass more than you think continues.
+Today we look on files as objects." />

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>Fatal error: Uncaught Error: [] operator not supported for strings in | Tomas Votruba</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    
+    <link rel="alternate" type="application/rss+xml" title="Tomas Votruba Blog RSS" href="/rss.xml">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
+
+        <link href="/assets/bootstrap/bootstrap.min.css?v=1216752074" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/prism/prism.css?v=1655023957" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/style.css?v=1186566134" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/gifplayer/gifplayer.css" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/checklist.css?v=1197859468" rel="stylesheet" type="text/css" />
+
+    <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/assets/gifplayer/jquery.gifplayer.js"></script>
+    <script src="/assets/js/checklist.js" async defer></script>
+</head>
+    <body>
+        <!-- post_id: 157 -->
+
+        <div class="hidden-sm-down">
+    <nav class="navbar">
+        <div class="container-fluid">
+            <ul>
+                <li id="logo">
+                    <img src="https://avatars1.githubusercontent.com/u/924196?s=60&v=4" class="avatar">
+                    Tomas Votruba
+                </li>
+                <li class="active">
+                    <a href="/">Blog</a>
+                </li>
+                <li class="">
+                    <a href="/clusters/">Clusters</a>
+                </li>
+                <li class="">
+                    <a href="/mission/">Mission</a>
+                </li>
+                <li class="">
+                    <a href="/talks/">Talks</a>
+                </li>
+                <li class="">
+                    <a href="/contact/">Contact</a>
+                </li>
+                <li id="top-menu-search">
+                    <form method="get" action="https://www.google.com/search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction">
+                        <meta itemprop="target" content="https://www.google.com/search?q={q}"/>
+                        <input name="sitesearch" value="tomasvotruba.cz" type="hidden"/>
+                        <input itemprop="query-input" type="text" id="search-query" class="form-control" required="required" name="q" placeholder="Search..." autocomplete="off"/>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="hidden-md-up">
+    <nav class="navbar" id="mobile-menu">
+        <div class="container">
+            <a href="/" class="col-3 col-sm-3 active">
+                <em class="fas fa-book"></em>
+                <br>
+                PHP Blog
+            </a>
+            <a href="/clusters/" class="col-3 col-sm-3 ">
+                <em class="fas fa-share-alt"></em>
+                <br>
+                Clusters
+            </a>
+            <a href="/mission/" class="col-3 col-sm-3 ">
+                <em class="fas fa-heartbeat"></em>
+                <br>
+                Mission
+            </a>
+            <a href="/contact/" class="col-3 col-sm-3 ">
+                <em class="fas fa-phone"></em>
+                <br>
+                Contact
+            </a>
+        </div>
+    </nav>
+
+    <div class="hidden-md-up text-center row" id="top-menu-search-mobile">
+        <!-- inspired and taken from: https://github.com/yegor256/blog/blob/master/_layouts/default.html -->
+        <form method="get" action="https://www.google.com/search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction" class="col-md-12">
+            <meta itemprop="target" content="https://www.google.com/search?q={q}"/>
+            <input name="sitesearch" value="tomasvotruba.cz" type="hidden"/>
+            <input itemprop="query-input" type="text" id="search-query" class="form-control" required="required" name="q" placeholder="Search with Google..." autocomplete="off"/>
+        </form>
+    </div>
+</div>
+
+        <div class="mainContent">
+            <div class="container-fluid" id="post">
+                <h1 id="fatal-error-uncaught-error-operator-not-supported-for-strings-in"><a href="#fatal-error-uncaught-error-operator-not-supported-for-strings-in">Fatal error: Uncaught Error: [] operator not supported for strings in</a></h1>
+
+                <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-11-Thu">Thu, Nov 8, 2018</time>
+    </li>
+
+            <li class="list-inline-item mr-3">
+            <em class="fas fa-fw fa-comments"></em>
+            <a href="https://www.tomasvotruba.cz/blog/2018/11/08/fatal-error-uncaught-error-operator-not-supported-for-strings-in/#disqus_thread">X</a> comments
+        </li>
+    
+            <li class="list-inline-item">
+            <em class="fas fa-fw fa-edit"></em>
+            <a href="https://github.com/TomasVotruba/tomasvotruba.cz/edit/master/source/_posts/2018/2018-11-08-fatal-error-uncaught-error-operator-not-supported-for-strings-in.md">Typo? Fix me, please</a>
+        </li>
+    
+    </ul>
+
+                
+                
+                <div class="card card-bigger">
+                    <div class="card-body">
+                        That's right! PHP 5.6 and 7.0 are entering EOL - end of <strike>line</strike> life this December. Social networks, Slacks, Twitter, Reddit are <a href="https://www.reddit.com/r/PHP/comments/9syr3m/php_56_eol_end_of_life_end_of_2018_and_php_7/">full</a> of it. Are you running PHP 7.1? Good, come next year when PHP 7.1 is <em>eoling</em>.
+<br><br>
+For the rest of you, what will you do when PHP will tell you the message in the title?
+                    </div>
+                </div>
+
+                
+                <div class="text-center">
+    <img src="/assets/images/posts/2018/upgrade-php/important.png" class="img-thumbnail"><p>The most important info from <a href="http://php.net/supported-versions.php">PHP.net</a> nowadays</p>
+</div>
+<p><br></p>
+<p>You see all this social boom, your boss is scared by &quot;no security support&quot; and <strong>you finally have a <em>go</em> to upgrade your PHP code</strong> to PHP 7.1. You upgrade your PHP locally to see if everything works:</p>
+<pre><code class="language-bash">"Warning: count(): Parameter must be an array or an object that implements Countable in"</code></pre>
+<pre><code class="language-bash">"Fatal error: Uncaught Error: [] operator not supported for strings in"</code></pre>
+<pre><code class="language-bash">"Deprecated: Methods with the same name as their class will not be constructors in a future version of PHP; Filter has a deprecated constructor in"</code></pre>
+<pre><code class="language-bash">"Fatal error: Uncaught Error: Call to undefined function ereg() in"</code></pre>
+<pre><code class="language-bash">"Fatal error: Cannot use empty list in"</code></pre>
+<p><br></p>
+<p>You're probably thinking <em>lets jump to PHP 7.2, while you're at it</em>:</p>
+<pre><code class="language-bash">"Deprecated: The each() function is deprecated. This message will be suppressed on further calls in"</code></pre>
+<p>Don't do it, <strong>always jump by minor versions</strong> - for both PHP and packages.</p>
+<p><br></p>
+<p>Actually, when you see a message - that's a good sign. How else would you notice this?</p>
+<pre><code class="language-php">// PHP 5.6-
+list($a[], $a[]) = [1, 2];
+
+// to get same result in PHP 7.0+
+list($a[], $a[]) = array_reverse([1, 2])</code></pre>
+<p>True story - see <a href="https://3v4l.org/H1hfA">3v4l.org</a>. The nice silent error just for you!</p>
+<img src="/assets/images/posts/2018/upgrade-php/swap.png" class="img-thumbnail">
+<h2 id="quot-i-got-this-quot"><a href="#quot-i-got-this-quot">&quot;I Got This&quot;</a></h2>
+<p>But let's say you know that &quot;Deprecated: The each() function is deprecated. This message will be suppressed on further calls in&quot; means <strong>refactor <em>each</em> <code>each()</code> usage to <code>foreach()</code>.</strong></p>
+<p>(Often it's more complicated, but keep this simple for now.)</p>
+<p>Some cases are easy, if your <strong>variables are well-named</strong>:</p>
+<pre><code class="language-php">while (list($key, $callback) = each($callbacks)) {
+    // ...
+}</code></pre>
+<p>↓</p>
+<pre><code class="language-php">foreach ($callbacks as $key =&gt; $callback) {
+    // ...
+}</code></pre>
+<p><br></p>
+<p>But some... how would you change this one?</p>
+<pre><code class="language-php">while (list($callback) = each($callbacks)) {
+    // ...
+}</code></pre>
+<p>↓</p>
+<pre><code class="language-php">foreach ($callbacks as $callback) {
+    // ...
+}</code></pre>
+<p>Are you sure? I think it should be like this:</p>
+<pre><code class="language-php">foreach (array_keys($callbacks) as $callback) {
+    // ...
+}</code></pre>
+<p><a href="https://github.com/rectorphp/rector/pull/661/" class="btn btn-dark btn-sm">
+<em class="fab fa-github fa-fw"></em>
+See pull-request #661
+</a></p>
+<p><strong>Honestly, I'm not sure either.</strong> But I took time to test all possible <code>each()</code> combinations with <code>list()</code>, <code>while()</code> and <code>do/while</code>, put them into awesome <a href="https://3v4l.org/">3v4l.org</a>, wrote a bunch of tests and wrote tested rules for Rector.</p>
+<p><br></p>
+<pre><code class="language-bash">"Fatal error: Uncaught Error: Call to undefined function ereg() in"</code></pre>
+<h2 id="how-rector-got-into-pure-php-upgrades"><a href="#how-rector-got-into-pure-php-upgrades">How Rector got into pure PHP Upgrades</a></h2>
+<p>At the <a href="/blog/2018/10/18/how-i-almost-missed-my-talk-in-php-asia-conference/">PHP Asia Conference</a> Rasmus Lerdorf spoke about <strong>upgrading PHP as a big problem</strong>. Much bigger than upgrading particular frameworks. Many WTF namings in PHP are just for BC sake. I struck me, that there is much more legacy PHP code in every company than there is framework-bound code.</p>
+<p>I instantly created an issue at Rector, that deals with <a href="https://github.com/rectorphp/rector/issues/638">PHP 5.3 to 7.4 upgrades</a>.
+I went full-time on writing PHP upgrade rules - in the train, in the buss, in the plane (the best place to code actually, wonder why).</p>
+<p><br></p>
+<p class="bigger">
+   <strong>Today I'm proud to announce 7 new Rector levels</strong> that were not here a month ago:
+</p>
+<pre><code class="language-bash">vendor/bin/rector process src --level php54
+vendor/bin/rector process src --level php56
+vendor/bin/rector process src --level php70
+vendor/bin/rector process src --level php71
+vendor/bin/rector process src --level php72
+vendor/bin/rector process src --level php73
+vendor/bin/rector process src --level php74</code></pre>
+<p><br></p>
+<p>I finally looked over my small framework bubble and <strong>learned a lot about problems of the <a href="https://friendsofphp.org/">world PHP community</a></strong>.</p>
+<h3 id="how-to-em-ereg-em-correctly"><a href="#how-to-em-ereg-em-correctly">How to <em>ereg</em> Correctly?</a></h3>
+<p>One example for all:</p>
+<p><a href="https://github.com/rectorphp/rector/pull/661/" class="btn btn-dark btn-sm">
+<em class="fab fa-github fa-fw"></em>
+See pull-request #661
+</a></p>
+<pre><code class="language-bash">"Fatal error: Uncaught Error: Call to undefined function ereg() in"</code></pre>
+<p>That's easy, just add <code>#</code> around and change the function name, right?</p>
+<pre><code class="language-diff">-ereg('hi', $string);
++preg_match('#hi#', $string);</code></pre>
+<p>But what about?</p>
+<pre><code class="language-php">ereg('[]-z]', $string);
+ereg('^[a-z]+[.,][a-z]{3,}$', $string);</code></pre>
+<p>Don't reinvent the wheel! Did you know that 8 years ago some guy <a href="https://gist.github.com/lifthrasiir/704754/7e486f43e62fd1c9d3669330c251f8ca4a59a3f8">wrote ereg → preg patterns converter</a>? That <em>some guy</em> is Kang Seonghoon and helped hundreds if not thousands of people <em>to not to give a fuck</em>. Including me. <strong>Amazing work</strong> and I learned about it just by accidental googling. I wonder how many hidden gems are out there.</p>
+<h2 id="harder-better-faster-stronger-php-community"><a href="#harder-better-faster-stronger-php-community">Harder, Better, Faster, Stronger... PHP Community</a></h2>
+<p>Take the Rector out, run it on your code, let it fix what it can and <strong>report the rest you had to do manually in the issues</strong>. Maybe it can be automated.
+You'll be helping each other developer, who upgrades the same PHP version you did. Imagine PHP version 5.3 would be shipped with set like this, covering 100 % of all changes. It's up to us to make a brighter future now.</p>
+<p><br></p>
+<p>Happy stress-free upgrading!</p>
+
+                <br>
+
+                
+                <div class="card mb-5">
+                    <div class="card-body text-center">
+                        <a href="https://github.com/TomasVotruba/tomasvotruba.cz/edit/master/source/_posts/2018/2018-11-08-fatal-error-uncaught-error-operator-not-supported-for-strings-in.md" class="btn btn-info btn-sm">
+                            <em class="fas fa-fw fa-edit"></em>
+                            Typo? Fix it, please
+                        </a>
+                        &nbsp;and join <a href="/thank-you">56 people</a> who build this website
+                    </div>
+                </div>
+
+                <a name="comments"></a>
+
+                <div id="disqus_thread"></div>
+
+<script type="text/javascript">
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//' + 'itsworthsharing' + '.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+            </div>
+
+            <script id="dsq-count-scr" src="https://itsworthsharing.disqus.com/count.js" async defer></script>
+        </div>
+
+        <script>
+    ga=function(){ ga.q.push(arguments) };
+    ga.q=[];
+    ga.l=+new Date;
+    ga('create', 'UA-46082345-1', 'auto');
+    ga('send','pageview');
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+<script src="/assets/prism/prism.js"></script>
+
+<script>
+    $('.gifplayer').gifplayer();
+</script>
+
+<div class="text-center mt-5" id="footer">
+    <div class="row">
+        <div class="col-12">
+            Join 17 000 PHP developers every month: <a href="/rss.xml">RSS</a>&nbsp;or&nbsp;<a href="https://twitter.com/votrubaT">@votrubaT</a>
+
+            <span class="pl-2 pr-2 hidden-sm-down">•</span>
+
+            <span class="hidden-sm-down">
+                Watch my <a href="https://github.com/tomasvotruba">open-source addiction</a>
+            </span>
+        </div>
+    </div>
+
+    <p>
+        Build by <a href="/thank-you/">56 people</a>
+
+        <span class="pl-2 pr-2">•</span>
+
+        Runs on <a href="https://www.statie.org/">Statie</a>
+
+        <span class="pl-2 pr-2">•</span>
+
+        <a href="/now/">Now</a>
+
+        <span class="hidden-sm-down">
+            <span class="pl-2 pr-2">•</span>
+            Hosted on <a href="https://github.com/tomasvotruba/tomasvotruba.cz">GitHub</a>
+        </span>
+    </p>
+</div>
+    </body>
+</html>
+
+        <meta property="og:type" content="article" />
+    <meta property="og:title" content="Fatal error: Uncaught Error: [] operator not supported for strings in" />
+    <meta property="og:description" content="That&#039;s right! PHP 5.6 and 7.0 are entering EOL - end of line life this December. Social networks, Slacks, Twitter, Reddit are full of it. Are you running PHP 7.1? Good, come next year when PHP 7.1 is eoling.
+
+For the rest of you, what will you do when PHP will tell you the message in the title?" />
+    <meta property="og:url" content="https://www.tomasvotruba.cz/blog/2018/11/08/fatal-error-uncaught-error-operator-not-supported-for-strings-in" />
+
+        <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@votrubaT">
+    <meta name="twitter:title" content="Fatal error: Uncaught Error: [] operator not supported for strings in" />
+    <meta name="twitter:description" content="That&#039;s right! PHP 5.6 and 7.0 are entering EOL - end of line life this December. Social networks, Slacks, Twitter, Reddit are full of it. Are you running PHP 7.1? Good, come next year when PHP 7.1 is eoling.
+
+For the rest of you, what will you do when PHP will tell you the message in the title?" />

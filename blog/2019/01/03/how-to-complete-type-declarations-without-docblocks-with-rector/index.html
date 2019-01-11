@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>How to Complete Type Declarations without Docblocks with Rector | Tomas Votruba</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    
+    <link rel="alternate" type="application/rss+xml" title="Tomas Votruba Blog RSS" href="/rss.xml">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
+
+        <link href="/assets/bootstrap/bootstrap.min.css?v=1508187854" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/prism/prism.css?v=1901390212" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/style.css?v=1717988773" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/gifplayer/gifplayer.css" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/checklist.css?v=66592350" rel="stylesheet" type="text/css" />
+
+    <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/assets/gifplayer/jquery.gifplayer.js"></script>
+    <script src="/assets/js/checklist.js" async defer></script>
+</head>
+    <body>
+        <!-- post_id: 173 -->
+
+        <div class="hidden-sm-down">
+    <nav class="navbar">
+        <div class="container-fluid">
+            <ul>
+                <li id="logo">
+                    <img src="https://avatars1.githubusercontent.com/u/924196?s=60&v=4" class="avatar">
+                    Tomas Votruba
+                </li>
+                <li class="active">
+                    <a href="/">Blog</a>
+                </li>
+                <li class="">
+                    <a href="/clusters/">Clusters</a>
+                </li>
+                <li class="">
+                    <a href="/mission/">Mission</a>
+                </li>
+                <li class="">
+                    <a href="/talks/">Talks</a>
+                </li>
+                <li class="">
+                    <a href="/contact/">Contact</a>
+                </li>
+                <li id="top-menu-search">
+                    <form method="get" action="https://www.google.com/search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction">
+                        <meta itemprop="target" content="https://www.google.com/search?q={q}"/>
+                        <input name="sitesearch" value="tomasvotruba.cz" type="hidden"/>
+                        <input itemprop="query-input" type="text" id="search-query" class="form-control" required="required" name="q" placeholder="Search..." autocomplete="off"/>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="hidden-md-up">
+    <nav class="navbar" id="mobile-menu">
+        <div class="container">
+            <a href="/" class="col-3 col-sm-3 active">
+                <em class="fas fa-book"></em>
+                <br>
+                PHP Blog
+            </a>
+            <a href="/clusters/" class="col-3 col-sm-3 ">
+                <em class="fas fa-share-alt"></em>
+                <br>
+                Clusters
+            </a>
+            <a href="/mission/" class="col-3 col-sm-3 ">
+                <em class="fas fa-heartbeat"></em>
+                <br>
+                Mission
+            </a>
+            <a href="/contact/" class="col-3 col-sm-3 ">
+                <em class="fas fa-phone"></em>
+                <br>
+                Contact
+            </a>
+        </div>
+    </nav>
+
+    <div class="hidden-md-up text-center row" id="top-menu-search-mobile">
+        <!-- inspired and taken from: https://github.com/yegor256/blog/blob/master/_layouts/default.html -->
+        <form method="get" action="https://www.google.com/search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction" class="col-md-12">
+            <meta itemprop="target" content="https://www.google.com/search?q={q}"/>
+            <input name="sitesearch" value="tomasvotruba.cz" type="hidden"/>
+            <input itemprop="query-input" type="text" id="search-query" class="form-control" required="required" name="q" placeholder="Search with Google..." autocomplete="off"/>
+        </form>
+    </div>
+</div>
+
+        <div class="mainContent">
+            <div class="container-fluid" id="post">
+                <h1 id="how-to-complete-type-declarations-without-docblocks-with-rector"><a href="#how-to-complete-type-declarations-without-docblocks-with-rector">How to Complete Type Declarations without Docblocks with Rector</a></h1>
+
+                <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>6 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2019-01-Thu">Thu, Jan 3, 2019</time>
+    </li>
+
+            <li class="list-inline-item mr-3">
+            <em class="fas fa-fw fa-comments"></em>
+            <a href="https://www.tomasvotruba.cz/blog/2019/01/03/how-to-complete-type-declarations-without-docblocks-with-rector/#disqus_thread">X</a> comments
+        </li>
+    
+            <li class="list-inline-item">
+            <em class="fas fa-fw fa-edit"></em>
+            <a href="https://github.com/TomasVotruba/tomasvotruba.cz/edit/master/source/_posts/2019/2019-01-03-how-to-complete-type-declarations-without-docblocks-with-rector.md">Typo? Fix me, please</a>
+        </li>
+    
+    </ul>
+
+                
+                
+                <div class="card card-bigger">
+                    <div class="card-body">
+                        In <a href="/blog/2018/12/10/rocket-science-behind-migration-of-docblock-types-to-php-typehints/">previous post</a> we looked at how to migrate from docblocks to type declarations. From <code>@param Type $param</code> to <code>Type $param</code>. Even if it doesn't break code like coding standards do, works with inheritance, localized <code>self</code> and <code>static</code> and propagates types to all child classes, it's still not such a big deal.
+<br><br>
+But <strong>how do you complete type declarations if don't have any docblocks?</strong>
+                    </div>
+                </div>
+
+                
+                <p>Well, you're doomed, because <strong>you should write</strong> <a href="/blog/2017/12/17/new-in-symplify-3-doc-block-cleaner-fixer/">docblocks everywhere where useful</a>.</p>
+<pre><code class="language-php">&lt;?php
+
+class SomeClass
+{
+    public function getItems()
+    {
+        return ['Statie', 'EasyCodingStandard', 'Rector'];
+    }
+}</code></pre>
+<p>If you only typed <code>@return</code> annotation 4 years ago, where no-one thought there will ever be scalar type declarations and such annotations were only for geeks. Transition to PHP 7 features would be so easy:</p>
+<pre><code class="language-diff"> &lt;?php
+
+ class SomeClass
+ {
+-    public function getItems()
++    public function getItems(): array
+     {
+         return ['Statie', 'EasyCodingStandard', 'Rector'];
+     }
+ }</code></pre>
+<p>Now, I hope you've learned, that <strong>future compatibility is a thing</strong> and you'll write annotations to each property, so they Rector will <a href="/blog/2018/11/15/how-to-get-php-74-typed-properties-to-your-code-in-few-seconds/#visualize-future-compatibility">convert them to type declarations</a> once PHP 7.4 is out.</p>
+<h2 id="quot-it-s-not-my-fault-quot"><a href="#quot-it-s-not-my-fault-quot">&quot;It's Not My Fault&quot;</a></h2>
+<p>Well, but what if you've inherited such legacy code, are you to blame? No, <strong>no-one is to blame even if you wrote the code</strong>. That's how change works. <strong>We feel like we know all today, but in 5 years array-type declarations will be considered code smell</strong> and we keep it only <em>for historical reasons</em>.</p>
+<p>So how can we fight the change together?</p>
+<pre><code class="language-php">&lt;?php
+
+class SomeClass
+{
+    public function getItems()
+    {
+        $items = ['Statie', 'EasyCodingStandard', 'Rector'];
+
+         return $this-&gt;sortItems($items);
+    }
+
+    private function sortItems(array $items)
+    {
+        sort($items);
+        return $items;
+    }
+}</code></pre>
+<p>How would upgrade this code to type declarations?</p>
+<pre><code class="language-diff"> &lt;?php
+
+ class SomeClass
+ {
+-    public function getItems()
++    public function getItems(): array
+     {
+         $items = ['Statie', 'EasyCodingStandard', 'Rector'];
+
+         return $this-&gt;sortItems($items);
+     }
+
+-    private function sortItems(array $items)
++    private function sortItems(array $items): array
+     {
+         sort($items);
+         return $items;
+     }
+ }</code></pre>
+<p>Good job, that's correct! Now you can do it for the rest of your 25 000 lines of code.</p>
+<p>Or... You can be <em>lazy smart </em> and <strong>use static analysis from PHPStan to do it for you</strong>. It already knows that:</p>
+<ul>
+<li><code>$items</code> is <code>array</code> with strings</li>
+<li><code>sort</code> sorts <code>array</code> and keeps it an <code>array</code></li>
+</ul>
+<p>That was too easy... let's check case we'll find in our code:</p>
+<pre><code class="language-diff"> &lt;?php
+
+ // ...
+
+-public function getResult()
++public function getResult(): float
+ {
+     if (true) {
+         return 5.2;
+     }
+
+     $value = 5.3;
+
+     return $value;
+ }</code></pre>
+<p>Don't get confused by incorrect doc:</p>
+<pre><code class="language-diff"> /**
+  * @return bool
+  */
+-public function getNumber()
++public function getNumber(): int
+ {
+     return 5;
+ }</code></pre>
+<p>Is one object or null?</p>
+<pre><code class="language-diff"> &lt;?php
+
+ // ...
+
+-public function resolve(Product $product)
++public function resolve(Product $product): ?Product
+ {
+     // ...
+
+     if (...) {
+         return null;
+     }
+
+     return $product;
+ }</code></pre>
+<p><br></p>
+<blockquote class="blockquote text-center mb-5 mt-5">
+    If PHPStorm or PHPStan knows what type it is,<br>
+    there is a big chance Rector can change it everywhere in your code.
+</blockquote>
+<p><br></p>
+<p><a href="https://github.com/jkuchar">Honza Kuchař</a> spend one afternoon over Rector with me and motivated me to add this feature to Rector, so PHP developers can enjoy the laziness AST provides. Thank you, Honza! It's done (<a href="https://github.com/rectorphp/rector/pull/880">see PR</a>).</p>
+<p>Just setup <a href="https://github.com/rectorphp/rector">Rector</a> and upgrade your code:</p>
+<pre><code class="language-yaml"># rector.yml
+services:
+    Rector\Php\Rector\FunctionLike\ReturnTypeDeclarationRector: ~</code></pre>
+<pre><code class="language-bash">vendor/bin/rector process src</code></pre>
+<p>Done!</p>
+<p><br></p>
+<p>Just one more thing...</p>
+<h2 id="properties-without-code-var-code"><a href="#properties-without-code-var-code">Properties Without <code>@var</code>?</a></h2>
+<p>There is a big chance that if our code misses <code>@param</code> and <code>@return</code> type declarations, the <code>@var</code> is missing as well. We don't have to go to legacy code to find such code.</p>
+<p>Do you recognize this class?</p>
+<pre><code class="language-php">&lt;?php
+
+namespace Symfony\Component\Console\Command;
+
+use Symfony\Component\Console\Application;
+
+class Command
+{
+    private $application;
+    private $name;
+    private $processTitle;
+    private $aliases = [];
+    private $definition;
+    private $hidden = false;
+    private $help;
+    private $description;
+    private $ignoreValidationErrors = false;
+    private $applicationDefinitionMerged = false;
+    private $applicationDefinitionMergedWithArgs = false;
+    private $code;
+    private $synopsis = [];
+    private $usages = [];
+    private $helperSet;
+
+    // ...
+
+    public function setApplication(Application $application = null)
+    {
+        $this-&gt;application = $application;
+    }
+}</code></pre>
+<p>Quiz question: how would <strong>you utilize AST to autocomplete all <code>@var</code> annotations to properties above</strong>?</p>
+<p><br></p>
+<p><code>$this-&gt;application = $application;</code> we know that <code>$application</code> can be upgraded to:</p>
+<pre><code class="language-diff">+/**
++ * @var \Symfony\Component\Console\Application
++ */
+ private $application;</code></pre>
+<p>That's it! Let's put this algorithm into Rector:</p>
+<pre><code class="language-yaml"># rector.yml
+services:
+    Rector\Php\Rector\Property\CompleteVarDocTypePropertyRector: ~</code></pre>
+<pre><code class="language-bash">vendor/bin/rector process src</code></pre>
+<p>↓</p>
+<pre><code class="language-diff"> &lt;?php
+
+ namespace Symfony\Component\Console\Command;
+
+ use Symfony\Component\Console\Application;
+
+ class Command
+ {
++    /**
++     * @var \Symfony\Component\Console\Application
++     */
+     private $application;
++    /**
++     * @var string
++     */
+     private $name;
++    /**
++     * @var string
++     */
+     private $processTitle;
++    /**
++     * @var mixed[]|string[]
++     */
+     private $aliases = [];
++    /**
++     * @var \Symfony\Component\Console\Input\InputDefinition
++     */
+     private $definition;
++    /**
++     * @var bool
++     */
+     private $hidden = false;
++    /**
++     * @var string
++     */
+     private $help;
++    /**
++     * @var string
++     */
+     private $description;
++    /**
++     * @var bool
++     */
+     private $ignoreValidationErrors = false;
++    /**
++     * @var bool
++     */
+     private $applicationDefinitionMerged = false;
++    /**
++     * @var bool
++     */
+     private $applicationDefinitionMergedWithArgs = false;
++    /**
++     * @var callable
++     */
+     private $code;
++    /**
++     * @var mixed[]
++     */
+     private $synopsis = [];
++    /**
++     * @var mixed[]
++     */
+     private $usages = [];
++    /**
++     * @var \Symfony\Component\Console\Helper\HelperSet
++     */
+     private $helperSet;</code></pre>
+<p>In matter of seconds now we have:</p>
+<ul>
+<li>Better static type analysis <em class="fas fa-lg fa-check text-success"></em></li>
+<li>Better PHPStorm autocomplete <em class="fas fa-lg fa-check text-success"></em></li>
+<li>Better coding standards <em class="fas fa-lg fa-check text-success"></em></li>
+<li>No manual boring work required from the developer <em class="fas fa-lg fa-check text-success"></em></li>
+</ul>
+<p><br></p>
+<p>If you want to how Rector works behind this scene, (<a href="https://github.com/rectorphp/rector/pull/885">check the PR</a>). <strong>The code size to make this happen is not what you'd expect</strong> thanks to php-parser elegance (thanks Nikic!).</p>
+<p><br></p>
+<p>What more could be done to turn legacy code to elegant code? Share in comments, I'm eager to know.</p>
+<p><br></p>
+<p>Happy coding!</p>
+
+                <br>
+
+                
+                <div class="card mb-5">
+                    <div class="card-body text-center">
+                        <a href="https://github.com/TomasVotruba/tomasvotruba.cz/edit/master/source/_posts/2019/2019-01-03-how-to-complete-type-declarations-without-docblocks-with-rector.md" class="btn btn-info btn-sm">
+                            <em class="fas fa-fw fa-edit"></em>
+                            Typo? Fix it, please
+                        </a>
+                        &nbsp;and join <a href="/thank-you">56 people</a> who build this website
+                    </div>
+                </div>
+
+                <a name="comments"></a>
+
+                <div id="disqus_thread"></div>
+
+<script type="text/javascript">
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//' + 'itsworthsharing' + '.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+            </div>
+
+            <script id="dsq-count-scr" src="https://itsworthsharing.disqus.com/count.js" async defer></script>
+        </div>
+
+        <script>
+    ga=function(){ ga.q.push(arguments) };
+    ga.q=[];
+    ga.l=+new Date;
+    ga('create', 'UA-46082345-1', 'auto');
+    ga('send','pageview');
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+<script src="/assets/prism/prism.js"></script>
+
+<script>
+    $('.gifplayer').gifplayer();
+</script>
+
+<div class="text-center mt-5" id="footer">
+    <div class="row">
+        <div class="col-12">
+            Join 17 000 PHP developers every month: <a href="/rss.xml">RSS</a>&nbsp;or&nbsp;<a href="https://twitter.com/votrubaT">@votrubaT</a>
+
+            <span class="pl-2 pr-2 hidden-sm-down">•</span>
+
+            <span class="hidden-sm-down">
+                Watch my <a href="https://github.com/tomasvotruba">open-source addiction</a>
+            </span>
+        </div>
+    </div>
+
+    <p>
+        Build by <a href="/thank-you/">56 people</a>
+
+        <span class="pl-2 pr-2">•</span>
+
+        Runs on <a href="https://www.statie.org/">Statie</a>
+
+        <span class="pl-2 pr-2">•</span>
+
+        <a href="/now/">Now</a>
+
+        <span class="hidden-sm-down">
+            <span class="pl-2 pr-2">•</span>
+            Hosted on <a href="https://github.com/tomasvotruba/tomasvotruba.cz">GitHub</a>
+        </span>
+    </p>
+</div>
+    </body>
+</html>
+
+        <meta property="og:type" content="article" />
+    <meta property="og:title" content="How to Complete Type Declarations without Docblocks with Rector" />
+    <meta property="og:description" content="In previous post we looked at how to migrate from docblocks to type declarations. From @param Type $param to Type $param. Even if it doesn&#039;t break code like coding standards do, works with inheritance, localized self and static and propagates types to all child classes, it&#039;s still not such a big deal.
+
+But how do you complete type declarations if don&#039;t have any docblocks?" />
+    <meta property="og:url" content="https://www.tomasvotruba.cz/blog/2019/01/03/how-to-complete-type-declarations-without-docblocks-with-rector" />
+
+        <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@votrubaT">
+    <meta name="twitter:title" content="How to Complete Type Declarations without Docblocks with Rector" />
+    <meta name="twitter:description" content="In previous post we looked at how to migrate from docblocks to type declarations. From @param Type $param to Type $param. Even if it doesn&#039;t break code like coding standards do, works with inheritance, localized self and static and propagates types to all child classes, it&#039;s still not such a big deal.
+
+But how do you complete type declarations if don&#039;t have any docblocks?" />

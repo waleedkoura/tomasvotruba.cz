@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>9 Steps to Migrate From Jekyll to Statie | Tomas Votruba</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    
+    <link rel="alternate" type="application/rss+xml" title="Tomas Votruba Blog RSS" href="/rss.xml">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
+
+        <link href="/assets/bootstrap/bootstrap.min.css?v=1488308370" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/prism/prism.css?v=1969962229" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/style.css?v=432877687" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/gifplayer/gifplayer.css" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/checklist.css?v=939087814" rel="stylesheet" type="text/css" />
+
+    <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/assets/gifplayer/jquery.gifplayer.js"></script>
+    <script src="/assets/js/checklist.js" async defer></script>
+</head>
+    <body>
+        <!-- post_id: 176 -->
+
+        <div class="hidden-sm-down">
+    <nav class="navbar">
+        <div class="container-fluid">
+            <ul>
+                <li id="logo">
+                    <img src="https://avatars1.githubusercontent.com/u/924196?s=60&v=4" class="avatar">
+                    Tomas Votruba
+                </li>
+                <li class="active">
+                    <a href="/">Blog</a>
+                </li>
+                <li class="">
+                    <a href="/clusters/">Clusters</a>
+                </li>
+                <li class="">
+                    <a href="/mission/">Mission</a>
+                </li>
+                <li class="">
+                    <a href="/talks/">Talks</a>
+                </li>
+                <li class="">
+                    <a href="/contact/">Contact</a>
+                </li>
+                <li id="top-menu-search">
+                    <form method="get" action="https://www.google.com/search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction">
+                        <meta itemprop="target" content="https://www.google.com/search?q={q}"/>
+                        <input name="sitesearch" value="tomasvotruba.cz" type="hidden"/>
+                        <input itemprop="query-input" type="text" id="search-query" class="form-control" required="required" name="q" placeholder="Search..." autocomplete="off"/>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="hidden-md-up">
+    <nav class="navbar" id="mobile-menu">
+        <div class="container">
+            <a href="/" class="col-3 col-sm-3 active">
+                <em class="fas fa-book"></em>
+                <br>
+                PHP Blog
+            </a>
+            <a href="/clusters/" class="col-3 col-sm-3 ">
+                <em class="fas fa-share-alt"></em>
+                <br>
+                Clusters
+            </a>
+            <a href="/mission/" class="col-3 col-sm-3 ">
+                <em class="fas fa-heartbeat"></em>
+                <br>
+                Mission
+            </a>
+            <a href="/contact/" class="col-3 col-sm-3 ">
+                <em class="fas fa-phone"></em>
+                <br>
+                Contact
+            </a>
+        </div>
+    </nav>
+
+    <div class="hidden-md-up text-center row" id="top-menu-search-mobile">
+        <!-- inspired and taken from: https://github.com/yegor256/blog/blob/master/_layouts/default.html -->
+        <form method="get" action="https://www.google.com/search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction" class="col-md-12">
+            <meta itemprop="target" content="https://www.google.com/search?q={q}"/>
+            <input name="sitesearch" value="tomasvotruba.cz" type="hidden"/>
+            <input itemprop="query-input" type="text" id="search-query" class="form-control" required="required" name="q" placeholder="Search with Google..." autocomplete="off"/>
+        </form>
+    </div>
+</div>
+
+        <div class="mainContent">
+            <div class="container-fluid" id="post">
+                <h1 id="9-steps-to-migrate-from-jekyll-to-statie"><a href="#9-steps-to-migrate-from-jekyll-to-statie">9 Steps to Migrate From Jekyll to Statie</a></h1>
+
+                <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>2 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2019-01-Thu">Thu, Jan 10, 2019</time>
+    </li>
+
+            <li class="list-inline-item mr-3">
+            <em class="fas fa-fw fa-comments"></em>
+            <a href="https://www.tomasvotruba.cz/blog/2019/01/10/9-steps-to-migrate-from-jekyll-to-statie/#disqus_thread">X</a> comments
+        </li>
+    
+            <li class="list-inline-item">
+            <em class="fas fa-fw fa-edit"></em>
+            <a href="https://github.com/TomasVotruba/tomasvotruba.cz/edit/master/source/_posts/2019/2019-01-10-9-steps-to-migrate-from-jekyll-to-statie.md">Typo? Fix me, please</a>
+        </li>
+    
+    </ul>
+
+                
+                
+                <div class="card card-bigger">
+                    <div class="card-body">
+                        Jekyll is great to start for micro websites like <a href="https://gomonorepo.org/">Go Monorepo</a>. But Jekyll has one big problem - the language.
+How would you add custom Twig or Latte filter to Jekyll?
+<br><br>
+I wanted to migrate <a href="https://gomonorepo.org/">gomonorepo.org</a> and <a href="https://gophp71.org/">gophp71.org</a> from Jekyll to Statie. Can new <code>init</code> command make this piece of cake? And what needs to be done next?
+                    </div>
+                </div>
+
+                
+                <h2 id="1-create-basic-statie-structure"><a href="#1-create-basic-statie-structure">1. Create Basic Statie Structure</a></h2>
+<p>Statie 5.3 brings <a href="/blog/2019/01/07/how-to-create-your-first-php-twig-static-website-under-2-minutes-with-statie/">new <code>init</code> command</a>, that creates basic structure in <code>/source</code> directory, <code>statie.yml</code>, <code>.travis.yml</code> and metafiles.</p>
+<p>Before we start any moving, create a basic structure to save many copy-pasting steps:</p>
+<pre><code class="language-bash">composer require symplify/statie
+vendor/bin/statie init</code></pre>
+<p>Then, clean <code>/source</code> directory from generated files and...</p>
+<h2 id="2-move-source-files-to-code-source-code-directory"><a href="#2-move-source-files-to-code-source-code-directory">2. Move Source files to <code>/source</code> Directory</a></h2>
+<ul>
+<li>Jekyll has all the source code in the root.</li>
+<li>Statie works with <code>/source</code> directory, so the website is separated from PHP code, tests, metafiles.</li>
+</ul>
+<pre><code class="language-diff">-CNAME
++/source/CNAME</code></pre>
+<pre><code class="language-diff">-index.html
++/source/index.html</code></pre>
+<pre><code class="language-diff">-_data/projects.yaml
++/source/_data/projects.yaml</code></pre>
+<h2 id="3-move-parameters-files-under-code-parameters-gt-param-name-code-sections"><a href="#3-move-parameters-files-under-code-parameters-gt-param-name-code-sections">3. Move Parameters Files Under <code>parameters &gt; [param name]</code> Sections</a></h2>
+<p><strong>Before</strong> - Jekyll</p>
+<pre><code class="language-yaml"># _data/projects.yaml
+-
+    name: Symplify
+    url: https://github.com/Symplify/Symplify</code></pre>
+<p><strong>After</strong> - Statie</p>
+<pre><code class="language-yaml"># source/_data/projects.yaml
+parameters:
+    projects:
+        -
+            name: Symplify
+            url: https://github.com/Symplify/Symplify</code></pre>
+<h2 id="4-upgrade-absolute-links-to-moved-files"><a href="#4-upgrade-absolute-links-to-moved-files">4. Upgrade Absolute Links to Moved Files</a></h2>
+<pre><code class="language-diff">-https://github.com/TomasVotruba/gophp71.org/edit/master/_data/projects.yaml
++https://github.com/TomasVotruba/gophp71.org/edit/master/source/_data/projects.yaml</code></pre>
+<h2 id="5-load-moved-yaml-files-in-code-statie-yml-code"><a href="#5-load-moved-yaml-files-in-code-statie-yml-code">5. Load Moved YAML Files in <code>statie.yml</code></a></h2>
+<pre><code class="language-diff">+imports:
++    - { resource: "source/_data/projects.yaml" }</code></pre>
+<h2 id="6-remove-code-site-data-code-and-use-variables-directly"><a href="#6-remove-code-site-data-code-and-use-variables-directly">6. Remove <code>site.data.</code> and use Variables Directly</a></h2>
+<pre><code class="language-diff"> &lt;ul&gt;
+-    {% for project in site.data.projects %}
++    {% for project in projects %}
+         &lt;li&gt;&lt;a href="{{ project.url }}"&gt;{{ project.name }}&lt;/a&gt;&lt;/li&gt;
+     {% endfor %}
+ &lt;/ul&gt;</code></pre>
+<h2 id="7-setup-github-pages-deploy-in-travis"><a href="#7-setup-github-pages-deploy-in-travis">7. Setup Github Pages deploy in Travis</a></h2>
+<p>Thanks to <code>vendor/bin/statie init</code> you have correctly configured <code>.travis.yml</code> in your repository.</p>
+<p>To finish deploy, you need to:</p>
+<ul>
+<li>create <code>gh-pages</code> branch</li>
+<li>pick it as a source for Github Pages</li>
+<li>generate Github Token</li>
+<li>put it to Travis configuration of your repository</li>
+</ul>
+<p>How you do this? Just <strong>follow <a href="https://www.statie.org/docs/github-pages/">Statie.org documentation</a></strong> step by step.</p>
+<h2 id="8-clean-metadata-from-headers"><a href="#8-clean-metadata-from-headers">8. Clean Metadata from Headers</a></h2>
+<p>In Jekyll, it's required to have <code>---</code> section in files, even if empty. You can drop it now:</p>
+<pre><code class="language-diff">- ---
+- ---
+
+HTML
+...</code></pre>
+<h2 id="9-run-project-locally"><a href="#9-run-project-locally">9. Run Project Locally</a></h2>
+<p>This is what I missed the most at Jekyll page - instant feedback. We want to develop and see output instantly - is it correct or is there a bug?</p>
+<pre><code class="language-bash">npm install
+gulp</code></pre>
+<ul>
+<li>Then open <code>localhost:8000</code> to see your generated HTML.</li>
+<li>Did you edit code in <code>/source</code>? → Just <strong>refresh browser to see re-generated HTML</strong>.</li>
+</ul>
+<p>This is at least 100 times faster than deploying to Jekyll and checking the output in the production.</p>
+<h3 id="show-me-the-real-migration-code"><a href="#show-me-the-real-migration-code">Show me the Real Migration Code</a></h3>
+<ul>
+<li><a href="https://github.com/TomasVotruba/gophp71.org/pull/32">pull request on gophp71.org</a></li>
+<li><a href="https://github.com/TomasVotruba/gomonorepo.org/pull/7">pull request on gomonorepo.org</a></li>
+</ul>
+<p><br></p>
+<p>That's it! You can enjoy Markdown, Twig, Latte, and PHP directly from your local machine and still on Github Pages.</p>
+<p>Happy coding!</p>
+
+                <br>
+
+                
+                <div class="card mb-5">
+                    <div class="card-body text-center">
+                        <a href="https://github.com/TomasVotruba/tomasvotruba.cz/edit/master/source/_posts/2019/2019-01-10-9-steps-to-migrate-from-jekyll-to-statie.md" class="btn btn-info btn-sm">
+                            <em class="fas fa-fw fa-edit"></em>
+                            Typo? Fix it, please
+                        </a>
+                        &nbsp;and join <a href="/thank-you">56 people</a> who build this website
+                    </div>
+                </div>
+
+                <a name="comments"></a>
+
+                <div id="disqus_thread"></div>
+
+<script type="text/javascript">
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//' + 'itsworthsharing' + '.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+            </div>
+
+            <script id="dsq-count-scr" src="https://itsworthsharing.disqus.com/count.js" async defer></script>
+        </div>
+
+        <script>
+    ga=function(){ ga.q.push(arguments) };
+    ga.q=[];
+    ga.l=+new Date;
+    ga('create', 'UA-46082345-1', 'auto');
+    ga('send','pageview');
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+<script src="/assets/prism/prism.js"></script>
+
+<script>
+    $('.gifplayer').gifplayer();
+</script>
+
+<div class="text-center mt-5" id="footer">
+    <div class="row">
+        <div class="col-12">
+            Join 17 000 PHP developers every month: <a href="/rss.xml">RSS</a>&nbsp;or&nbsp;<a href="https://twitter.com/votrubaT">@votrubaT</a>
+
+            <span class="pl-2 pr-2 hidden-sm-down">•</span>
+
+            <span class="hidden-sm-down">
+                Watch my <a href="https://github.com/tomasvotruba">open-source addiction</a>
+            </span>
+        </div>
+    </div>
+
+    <p>
+        Build by <a href="/thank-you/">56 people</a>
+
+        <span class="pl-2 pr-2">•</span>
+
+        Runs on <a href="https://www.statie.org/">Statie</a>
+
+        <span class="pl-2 pr-2">•</span>
+
+        <a href="/now/">Now</a>
+
+        <span class="hidden-sm-down">
+            <span class="pl-2 pr-2">•</span>
+            Hosted on <a href="https://github.com/tomasvotruba/tomasvotruba.cz">GitHub</a>
+        </span>
+    </p>
+</div>
+    </body>
+</html>
+
+        <meta property="og:type" content="article" />
+    <meta property="og:title" content="9 Steps to Migrate From Jekyll to Statie" />
+    <meta property="og:description" content="Jekyll is great to start for micro websites like Go Monorepo. But Jekyll has one big problem - the language.
+How would you add custom Twig or Latte filter to Jekyll?
+
+I wanted to migrate gomonorepo.org and gophp71.org from Jekyll to Statie. Can new init command make this piece of cake? And what needs to be done next?" />
+    <meta property="og:url" content="https://www.tomasvotruba.cz/blog/2019/01/10/9-steps-to-migrate-from-jekyll-to-statie" />
+
+        <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@votrubaT">
+    <meta name="twitter:title" content="9 Steps to Migrate From Jekyll to Statie" />
+    <meta name="twitter:description" content="Jekyll is great to start for micro websites like Go Monorepo. But Jekyll has one big problem - the language.
+How would you add custom Twig or Latte filter to Jekyll?
+
+I wanted to migrate gomonorepo.org and gophp71.org from Jekyll to Statie. Can new init command make this piece of cake? And what needs to be done next?" />

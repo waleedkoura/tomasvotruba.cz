@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>How to Create Your First PHP Twig Static Website under 2 Minutes with Statie | Tomas Votruba</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    
+    <link rel="alternate" type="application/rss+xml" title="Tomas Votruba Blog RSS" href="/rss.xml">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
+
+        <link href="/assets/bootstrap/bootstrap.min.css?v=1335023861" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/prism/prism.css?v=902610271" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/style.css?v=177257867" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/gifplayer/gifplayer.css" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/checklist.css?v=156935335" rel="stylesheet" type="text/css" />
+
+    <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/assets/gifplayer/jquery.gifplayer.js"></script>
+    <script src="/assets/js/checklist.js" async defer></script>
+</head>
+    <body>
+        <!-- post_id: 174 -->
+
+        <div class="hidden-sm-down">
+    <nav class="navbar">
+        <div class="container-fluid">
+            <ul>
+                <li id="logo">
+                    <img src="https://avatars1.githubusercontent.com/u/924196?s=60&v=4" class="avatar">
+                    Tomas Votruba
+                </li>
+                <li class="active">
+                    <a href="/">Blog</a>
+                </li>
+                <li class="">
+                    <a href="/clusters/">Clusters</a>
+                </li>
+                <li class="">
+                    <a href="/mission/">Mission</a>
+                </li>
+                <li class="">
+                    <a href="/talks/">Talks</a>
+                </li>
+                <li class="">
+                    <a href="/contact/">Contact</a>
+                </li>
+                <li id="top-menu-search">
+                    <form method="get" action="https://www.google.com/search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction">
+                        <meta itemprop="target" content="https://www.google.com/search?q={q}"/>
+                        <input name="sitesearch" value="tomasvotruba.cz" type="hidden"/>
+                        <input itemprop="query-input" type="text" id="search-query" class="form-control" required="required" name="q" placeholder="Search..." autocomplete="off"/>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="hidden-md-up">
+    <nav class="navbar" id="mobile-menu">
+        <div class="container">
+            <a href="/" class="col-3 col-sm-3 active">
+                <em class="fas fa-book"></em>
+                <br>
+                PHP Blog
+            </a>
+            <a href="/clusters/" class="col-3 col-sm-3 ">
+                <em class="fas fa-share-alt"></em>
+                <br>
+                Clusters
+            </a>
+            <a href="/mission/" class="col-3 col-sm-3 ">
+                <em class="fas fa-heartbeat"></em>
+                <br>
+                Mission
+            </a>
+            <a href="/contact/" class="col-3 col-sm-3 ">
+                <em class="fas fa-phone"></em>
+                <br>
+                Contact
+            </a>
+        </div>
+    </nav>
+
+    <div class="hidden-md-up text-center row" id="top-menu-search-mobile">
+        <!-- inspired and taken from: https://github.com/yegor256/blog/blob/master/_layouts/default.html -->
+        <form method="get" action="https://www.google.com/search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction" class="col-md-12">
+            <meta itemprop="target" content="https://www.google.com/search?q={q}"/>
+            <input name="sitesearch" value="tomasvotruba.cz" type="hidden"/>
+            <input itemprop="query-input" type="text" id="search-query" class="form-control" required="required" name="q" placeholder="Search with Google..." autocomplete="off"/>
+        </form>
+    </div>
+</div>
+
+        <div class="mainContent">
+            <div class="container-fluid" id="post">
+                <h1 id="how-to-create-your-first-php-twig-static-website-under-2-minutes-with-statie"><a href="#how-to-create-your-first-php-twig-static-website-under-2-minutes-with-statie">How to Create Your First PHP Twig Static Website under 2 Minutes with Statie</a></h1>
+
+                <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>2 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2019-01-Mon">Mon, Jan 7, 2019</time>
+    </li>
+
+            <li class="list-inline-item mr-3">
+            <em class="fas fa-fw fa-comments"></em>
+            <a href="https://www.tomasvotruba.cz/blog/2019/01/07/how-to-create-your-first-php-twig-static-website-under-2-minutes-with-statie/#disqus_thread">X</a> comments
+        </li>
+    
+            <li class="list-inline-item">
+            <em class="fas fa-fw fa-edit"></em>
+            <a href="https://github.com/TomasVotruba/tomasvotruba.cz/edit/master/source/_posts/2019/2019-01-07-how-to-create-your-first-php-twig-static-website-under-2-minutes-with-statie.md">Typo? Fix me, please</a>
+        </li>
+    
+    </ul>
+
+                
+                
+                <div class="card card-bigger">
+                    <div class="card-body">
+                        Do you like to write or create micro-sites? This post is for you.
+Statie is now <a href="https://packagist.org/packages/symplify/statie/stats">the most downloaded</a> PHP Twig static site generators, even surpassing 7-years old <a href="https://packagist.org/packages/sculpin/sculpin/stats">Sculpin</a> by 200 downloads a month. On the other hand, Sculpin is about to release <a href="https://github.com/sculpin/sculpin/releases">version 3</a> creating healthy competition.
+<br><br>
+As you can see, <strong>Static websites are on the rise in PHP</strong> and they were never used more than now. It's time to make creating a new static website simple for everyone.
+                    </div>
+                </div>
+
+                
+                <p>Until today, to create and understand static website basics, you had to learn:</p>
+<ul>
+<li><a href="https://www.tomasvotruba.cz/blog/2017/02/20/statie-how-to-run-it-locally/">Statie - part 1: How to run it Locally</a></li>
+<li><a href="https://www.tomasvotruba.cz/blog/2017/03/06/statie-2-how-to-add-contact-page-with-data/">Statie - part 2: How to add Contact Page With Data
+</a></li>
+<li><a href="https://www.tomasvotruba.cz/blog/2017/03/09/statie-3-how-to-add-reusable-parts-of-code/">Statie - part 3: How to Add Reusable Parts of Code</a></li>
+<li><a href="https://www.tomasvotruba.cz/blog/2017/03/13/statie-4-how-to-create-the-simplest-blog/">Statie - part 4: How to Create The Simplest Blog</a></li>
+</ul>
+<p><strong>Don't read it! It's an utter waste of time.</strong></p>
+<h2 id="documentation-is-dead-long-live-automatization"><a href="#documentation-is-dead-long-live-automatization">Documentation is Dead, Long Live Automatization</a></h2>
+<p>In recent years, there is a trend towards <strong>embodied knowledge</strong>:</p>
+<ul>
+<li>Do you understand semver and compare package dependencies? - No, you use Composer.</li>
+<li>Do you test your code against every PHP type? - No, you use PHPStan.</li>
+<li>Do you type manually method names or class names? - No, you use PHPStorm (or any other IDE).</li>
+<li>Do you upgrade your code manually? - No, you use Rector.</li>
+</ul>
+<p>In other words, <strong>the knowledge is shifting from human brain storage to tool's abilities</strong>.</p>
+<p>Not the <em>smart knowledge</em> that helps us create algorithms, but the dummy knowledge like &quot;what is the 3rd most largest river in the USA&quot; that I can Google in 2-3 seconds (depending on internet connection in the train). We <a href="/blog/2017/12/04/life30-what-will-you-do-when-ai-takes-over-the-world/">don't become retarded</a>, we become more powerful to use our brains for what they're best at.</p>
+<h2 id="your-first-statie-in-2-minutes"><a href="#your-first-statie-in-2-minutes">Your First Statie in 2 minutes</a></h2>
+<p><a href="https://github.com/Symplify/Symplify/pull/1285" class="btn btn-dark btn-sm">
+<em class="fab fa-github fa-fw"></em>
+See pull-request #1285
+</a></p>
+<pre><code class="language-bash">composer require symplify/statie</code></pre>
+<p>Statie 5.3 brings 1 new command:</p>
+<pre><code class="language-bash">vendor/bin/statie init</code></pre>
+<p>See how it works:</p>
+<script id="asciicast-220449" src="https://asciinema.org/a/220449.js" async></script>
+<p>Do you prefer Latte over Twig?</p>
+<pre><code class="language-bash">vendor/bin/statie init --templating latte</code></pre>
+<p>Explore the files to find hints on how to use templates, even if you never used Twig or Latte ever before ( ← embodied knowledge).</p>
+<p><br></p>
+<p>Great job! You're up and running locally.</p>
+<p>Do you want to <strong>finish the Travis → Github Pages deployment</strong>? Just follow <a href="https://www.statie.org/docs/github-pages/">the official documentation</a>.</p>
+<p><br></p>
+<p>Happy coding!</p>
+
+                <br>
+
+                
+                <div class="card mb-5">
+                    <div class="card-body text-center">
+                        <a href="https://github.com/TomasVotruba/tomasvotruba.cz/edit/master/source/_posts/2019/2019-01-07-how-to-create-your-first-php-twig-static-website-under-2-minutes-with-statie.md" class="btn btn-info btn-sm">
+                            <em class="fas fa-fw fa-edit"></em>
+                            Typo? Fix it, please
+                        </a>
+                        &nbsp;and join <a href="/thank-you">56 people</a> who build this website
+                    </div>
+                </div>
+
+                <a name="comments"></a>
+
+                <div id="disqus_thread"></div>
+
+<script type="text/javascript">
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//' + 'itsworthsharing' + '.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+            </div>
+
+            <script id="dsq-count-scr" src="https://itsworthsharing.disqus.com/count.js" async defer></script>
+        </div>
+
+        <script>
+    ga=function(){ ga.q.push(arguments) };
+    ga.q=[];
+    ga.l=+new Date;
+    ga('create', 'UA-46082345-1', 'auto');
+    ga('send','pageview');
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+<script src="/assets/prism/prism.js"></script>
+
+<script>
+    $('.gifplayer').gifplayer();
+</script>
+
+<div class="text-center mt-5" id="footer">
+    <div class="row">
+        <div class="col-12">
+            Join 17 000 PHP developers every month: <a href="/rss.xml">RSS</a>&nbsp;or&nbsp;<a href="https://twitter.com/votrubaT">@votrubaT</a>
+
+            <span class="pl-2 pr-2 hidden-sm-down">•</span>
+
+            <span class="hidden-sm-down">
+                Watch my <a href="https://github.com/tomasvotruba">open-source addiction</a>
+            </span>
+        </div>
+    </div>
+
+    <p>
+        Build by <a href="/thank-you/">56 people</a>
+
+        <span class="pl-2 pr-2">•</span>
+
+        Runs on <a href="https://www.statie.org/">Statie</a>
+
+        <span class="pl-2 pr-2">•</span>
+
+        <a href="/now/">Now</a>
+
+        <span class="hidden-sm-down">
+            <span class="pl-2 pr-2">•</span>
+            Hosted on <a href="https://github.com/tomasvotruba/tomasvotruba.cz">GitHub</a>
+        </span>
+    </p>
+</div>
+    </body>
+</html>
+
+        <meta property="og:type" content="article" />
+    <meta property="og:title" content="How to Create Your First PHP Twig Static Website under 2 Minutes with Statie" />
+    <meta property="og:description" content="Do you like to write or create micro-sites? This post is for you.
+Statie is now the most downloaded PHP Twig static site generators, even surpassing 7-years old Sculpin by 200 downloads a month. On the other hand, Sculpin is about to release version 3 creating healthy competition.
+
+As you can see, Static websites are on the rise in PHP and they were never used more than now. It&#039;s time to make creating a new static website simple for everyone." />
+    <meta property="og:url" content="https://www.tomasvotruba.cz/blog/2019/01/07/how-to-create-your-first-php-twig-static-website-under-2-minutes-with-statie" />
+
+        <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@votrubaT">
+    <meta name="twitter:title" content="How to Create Your First PHP Twig Static Website under 2 Minutes with Statie" />
+    <meta name="twitter:description" content="Do you like to write or create micro-sites? This post is for you.
+Statie is now the most downloaded PHP Twig static site generators, even surpassing 7-years old Sculpin by 200 downloads a month. On the other hand, Sculpin is about to release version 3 creating healthy competition.
+
+As you can see, Static websites are on the rise in PHP and they were never used more than now. It&#039;s time to make creating a new static website simple for everyone." />

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>Stylish and Standard Console Output with Symfony Style | Tomas Votruba</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    
+    <link rel="alternate" type="application/rss+xml" title="Tomas Votruba Blog RSS" href="/rss.xml">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
+
+        <link href="/assets/bootstrap/bootstrap.min.css?v=1429484996" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/prism/prism.css?v=587573375" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/style.css?v=1397522054" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/gifplayer/gifplayer.css" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/checklist.css?v=22035547" rel="stylesheet" type="text/css" />
+
+    <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/assets/gifplayer/jquery.gifplayer.js"></script>
+    <script src="/assets/js/checklist.js" async defer></script>
+</head>
+    <body>
+        <!-- post_id: 129 -->
+
+        <div class="hidden-sm-down">
+    <nav class="navbar">
+        <div class="container-fluid">
+            <ul>
+                <li id="logo">
+                    <img src="https://avatars1.githubusercontent.com/u/924196?s=60&v=4" class="avatar">
+                    Tomas Votruba
+                </li>
+                <li class="active">
+                    <a href="/">Blog</a>
+                </li>
+                <li class="">
+                    <a href="/clusters/">Clusters</a>
+                </li>
+                <li class="">
+                    <a href="/mission/">Mission</a>
+                </li>
+                <li class="">
+                    <a href="/talks/">Talks</a>
+                </li>
+                <li class="">
+                    <a href="/contact/">Contact</a>
+                </li>
+                <li id="top-menu-search">
+                    <form method="get" action="https://www.google.com/search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction">
+                        <meta itemprop="target" content="https://www.google.com/search?q={q}"/>
+                        <input name="sitesearch" value="tomasvotruba.cz" type="hidden"/>
+                        <input itemprop="query-input" type="text" id="search-query" class="form-control" required="required" name="q" placeholder="Search..." autocomplete="off"/>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="hidden-md-up">
+    <nav class="navbar" id="mobile-menu">
+        <div class="container">
+            <a href="/" class="col-3 col-sm-3 active">
+                <em class="fas fa-book"></em>
+                <br>
+                PHP Blog
+            </a>
+            <a href="/clusters/" class="col-3 col-sm-3 ">
+                <em class="fas fa-share-alt"></em>
+                <br>
+                Clusters
+            </a>
+            <a href="/mission/" class="col-3 col-sm-3 ">
+                <em class="fas fa-heartbeat"></em>
+                <br>
+                Mission
+            </a>
+            <a href="/contact/" class="col-3 col-sm-3 ">
+                <em class="fas fa-phone"></em>
+                <br>
+                Contact
+            </a>
+        </div>
+    </nav>
+
+    <div class="hidden-md-up text-center row" id="top-menu-search-mobile">
+        <!-- inspired and taken from: https://github.com/yegor256/blog/blob/master/_layouts/default.html -->
+        <form method="get" action="https://www.google.com/search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction" class="col-md-12">
+            <meta itemprop="target" content="https://www.google.com/search?q={q}"/>
+            <input name="sitesearch" value="tomasvotruba.cz" type="hidden"/>
+            <input itemprop="query-input" type="text" id="search-query" class="form-control" required="required" name="q" placeholder="Search with Google..." autocomplete="off"/>
+        </form>
+    </div>
+</div>
+
+        <div class="mainContent">
+            <div class="container-fluid" id="post">
+                <h1 id="stylish-and-standard-console-output-with-symfony-style"><a href="#stylish-and-standard-console-output-with-symfony-style">Stylish and Standard Console Output with Symfony Style</a></h1>
+
+                <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>5 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-08-Mon">Mon, Aug 6, 2018</time>
+    </li>
+
+            <li class="list-inline-item mr-3">
+            <em class="fas fa-fw fa-comments"></em>
+            <a href="https://www.tomasvotruba.cz/blog/2018/08/06/stylish-and-standard-console-output-with-symfony-style/#disqus_thread">X</a> comments
+        </li>
+    
+            <li class="list-inline-item">
+            <em class="fas fa-fw fa-edit"></em>
+            <a href="https://github.com/TomasVotruba/tomasvotruba.cz/edit/master/source/_posts/2018/2018-08-06-stylish-and-standard-console-output-with-symfony-style.md">Typo? Fix me, please</a>
+        </li>
+    
+    </ul>
+
+                
+                
+                <div class="card card-bigger">
+                    <div class="card-body">
+                        Even if you don't use any component from Symfony or even installed one, you can use this trick in your PHP CLI App.
+<br><br>
+It's simple, provides standard and makes your output look like a design from Apple - useful and nice at the same time.
+                    </div>
+                </div>
+
+                
+                <p>We want to <strong>report various states</strong> in PHP CLI Apps. Success message on the finish, errors message in case of failure or just simple note so users know that command is not stuck but working.</p>
+<h2 id="too-many-ways-to-do-1-thing"><a href="#too-many-ways-to-do-1-thing">Too Many Ways to Do 1 Thing</a></h2>
+<p>You can use plain PHP like <a href="https://github.com/squizlabs/PHP_CodeSniffer/blob/f893189392f9a0566aa837c4bcad3929c60d5348/src/Runner.php#L199">in PHP_CodeSniffer</a>:</p>
+<pre><code class="language-php">&lt;?php
+
+try {
+    // code
+} catch (Exception $exception) {
+    echo $exception-&gt;getMessage();
+    return $exception-&gt;getCode();
+}</code></pre>
+<p>There is also a bit advanced use of native <code>OutputInterface</code> in command like <a href="https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/1c10240da97479274fd40a136c3857ff94f7f93f/src/Console/Command/FixCommand.php#L236-L239">PHP CS Fixer</a>:</p>
+<pre><code class="language-php">&lt;?php
+
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+
+final class SomeCommand extends Command
+{
+    protected function execute(InputInterface $input, OutputInterface $output)
+    {
+        // ...
+
+        $output-&gt;write('Working on it!');
+
+        // ...
+    }
+}</code></pre>
+<p>The advantage of these approaches is <strong>they cannot be simpler and they're ready to be used</strong>. I bet everyone can use <code>echo 'DONE';</code>:</p>
+<img src="/assets/images/posts/2018/console-output/plain.png">
+<p>The second approach is not as easy, but if you're in a Symfony Command class using PHPStorm all you have to do is hit <code>Ctrl + Space</code> on an <code>$output</code> variable. And in their time they were good enough.</p>
+<p>But we want more than a plain text. <strong>If websites can have CSS, colors, and pictures, why not the CLI output?</strong></p>
+<img src="/assets/images/posts/2018/console-output/console.png">
+<p>But it's not about colors, <strong>it's about UX</strong>. <em class="text-white bg-success p-2">Green</em> and <em class="text-white bg-danger p-2">red</em> lines instead of white on black spaghetti like on the first image.</p>
+<img src="/assets/images/posts/2018/console-output/tracy.png">
+<p><br></p>
+<p>Last but not least, Symfony <code>$output</code> has <a href="https://symfony.com/doc/current/console/coloring.html#using-color-styles">few predefined styles</a>:</p>
+<pre><code class="language-php">&lt;?php
+
+// green text
+$output-&gt;writeln('&lt;info&gt;foo&lt;/info&gt;');
+
+// white text on a red background
+$output-&gt;writeln('&lt;error&gt;foo&lt;/error&gt;');</code></pre>
+<p>And also some colors and <strong><u>cool stuff</u></strong>:</p>
+<pre><code class="language-php">// green text
+$output-&gt;writeln('&lt;fg=green&gt;foo&lt;/&gt;');
+
+// bold text with underscore
+$output-&gt;writeln('&lt;options=bold,underscore&gt;foo&lt;/&gt;');</code></pre>
+<p><br></p>
+<p>Which one do you like so far? So many colors, so many options... maybe too many.</p>
+<h3 id="united-we-stand-divided-we-autumn"><a href="#united-we-stand-divided-we-autumn">United We Stand, Divided We Autumn</a></h3>
+<p>Do you remember when there were <a href="https://github.com/container-interop/container-interop">a dozen ways to create Dependency Injection Container</a>? Fortunately, the <a href="https://www.php-fig.org/psr/psr-11/">PSR-11 was born</a> to solve this and moved our focus to things that matter more.</p>
+<p>We don't want to play with colors, with <code>fg</code>, <code>underscore</code>, <code>green</code>, <code>cyan</code> (wtf is cyan?) words. Also, you know what they say:</p>
+<blockquote class="blockquote text-center">
+    Strings?<br>
+    Break things.
+</blockquote>
+<p><strong>We want to print the error and get back to coding</strong>.</p>
+<h2 id="symfony-2-8-to-the-rescue"><a href="#symfony-2-8-to-the-rescue">Symfony 2.8 to the Rescue</a></h2>
+<p>I was super happy when the <a href="https://symfony.com/blog/new-in-symfony-2-8-console-style-guide">SymfonyStyle</a> helper class came with Symfony 2.8. Simple wrapper about all mentioned above, <code>success()</code> method, <code>error()</code> method, all in API.</p>
+<img src="https://farm1.staticflickr.com/666/23555673406_6cbd4f5460_o.png">
+<p>I think it's not an understatement to say that <code>SymfonyStyle</code> is state of art in this matter.</p>
+<h3 id="1-it-s-easy-to-integrate-into-symfony-command"><a href="#1-it-s-easy-to-integrate-into-symfony-command">1. It's Easy to Integrate into Symfony Command</a></h3>
+<p>PHPStan is <a href="https://github.com/phpstan/phpstan/blob/1e232b3da00671a578b0ba451c5d15c904a82fd5/src/Command/ErrorsConsoleStyle.php#L9">using it</a>:</p>
+<pre><code class="language-diff"> &lt;?php
+
+ use Symfony\Component\Console\Command\Command;
+ use Symfony\Component\Console\Input\InputInterface;
+ use Symfony\Component\Console\Output\OutputInterface;
++use Symfony\Component\Console\Style\SymfonyStyle;
+
+ final class SomeCommand extends Command
+ {
+     protected function execute(InputInterface $input, OutputInterface $output)
+     {
+         $output-&gt;write('Working on it!');
++         $symfonyStyle = new SymfonyStyle($input, $output);
++         $symfonyStyle-&gt;note('Working on it!');
++         $symfonyStyle-&gt;success('DONE!');
+    }
+}</code></pre>
+<h3 id="2-don-t-make-user-think"><a href="#2-don-t-make-user-think">2. Don't make User Think</a></h3>
+<p>When I was 13 years old I've accidentally read <a href="https://www.sensible.com/dmmt.html"><em>Don’t Make Me Think</em></a>, amazing bug about UX, programming and psychology for dummies (I'm about to read 2014-revised version). The main point of the book was the Apple, the UX, and the DX mantra - <strong>create a design that users already expect, don't teach them doing common things differently</strong>.</p>
+<p>I recall many CLI Apps that each has different output - no colors, different font-size, cool underlines, error message is not red but success is green etc. <strong>User have to focus on the design and understand it instead of enjoying your app</strong>. WTF of non-red exception is just great!</p>
+<p>This class offers a common way not to make use think. ECS users it, Statie uses it, PHPStan uses it, Rector uses and <a href="https://github.com/lmc-eu/steward/blob/66b90dc1b7325f680481e104ae19f7e6d77e7133/src/Console/Command/Command.php#L52">Steward</a> use it.</p>
+<h3 id="3-symfonystyle-as-a-service"><a href="#3-symfonystyle-as-a-service">3. SymfonyStyle as a Service</a></h3>
+<p>You can create <code>SymfonyStyle</code> in simple static construction as in point 1, but what if you need it somewhere else than in a command? Imagine you have 1200 long Command (~= Controller) and you want to extract logic to another class?</p>
+<p>Do you have to pass the whole command there or move the <code>SymfonyStyle</code> manually?</p>
+<p>Save <a href="/blog/2018/04/26/how-i-got-into-static-trap-and-made-fool-of-myself/">the vendor-locking statics</a> for value objects and enjoy the constructor injection. There are more lines than one because we need to register <code>Input</code> and <code>Output</code> as a service and autowire their interfaces.</p>
+<pre><code class="language-yaml">services:
+    # SymfonyStyle
+    Symfony\Component\Console\Input\ArgvInput: ~
+    Symfony\Component\Console\Input\InputInterface:
+        alias: 'Symfony\Component\Console\Input\ArgvInput'
+    Symfony\Component\Console\Output\ConsoleOutput: ~
+    Symfony\Component\Console\Output\OutputInterface:
+        alias: 'Symfony\Component\Console\Output\ConsoleOutput'
+    Symfony\Component\Console\Style\SymfonyStyle: ~</code></pre>
+<pre><code class="language-diff"> &lt;?php
+
+ use Symfony\Component\Console\Command\Command;
+ use Symfony\Component\Console\Input\InputInterface;
+ use Symfony\Component\Console\Output\OutputInterface;
+ use Symfony\Component\Console\Style\SymfonyStyle;
+
+ final class SomeCommand extends Command
+ {
++    /**
++     * @var SymfonyStyle
++     */
++    private $symfonyStyle;
++
++    public function __construct(SymfonyStyle $symfonyStyle)
++    {
++        $this-&gt;symfonyStyle = $symfonyStyle;
++    }
++
+     protected function execute(InputInterface $input, OutputInterface $output)
+     {
+-         $symfonyStyle = new SymfonyStyle($input, $output);
+-         $symfonyStyle-&gt;note('Working on it!');
++         $this-&gt;symfonyStyle-&gt;note('Working on it!');
+-         $symfonyStyle-&gt;success('DONE!');
++         $this-&gt;symfonyStyle-&gt;success('DONE!');
+    }
+}</code></pre>
+<h3 id="4-show-your-style"><a href="#4-show-your-style">4. Show Your Style</a></h3>
+<p>Last little detail that makes the whole experience nice and smooth. EasyCodingStandard uses SymfonyStyle, but it needed to add 1 extra method.</p>
+<ul>
+<li>There could be 2 services but that extra burden for the contributors... but <strong>we don't make the user think</strong>.</li>
+<li>Then I tried composition, so I had to replicate many public methods. It shoots me back with too much maintenance and duplicated code.</li>
+<li>After seeing these options, I've happily settled with extension:</li>
+</ul>
+<pre><code class="language-php">final class OurStyle extends SymfonyStyle
+{
+    public function pink(string $message)
+    {
+        // ...
+    }
+}</code></pre>
+<p><em>One real example for all, check <a href="https://github.com/lmc-eu/steward/blob/724f72da6ae732065142f10b4100ea65b7282406/src/Console/Style/StewardStyle.php"><code>StewardStyle</code> class on Github</a>.</em></p>
+<p><br><br></p>
+<p>And that's it!</p>
+<p>Try the simple approach today and you'll see you won't regret it:</p>
+<pre><code class="language-php">&lt;?php
+
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Style\SymfonyStyle;
+
+final class SomeCommand extends Command
+{
+     protected function execute(InputInterface $input, OutputInterface $output)
+     {
+         $symfonyStyle = new SymfonyStyle($input, $output);
+         $symfonyStyle-&gt;note('Working on it!');
+         $symfonyStyle-&gt;success('DONE!');
+    }
+}</code></pre>
+<p>Happy coding!</p>
+
+                <br>
+
+                
+                <div class="card mb-5">
+                    <div class="card-body text-center">
+                        <a href="https://github.com/TomasVotruba/tomasvotruba.cz/edit/master/source/_posts/2018/2018-08-06-stylish-and-standard-console-output-with-symfony-style.md" class="btn btn-info btn-sm">
+                            <em class="fas fa-fw fa-edit"></em>
+                            Typo? Fix it, please
+                        </a>
+                        &nbsp;and join <a href="/thank-you">56 people</a> who build this website
+                    </div>
+                </div>
+
+                <a name="comments"></a>
+
+                <div id="disqus_thread"></div>
+
+<script type="text/javascript">
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//' + 'itsworthsharing' + '.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+            </div>
+
+            <script id="dsq-count-scr" src="https://itsworthsharing.disqus.com/count.js" async defer></script>
+        </div>
+
+        <script>
+    ga=function(){ ga.q.push(arguments) };
+    ga.q=[];
+    ga.l=+new Date;
+    ga('create', 'UA-46082345-1', 'auto');
+    ga('send','pageview');
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+<script src="/assets/prism/prism.js"></script>
+
+<script>
+    $('.gifplayer').gifplayer();
+</script>
+
+<div class="text-center mt-5" id="footer">
+    <div class="row">
+        <div class="col-12">
+            Join 17 000 PHP developers every month: <a href="/rss.xml">RSS</a>&nbsp;or&nbsp;<a href="https://twitter.com/votrubaT">@votrubaT</a>
+
+            <span class="pl-2 pr-2 hidden-sm-down">•</span>
+
+            <span class="hidden-sm-down">
+                Watch my <a href="https://github.com/tomasvotruba">open-source addiction</a>
+            </span>
+        </div>
+    </div>
+
+    <p>
+        Build by <a href="/thank-you/">56 people</a>
+
+        <span class="pl-2 pr-2">•</span>
+
+        Runs on <a href="https://www.statie.org/">Statie</a>
+
+        <span class="pl-2 pr-2">•</span>
+
+        <a href="/now/">Now</a>
+
+        <span class="hidden-sm-down">
+            <span class="pl-2 pr-2">•</span>
+            Hosted on <a href="https://github.com/tomasvotruba/tomasvotruba.cz">GitHub</a>
+        </span>
+    </p>
+</div>
+    </body>
+</html>
+
+        <meta property="og:type" content="article" />
+    <meta property="og:title" content="Stylish and Standard Console Output with Symfony Style" />
+    <meta property="og:description" content="Even if you don&#039;t use any component from Symfony or even installed one, you can use this trick in your PHP CLI App.
+
+It&#039;s simple, provides standard and makes your output look like a design from Apple - useful and nice at the same time." />
+    <meta property="og:url" content="https://www.tomasvotruba.cz/blog/2018/08/06/stylish-and-standard-console-output-with-symfony-style" />
+
+        <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@votrubaT">
+    <meta name="twitter:title" content="Stylish and Standard Console Output with Symfony Style" />
+    <meta name="twitter:description" content="Even if you don&#039;t use any component from Symfony or even installed one, you can use this trick in your PHP CLI App.
+
+It&#039;s simple, provides standard and makes your output look like a design from Apple - useful and nice at the same time." />

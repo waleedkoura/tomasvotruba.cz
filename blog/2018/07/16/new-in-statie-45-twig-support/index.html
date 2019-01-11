@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>New in Statie 4.5: Twig Support | Tomas Votruba</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    
+    <link rel="alternate" type="application/rss+xml" title="Tomas Votruba Blog RSS" href="/rss.xml">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
+
+        <link href="/assets/bootstrap/bootstrap.min.css?v=76799261" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/prism/prism.css?v=250723030" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/style.css?v=1241745864" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/gifplayer/gifplayer.css" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/checklist.css?v=1408991429" rel="stylesheet" type="text/css" />
+
+    <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/assets/gifplayer/jquery.gifplayer.js"></script>
+    <script src="/assets/js/checklist.js" async defer></script>
+</head>
+    <body>
+        <!-- post_id: 123 -->
+
+        <div class="hidden-sm-down">
+    <nav class="navbar">
+        <div class="container-fluid">
+            <ul>
+                <li id="logo">
+                    <img src="https://avatars1.githubusercontent.com/u/924196?s=60&v=4" class="avatar">
+                    Tomas Votruba
+                </li>
+                <li class="active">
+                    <a href="/">Blog</a>
+                </li>
+                <li class="">
+                    <a href="/clusters/">Clusters</a>
+                </li>
+                <li class="">
+                    <a href="/mission/">Mission</a>
+                </li>
+                <li class="">
+                    <a href="/talks/">Talks</a>
+                </li>
+                <li class="">
+                    <a href="/contact/">Contact</a>
+                </li>
+                <li id="top-menu-search">
+                    <form method="get" action="https://www.google.com/search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction">
+                        <meta itemprop="target" content="https://www.google.com/search?q={q}"/>
+                        <input name="sitesearch" value="tomasvotruba.cz" type="hidden"/>
+                        <input itemprop="query-input" type="text" id="search-query" class="form-control" required="required" name="q" placeholder="Search..." autocomplete="off"/>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="hidden-md-up">
+    <nav class="navbar" id="mobile-menu">
+        <div class="container">
+            <a href="/" class="col-3 col-sm-3 active">
+                <em class="fas fa-book"></em>
+                <br>
+                PHP Blog
+            </a>
+            <a href="/clusters/" class="col-3 col-sm-3 ">
+                <em class="fas fa-share-alt"></em>
+                <br>
+                Clusters
+            </a>
+            <a href="/mission/" class="col-3 col-sm-3 ">
+                <em class="fas fa-heartbeat"></em>
+                <br>
+                Mission
+            </a>
+            <a href="/contact/" class="col-3 col-sm-3 ">
+                <em class="fas fa-phone"></em>
+                <br>
+                Contact
+            </a>
+        </div>
+    </nav>
+
+    <div class="hidden-md-up text-center row" id="top-menu-search-mobile">
+        <!-- inspired and taken from: https://github.com/yegor256/blog/blob/master/_layouts/default.html -->
+        <form method="get" action="https://www.google.com/search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction" class="col-md-12">
+            <meta itemprop="target" content="https://www.google.com/search?q={q}"/>
+            <input name="sitesearch" value="tomasvotruba.cz" type="hidden"/>
+            <input itemprop="query-input" type="text" id="search-query" class="form-control" required="required" name="q" placeholder="Search with Google..." autocomplete="off"/>
+        </form>
+    </div>
+</div>
+
+        <div class="mainContent">
+            <div class="container-fluid" id="post">
+                <h1 id="new-in-statie-4-5-twig-support"><a href="#new-in-statie-4-5-twig-support">New in Statie 4.5: Twig Support</a></h1>
+
+                <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-07-Mon">Mon, Jul 16, 2018</time>
+    </li>
+
+            <li class="list-inline-item mr-3">
+            <em class="fas fa-fw fa-comments"></em>
+            <a href="https://www.tomasvotruba.cz/blog/2018/07/16/new-in-statie-45-twig-support/#disqus_thread">X</a> comments
+        </li>
+    
+            <li class="list-inline-item">
+            <em class="fas fa-fw fa-edit"></em>
+            <a href="https://github.com/TomasVotruba/tomasvotruba.cz/edit/master/source/_posts/2018/2018-07-16-new-in-statie-45-twig-support.md">Typo? Fix me, please</a>
+        </li>
+    
+    </ul>
+
+                
+                                    <div class="card border-success card-bigger">
+                        <div class="card-header text-white bg-success">
+                            <strong>This post was updated on September 2018</strong>
+                        </div>
+                        <div class="card-body">
+                            Updated with <strong>Statie 5</strong>, NEON → YAML and Twig.
+
+                        </div>
+                    </div>
+
+                    <br>
+                
+                <div class="card card-bigger">
+                    <div class="card-body">
+                        Statie supports YAML and Symfony Dependency Injection for some time. But you wanted more! <strong>You wanted Twig</strong>. Sculpin and all <a href="https://www.staticgen.com/">the other PHP Static Website generators</a> have it.
+<br><br>
+So there you go! Enjoy
+                    </div>
+                </div>
+
+                
+                <p><a href="https://github.com/Symplify/Symplify/pull/892" class="btn btn-dark btn-sm">
+<em class="fab fa-github fa-fw"></em>
+See pull-request
+</a></p>
+<h2 id="3-steps-to-your-first-twig-page-on-statie"><a href="#3-steps-to-your-first-twig-page-on-statie">3 Steps to Your First Twig Page on Statie</a></h2>
+<h3 id="1-prepare-layout-code-layouts-default-twig-code"><a href="#1-prepare-layout-code-layouts-default-twig-code">1. Prepare Layout <code>_layouts/default.twig</code></a></h3>
+<pre><code class="language-twig">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    {% include "_snippets/head.twig" %}
+    &lt;body&gt;
+        {% include "_snippets/menu.twig" %}
+
+        &lt;div&gt;
+            {% block content %}{% endblock %}
+        &lt;/div&gt;
+
+        {% include "_snippets/footer.twig" %}
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h3 id="2-create-template-code-contact-twig-code"><a href="#2-create-template-code-contact-twig-code">2. Create Template <code>contact.twig</code></a></h3>
+<pre><code class="language-twig">---
+layout: "_layouts/default.twig"
+---
+
+{% block content %}
+    &lt;h1&gt;Call me&lt;/h1&gt;
+
+    &lt;a href="tel:+420776778332"&gt;+420 &lt;strong&gt;776 778 332&lt;/strong&gt;&lt;/a&gt;
+{% endblock %}</code></pre>
+<h3 id="3-enable-twig"><a href="#3-enable-twig">3. Enable Twig</a></h3>
+<pre><code class="language-yaml"># statie.yml
+parameters:
+    templating: twig</code></pre>
+<p>And you're ready to go!</p>
+<h2 id="how-to-upgrade-to-statie-4-5"><a href="#how-to-upgrade-to-statie-4-5">How to Upgrade to Statie 4.5?</a></h2>
+<img src="/assets/images/posts/2018/statie-45/statie-45.png">
+<p>Update it in composer:</p>
+<pre><code class="language-php">composer require symplify/statie 4.5</code></pre>
+<p>And try:</p>
+<pre><code class="language-bash">vendor/bin/source generate</code></pre>
+<p>It will probably fail because there was one change in templating reference.</p>
+<p>Before the paths of included files were just a file name and the full path was guessed. This practice is common in Nette and Symfony Controllers, so I used as a starting point. But it caused many WTFs and name conflicts like:</p>
+<pre><code class="language-bash">/_snippets
+    /post
+        detail.latte
+    /lecture
+        detail.latte</code></pre>
+<pre><code class="language-twig">{include "detail"}</code></pre>
+<p>Which file will is used? Or is it a block import? Magic :)</p>
+<p>How to do it better with <em>a principle of the least surprise</em>?</p>
+<h3 id="clear-obvious-file-naming"><a href="#clear-obvious-file-naming">Clear, Obvious File Naming</a></h3>
+<p>All files in <code>_layouts</code> and <code>_snippets</code> are now referenced by <strong>they full relative path to source</strong> (usually <code>/source</code> directory):</p>
+<pre><code class="language-diff">-layout: "default"
++layout: "_layouts/default.twig"
+ ---
+
+-{% include "postMetadata" %}
++{% include "_snippets/postMetadata.twig" %}</code></pre>
+<p>Do you use <a href="https://www.statie.org/docs/generators/">Generators</a>? Don't forget to upgrade them too:</p>
+<pre><code class="language-diff"> parameters:
+     generators:
+         posts:
+-            layout: 'post'
++            layout: '_layouts/post.twig'</code></pre>
+<h3 id="already-running-on-statie-4-5"><a href="#already-running-on-statie-4-5">Already Running on Statie 4.5</a></h3>
+<p>Check diffs of these merged pull-requests so you have the idea <strong>how small the change really is</strong>:</p>
+<ul>
+<li><a href="https://github.com/crazko/statie-web/pull/18/files">statie.org</a></li>
+<li><a href="https://github.com/crazko/romanvesely.com/pull/44/files">romanvesely.com</a></li>
+<li><a href="https://github.com/pehapkari/pehapkari.cz/commit/a8256817acc61a14c4adcd0f6ed06b042450bfc3#diff-f9937b27a07038e5d12db3b137e228ce">tomasvotruba.cz</a></li>
+</ul>
+<h2 id="how-to-migrate-latte-to-twig-as-well"><a href="#how-to-migrate-latte-to-twig-as-well">How to Migrate Latte to Twig as Well?</a></h2>
+<img src="/assets/images/posts/2018/statie-45/latte-twig.png">
+<p>If you use Statie, you're probably running on Latte. In the case you prefer Twig, <strong>I guess you're already frustrated from annoying Latte to Twig migration you have ahead of you</strong>.</p>
+<p>Again, check these diffs, so you have the idea <strong>how big that change really is</strong>:</p>
+<ul>
+<li><a href="https://github.com/TomasVotruba/tomasvotruba.cz/pull/380/files">TomasVotruba.cz</a></li>
+<li><a href="https://github.com/pehapkari/pehapkari.cz/pull/486/files">Pehapkari.cz</a></li>
+</ul>
+<p>I feel you. You can stay with Latte until... just kidding. That's a lot of work, right? Well, I'm not that hardworking, don't worry. I'm a lazy bastard, so I made <a href="/blog/2018/07/05/how-to-convert-latte-templates-to-twig-in-27-regular-expressions/">a package for Latte to Twig migration</a>.</p>
+<p>Enjoy!</p>
+
+                <br>
+
+                
+                <div class="card mb-5">
+                    <div class="card-body text-center">
+                        <a href="https://github.com/TomasVotruba/tomasvotruba.cz/edit/master/source/_posts/2018/2018-07-16-new-in-statie-45-twig-support.md" class="btn btn-info btn-sm">
+                            <em class="fas fa-fw fa-edit"></em>
+                            Typo? Fix it, please
+                        </a>
+                        &nbsp;and join <a href="/thank-you">56 people</a> who build this website
+                    </div>
+                </div>
+
+                <a name="comments"></a>
+
+                <div id="disqus_thread"></div>
+
+<script type="text/javascript">
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//' + 'itsworthsharing' + '.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+            </div>
+
+            <script id="dsq-count-scr" src="https://itsworthsharing.disqus.com/count.js" async defer></script>
+        </div>
+
+        <script>
+    ga=function(){ ga.q.push(arguments) };
+    ga.q=[];
+    ga.l=+new Date;
+    ga('create', 'UA-46082345-1', 'auto');
+    ga('send','pageview');
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+<script src="/assets/prism/prism.js"></script>
+
+<script>
+    $('.gifplayer').gifplayer();
+</script>
+
+<div class="text-center mt-5" id="footer">
+    <div class="row">
+        <div class="col-12">
+            Join 17 000 PHP developers every month: <a href="/rss.xml">RSS</a>&nbsp;or&nbsp;<a href="https://twitter.com/votrubaT">@votrubaT</a>
+
+            <span class="pl-2 pr-2 hidden-sm-down">•</span>
+
+            <span class="hidden-sm-down">
+                Watch my <a href="https://github.com/tomasvotruba">open-source addiction</a>
+            </span>
+        </div>
+    </div>
+
+    <p>
+        Build by <a href="/thank-you/">56 people</a>
+
+        <span class="pl-2 pr-2">•</span>
+
+        Runs on <a href="https://www.statie.org/">Statie</a>
+
+        <span class="pl-2 pr-2">•</span>
+
+        <a href="/now/">Now</a>
+
+        <span class="hidden-sm-down">
+            <span class="pl-2 pr-2">•</span>
+            Hosted on <a href="https://github.com/tomasvotruba/tomasvotruba.cz">GitHub</a>
+        </span>
+    </p>
+</div>
+    </body>
+</html>
+
+        <meta property="og:type" content="article" />
+    <meta property="og:title" content="New in Statie 4.5: Twig Support" />
+    <meta property="og:description" content="Statie supports YAML and Symfony Dependency Injection for some time. But you wanted more! You wanted Twig. Sculpin and all the other PHP Static Website generators have it.
+
+So there you go! Enjoy" />
+    <meta property="og:url" content="https://www.tomasvotruba.cz/blog/2018/07/16/new-in-statie-45-twig-support" />
+
+        <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@votrubaT">
+    <meta name="twitter:title" content="New in Statie 4.5: Twig Support" />
+    <meta name="twitter:description" content="Statie supports YAML and Symfony Dependency Injection for some time. But you wanted more! You wanted Twig. Sculpin and all the other PHP Static Website generators have it.
+
+So there you go! Enjoy" />

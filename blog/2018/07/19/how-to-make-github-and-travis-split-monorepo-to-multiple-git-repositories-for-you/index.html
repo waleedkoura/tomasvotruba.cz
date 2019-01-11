@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>How to Make Github and Travis Split Monorepo to Multiple Git Repositories for You | Tomas Votruba</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    
+    <link rel="alternate" type="application/rss+xml" title="Tomas Votruba Blog RSS" href="/rss.xml">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
+
+        <link href="/assets/bootstrap/bootstrap.min.css?v=1215235868" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/prism/prism.css?v=1843137893" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/style.css?v=144619539" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/gifplayer/gifplayer.css" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/checklist.css?v=831558538" rel="stylesheet" type="text/css" />
+
+    <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/assets/gifplayer/jquery.gifplayer.js"></script>
+    <script src="/assets/js/checklist.js" async defer></script>
+</head>
+    <body>
+        <!-- post_id: 124 -->
+
+        <div class="hidden-sm-down">
+    <nav class="navbar">
+        <div class="container-fluid">
+            <ul>
+                <li id="logo">
+                    <img src="https://avatars1.githubusercontent.com/u/924196?s=60&v=4" class="avatar">
+                    Tomas Votruba
+                </li>
+                <li class="active">
+                    <a href="/">Blog</a>
+                </li>
+                <li class="">
+                    <a href="/clusters/">Clusters</a>
+                </li>
+                <li class="">
+                    <a href="/mission/">Mission</a>
+                </li>
+                <li class="">
+                    <a href="/talks/">Talks</a>
+                </li>
+                <li class="">
+                    <a href="/contact/">Contact</a>
+                </li>
+                <li id="top-menu-search">
+                    <form method="get" action="https://www.google.com/search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction">
+                        <meta itemprop="target" content="https://www.google.com/search?q={q}"/>
+                        <input name="sitesearch" value="tomasvotruba.cz" type="hidden"/>
+                        <input itemprop="query-input" type="text" id="search-query" class="form-control" required="required" name="q" placeholder="Search..." autocomplete="off"/>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="hidden-md-up">
+    <nav class="navbar" id="mobile-menu">
+        <div class="container">
+            <a href="/" class="col-3 col-sm-3 active">
+                <em class="fas fa-book"></em>
+                <br>
+                PHP Blog
+            </a>
+            <a href="/clusters/" class="col-3 col-sm-3 ">
+                <em class="fas fa-share-alt"></em>
+                <br>
+                Clusters
+            </a>
+            <a href="/mission/" class="col-3 col-sm-3 ">
+                <em class="fas fa-heartbeat"></em>
+                <br>
+                Mission
+            </a>
+            <a href="/contact/" class="col-3 col-sm-3 ">
+                <em class="fas fa-phone"></em>
+                <br>
+                Contact
+            </a>
+        </div>
+    </nav>
+
+    <div class="hidden-md-up text-center row" id="top-menu-search-mobile">
+        <!-- inspired and taken from: https://github.com/yegor256/blog/blob/master/_layouts/default.html -->
+        <form method="get" action="https://www.google.com/search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction" class="col-md-12">
+            <meta itemprop="target" content="https://www.google.com/search?q={q}"/>
+            <input name="sitesearch" value="tomasvotruba.cz" type="hidden"/>
+            <input itemprop="query-input" type="text" id="search-query" class="form-control" required="required" name="q" placeholder="Search with Google..." autocomplete="off"/>
+        </form>
+    </div>
+</div>
+
+        <div class="mainContent">
+            <div class="container-fluid" id="post">
+                <h1 id="how-to-make-github-and-travis-split-monorepo-to-multiple-git-repositories-for-you"><a href="#how-to-make-github-and-travis-split-monorepo-to-multiple-git-repositories-for-you">How to Make Github and Travis Split Monorepo to Multiple Git Repositories for You</a></h1>
+
+                <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>6 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-07-Thu">Thu, Jul 19, 2018</time>
+    </li>
+
+            <li class="list-inline-item mr-3">
+            <em class="fas fa-fw fa-comments"></em>
+            <a href="https://www.tomasvotruba.cz/blog/2018/07/19/how-to-make-github-and-travis-split-monorepo-to-multiple-git-repositories-for-you/#disqus_thread">X</a> comments
+        </li>
+    
+            <li class="list-inline-item">
+            <em class="fas fa-fw fa-edit"></em>
+            <a href="https://github.com/TomasVotruba/tomasvotruba.cz/edit/master/source/_posts/2018/2018-07-19-how-to-make-github-and-travis-split-monorepo-to-multiple-git-repositories-for-you.md">Typo? Fix me, please</a>
+        </li>
+    
+    </ul>
+
+                
+                
+                <div class="card card-bigger">
+                    <div class="card-body">
+                        Do you use a <a href="https://gomonorepo.org/">monorepo</a>? Then you know <a href="https://blog.shopsys.com/how-to-maintain-multiple-git-repositories-with-ease-61a5e17152e0">How to maintain multiple Git repositories with ease</a>. If you're not there yet, you may wonder <a href="https://blog.shopsys.com/how-to-merge-15-repositories-to-1-monorepo-keep-their-git-history-and-add-project-base-as-well-6e124f3a0ab3">How to Merge 15 Repositories to 1 Monorepo and Keep their Git History</a>.
+<br><br>
+Are you and your monorepo ready? Today we'll focus on <strong>fast, secured and outsourced monorepo auto split</strong> - all that under 10 minutes.
+                    </div>
+                </div>
+
+                
+                <p>It's great to be alive in this era. We have solved maintaining multiple repositories, even merge migration of their git history to one repository. Creating huge code bases was more never cost effective and never had a steeper learning curve.</p>
+<p>The same way it was never easier to drive an autonomous car. You just sit in the car, press the button of your destination, and Tesla will drive you there when you check all the news on <a href="https://www.reddit.com/r/PHP/">/r/PHP</a>.</p>
+<p>Well, the monorepo paradigm is not there yet but it's getting there.</p>
+<h2 id="the-split-problem"><a href="#the-split-problem">The Split Problem</a></h2>
+<p>One of the last problems I'm aware of is splitting the monorepo to particular packages. Imagine you have <a href="https://github.com/symfony/symfony">Symfony monorepo</a> and you're trying to split it to all standalone packages like <a href="https://github.com/symfony/console">symfony/console</a>, <a href="https://github.com/symfony/dependency-injection">symfony/dependency-injection</a> and so on.</p>
+<h3 id="current-status"><a href="#current-status">Current Status</a></h3>
+<p>This whole &quot;take a code from this directory and put it into this repository in <code>master</code> branch and last tag&quot; process is now:</p>
+<ul>
+<li>complex</li>
+<li>slow</li>
+<li>requires a lot of setups</li>
+</ul>
+<p>Instead, we want it to be:</p>
+<ul>
+<li><strong>simple so you will understand it at the end of reading this post</strong></li>
+<li><strong>fast like Travis build of your project</strong></li>
+<li><strong>easy to set up in 1 composer package and 5 lines of YAML</strong></li>
+</ul>
+<p>Why? So you could amaze your friends at the party that you just set-up a monorepo split and they can enjoy merged PRs in a matter of minutes (even if you know almost nothing about git or PHP).</p>
+<p>Do you think we can get there? You'll see.</p>
+<h2 id="the-best-solutions-to-split-so-far"><a href="#the-best-solutions-to-split-so-far">The Best Solutions to Split (So Far)</a></h2>
+<p>Feel free to explore these following solutions. I did it for you and here are a few blockers that hold them from being massively adopted.</p>
+<p>On the other hand, <strong>I'm grateful for each one of them, because they're pushing the evolution further and further. Thanks to them we don't have to reinvent the wheel and we can build on their shoulders</strong>.</p>
+<h3 id="1-splitsh-lite"><a href="#1-splitsh-lite">1. splitsh/lite</a></h3>
+<ul>
+<li><a href="https://github.com/splitsh/lite">https://github.com/splitsh/lite</a></li>
+<li>You need to know Go and bash and be able to resolve conflicts of their dependencies.</li>
+</ul>
+<h3 id="2-dflydev-git-subsplit"><a href="#2-dflydev-git-subsplit">2. dflydev/git-subsplit</a></h3>
+<ul>
+<li><a href="https://github.com/dflydev/git-subsplit">https://github.com/dflydev/git-subsplit</a></li>
+<li>Extra splits that are not needed</li>
+<li>Complex configuration</li>
+<li>Requires manual bash install</li>
+<li>It was used by Laravel and then by Symplify</li>
+</ul>
+<h2 id="what-would-the-ideal-state-look-like"><a href="#what-would-the-ideal-state-look-like">What Would the Ideal State Look Like?</a></h2>
+<p>Before diving into solution and how to do it, I try to stop and go into a wonderland. What would the ideal solution look like? How would I use it? How would I explain it to others? How fast would it be? Try to break away from your know-how limits (because they're limiting your thinking) and be free to come up with absolutely non-sense answers:</p>
+<ul>
+<li>&quot;1 command to install&quot;</li>
+<li>&quot;zero setup&quot;</li>
+<li>&quot;1 command to run&quot;</li>
+<li>&quot;1 minute to finish the whole process&quot;</li>
+<li>&quot;split only what I and people really need&quot;</li>
+</ul>
+<p><br></p>
+<p>If we put it in the code, it might look like:</p>
+<pre><code class="language-bash">composer require symplify/monorepo-builder --dev</code></pre>
+<pre><code class="language-yaml"># monorepo-builder.yml
+parameters:
+    directories_to_repositories:
+        packages/MonorepoBuilder: 'git@github.com:Symplify/MonorepoBuilder.git'</code></pre>
+<pre><code class="language-bash">vendor/bin/monorepo-builder split</code></pre>
+<p>That could do, right? At least from a <a href="https://symfony.com/blog/making-the-symfony-experience-exceptional">developer's experience</a> view.</p>
+<p><br></p>
+<p>But what would <a href="https://www.michalspacek.com/">security expert Michal Špaček</a> say to lousy code like that?</p>
+<img src="/assets/images/posts/2018/monorepo-split/found-keys.jpg" class="img-thumbnail">
+<h2 id="how-to-avoid-rape-on-github-and-travis"><a href="#how-to-avoid-rape-on-github-and-travis">How To Avoid Rape on Github and Travis?</a></h2>
+<blockquote class="blockquote text-center">
+    "So, anyone can now push to your repository whatever he wants?"
+</blockquote>
+<p>This is a valid question that was probably scratching your mind when you saw <em>Github + Travis + git + open-source</em> combination.
+Travis is basically a terminal, that runs few command lines. What would prevent someone from using this to &quot;play with&quot; your repository?</p>
+<p>Let's look at the repository address in our example:</p>
+<pre><code class="language-bash">git@github.com:Symplify/MonorepoBuilder.git</code></pre>
+<p>This basically means <strong>we need to make ssh key or username and a password public</strong>. Does that sound like a good idea to you?</p>
+<p>Don't worry, Github and Travis thought about these cases - with a hashed <code>GITHUB_TOKEN</code> environment variable.</p>
+<h3 id="1-create-a-personal-access-token-on-github"><a href="#1-create-a-personal-access-token-on-github">1. Create a Personal Access Token on Github</a></h3>
+<p>First, you need to create a custom token, that will authorize access to your Github repositories from any command line where it will be used.</p>
+<p>Read <a href="https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/">the Github docs</a> or use <strong>tl;dr;</strong>:</p>
+<ul>
+<li>Go to your <a href="https://github.com/settings/tokens">Github Tokens</a></li>
+<li>Click <em>Generate new token</em></li>
+<li>Check only <em>repo</em> scope
+<img src="/assets/images/posts/2018/monorepo-split/github-token.png" class="img-thumbnail"></li>
+<li>Click <em>Generate token</em></li>
+</ul>
+<h3 id="2-add-code-github-token-code-in-repository-settings-on-travis"><a href="#2-add-code-github-token-code-in-repository-settings-on-travis">2. Add <code>GITHUB_TOKEN</code> in Repository Settings on Travis</a></h3>
+<p>Then we need to store this token to Travis build, so Travis can be authorized to manipulate with your repositories without any password or ssh key.</p>
+<p>Read <a href="https://docs.travis-ci.com/user/environment-variables/#Defining-Variables-in-Repository-Settings-">the Travis docs</a> or use <strong>tl;dr;</strong>:</p>
+<ul>
+<li>Go to Travis settings of your repository - <code>https://travis-ci.org/&lt;your&gt;/&lt;repository&gt;/settings</code></li>
+<li>Jump to <em>Environment Variables</em> section</li>
+<li>Create <code>GITHUB_TOKEN</code> with the value from Github</li>
+<li>Click <em>Add</em></li>
+</ul>
+<p>In the end, it should look like this:</p>
+<div class="text-center">
+    <img src="/assets/images/posts/2018/monorepo-split/token-after.png" class="img-thumbnail"></div>
+<p><em>If you got lost in this tl;dr;s, try <a href="https://developer.ibm.com/recipes/tutorials/separating-continuous-integration-from-continuous-deployment-using-github-and-travis-ci/">this nice post with so many screenshots</a>.</em></p>
+<h3 id="github-and-travis-protects-you"><a href="#github-and-travis-protects-you">GitHub and Travis Protects You</a></h3>
+<p>Now the best part. If you accidentally commit your access token in <code>.travis.yml</code> (like I did while testing), <strong>GitHub will immediately disable it</strong> and sends you an email (to bad I found that out the next day after 4 hours of debugging with that token).</p>
+<p>And if you add the token to your repository on Travis as above, <strong>it will hide it in all logs for you</strong>. No need to hash it.</p>
+<p>So instead of insecure</p>
+<pre><code class="language-bash">git@github.com:Symplify/MonorepoBuilder.git
+# or
+https://aFjk02FJlkj1675jlk@github.com/Symplify/MonorepoBulder.git</code></pre>
+<p>everyone will see:</p>
+<pre><code class="language-bash">https://[secure]@github.com/Symplify/MonorepoBulder.git</code></pre>
+<p>Sound and safe!</p>
+<p><br></p>
+<p><strong>Now we have:</strong></p>
+<ul>
+<li>the <code>symplify/monorepo-builder</code> package as a local dependency</li>
+<li>configured package to repository paths in <code>monorepo-builder.yml</code></li>
+<li>secured <code>GITHUB_TOKEN</code> in Travis settings for your monorepo repository</li>
+<li>a command to run the split: <code>vendor/bin/monorepo-builder split</code></li>
+</ul>
+<p>Something is missing...</p>
+<p>Oh right, <strong>when</strong> will the monorepo be split? Do we have to do it manually? How often? Should Travis CRON do it on daily basis?</p>
+<h2 id="when-is-the-best-time-to-split-our-monorepo"><a href="#when-is-the-best-time-to-split-our-monorepo">When is the Best Time to Split our Monorepo?</a></h2>
+<p>In times like these, get back to our ideal product:</p>
+<ul>
+<li>&quot;1 command to install&quot;</li>
+<li>&quot;zero setup&quot;</li>
+<li>&quot;1 command to run&quot;</li>
+<li><strong>&quot;1 minute to finish the whole process&quot;</strong></li>
+<li>&quot;split only what maintainer and users really need&quot;</li>
+</ul>
+<p>It often happens <strong>we merge fix or feature to monorepo and we want to try it</strong> before rushing to tagging a stable release. We want to do it <strong>as soon as possible</strong>, <strong>without manually triggering Travis</strong> to do it. Also, we <strong>don't want Travis to waste energy on pull-requests</strong> that are not merged to master. That would only slow the whole CI process down and frustrate contributors and maintainer.</p>
+<p>Saying that how <code>.travis.yml</code> should look like?</p>
+<pre><code class="language-yaml">language: php
+
+# required for "git tag" presence for MonorepoBuilder split and ChangelogLinker git tags resolver
+# see https://github.com/travis-ci/travis-ci/issues/7422
+git:
+  depth: false
+
+matrix:
+  include:
+    - php: 7.2
+      env: MONOREPO_SPLIT=true
+    # ... other builds
+
+install:
+  - composer install
+
+# ... other scripts
+
+after_script:
+  # split monorepo to packages - only on merge to master
+  - |
+    if [[ $TRAVIS_EVENT_TYPE == "push" &amp;&amp; $MONOREPO_SPLIT == true &amp;&amp; $TRAVIS_BRANCH == "master" ]]; then
+      vendor/bin/monorepo-builder split -v
+    fi</code></pre>
+<p>That way the split command is run only merge to <code>master</code> and <strong>exactly once after each merge</strong>. So you can test your feature in a matter of minutes...</p>
+<p>Wait wait, no vague statements like <em>a matter of minutes</em>. How <strong>fast it really is</strong>? To give you an idea, this is Symplify Travis build with a split of 10 packages:</p>
+<img src="/assets/images/posts/2018/monorepo-split/speed.png" class="img-thumbnail mb-4">
+<p><strong>It takes under 7,5 minutes</strong> including all the tests, static analysis and code style validation.</p>
+<p>That's all folks. You're ready to go and try it on your monorepo.</p>
+<p><br></p>
+<h2 id="are-you-into-git-internals"><a href="#are-you-into-git-internals">Are You Into Git Internals?</a></h2>
+<p>I knew you are, so here are few details.</p>
+<p>All it' wrapped in a bash file at the moment. It could be done in <code>symfony\process</code>, but the original source <a href="https://github.com/dflydev/git-subsplit">subsplit.sh</a> was in bash so I used it.</p>
+<p>There are ~160 lines but most of them are arguments and options configuration, their resolving, preparing the repository and other boring stuff. The interesting part is really <a href="https://github.com/Symplify/MonorepoBuilder/blob/db9a1aa840092a66234c166cbcc9d6d9196d81b1/packages/Split/bash/subsplit.sh#L107">in this 1</a> and <a href="https://github.com/Symplify/MonorepoBuilder/blob/db9a1aa840092a66234c166cbcc9d6d9196d81b1/packages/Split/bash/subsplit.sh#L123-L126">these 3 lines</a>:</p>
+<pre><code class="language-bash">git remote add origin "git@github.com:Symplify/MonorepoBuilder.git"
+
+git checkout -b "master"
+git subtree split -q --prefix="/packages/MonorepoBuilder" --branch="master"
+git push -q --force origin "master"</code></pre>
+<p>I used &quot;real values&quot; instead of <code>$VARIABLES</code>, so it's more clear to you.</p>
+<p>In human words it works like this:</p>
+<pre><code class="language-bash"># in what repository should we push the code?
+git remote add origin "git@github.com:Symplify/MonorepoBuilder.git"
+
+# what branch do we push there?
+git checkout -b "master"
+
+# the split magic!
+git subtree split -q --prefix="/packages/MonorepoBuilder" --branch="master"
+
+# push this branch to remote branch
+git push -q --force origin "master"</code></pre>
+<p>That is really it!</p>
+<p><strong>If you're git split geek (like me), feel free to explore the whole <a href="https://github.com/Symplify/MonorepoBuilder/blob/master/packages/Split/bash/subsplit.sh"><code>subsplit.sh</code> script</a></strong>. There are many nice little details to learn from.</p>
+<p><br></p>
+<p>So, do you think you're ready to fascinate your friends tonight with all your brand new monorepo split setup?</p>
+
+                <br>
+
+                
+                <div class="card mb-5">
+                    <div class="card-body text-center">
+                        <a href="https://github.com/TomasVotruba/tomasvotruba.cz/edit/master/source/_posts/2018/2018-07-19-how-to-make-github-and-travis-split-monorepo-to-multiple-git-repositories-for-you.md" class="btn btn-info btn-sm">
+                            <em class="fas fa-fw fa-edit"></em>
+                            Typo? Fix it, please
+                        </a>
+                        &nbsp;and join <a href="/thank-you">56 people</a> who build this website
+                    </div>
+                </div>
+
+                <a name="comments"></a>
+
+                <div id="disqus_thread"></div>
+
+<script type="text/javascript">
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//' + 'itsworthsharing' + '.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+            </div>
+
+            <script id="dsq-count-scr" src="https://itsworthsharing.disqus.com/count.js" async defer></script>
+        </div>
+
+        <script>
+    ga=function(){ ga.q.push(arguments) };
+    ga.q=[];
+    ga.l=+new Date;
+    ga('create', 'UA-46082345-1', 'auto');
+    ga('send','pageview');
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+<script src="/assets/prism/prism.js"></script>
+
+<script>
+    $('.gifplayer').gifplayer();
+</script>
+
+<div class="text-center mt-5" id="footer">
+    <div class="row">
+        <div class="col-12">
+            Join 17 000 PHP developers every month: <a href="/rss.xml">RSS</a>&nbsp;or&nbsp;<a href="https://twitter.com/votrubaT">@votrubaT</a>
+
+            <span class="pl-2 pr-2 hidden-sm-down">•</span>
+
+            <span class="hidden-sm-down">
+                Watch my <a href="https://github.com/tomasvotruba">open-source addiction</a>
+            </span>
+        </div>
+    </div>
+
+    <p>
+        Build by <a href="/thank-you/">56 people</a>
+
+        <span class="pl-2 pr-2">•</span>
+
+        Runs on <a href="https://www.statie.org/">Statie</a>
+
+        <span class="pl-2 pr-2">•</span>
+
+        <a href="/now/">Now</a>
+
+        <span class="hidden-sm-down">
+            <span class="pl-2 pr-2">•</span>
+            Hosted on <a href="https://github.com/tomasvotruba/tomasvotruba.cz">GitHub</a>
+        </span>
+    </p>
+</div>
+    </body>
+</html>
+
+        <meta property="og:type" content="article" />
+    <meta property="og:title" content="How to Make Github and Travis Split Monorepo to Multiple Git Repositories for You" />
+    <meta property="og:description" content="Do you use a monorepo? Then you know How to maintain multiple Git repositories with ease. If you&#039;re not there yet, you may wonder How to Merge 15 Repositories to 1 Monorepo and Keep their Git History.
+
+Are you and your monorepo ready? Today we&#039;ll focus on fast, secured and outsourced monorepo auto split - all that under 10 minutes." />
+    <meta property="og:url" content="https://www.tomasvotruba.cz/blog/2018/07/19/how-to-make-github-and-travis-split-monorepo-to-multiple-git-repositories-for-you" />
+
+        <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@votrubaT">
+    <meta name="twitter:title" content="How to Make Github and Travis Split Monorepo to Multiple Git Repositories for You" />
+    <meta name="twitter:description" content="Do you use a monorepo? Then you know How to maintain multiple Git repositories with ease. If you&#039;re not there yet, you may wonder How to Merge 15 Repositories to 1 Monorepo and Keep their Git History.
+
+Are you and your monorepo ready? Today we&#039;ll focus on fast, secured and outsourced monorepo auto split - all that under 10 minutes." />

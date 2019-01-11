@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>What&#039;s New in PHP 7.3 in 30 Seconds in Diffs | Tomas Votruba</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    
+    <link rel="alternate" type="application/rss+xml" title="Tomas Votruba Blog RSS" href="/rss.xml">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
+
+        <link href="/assets/bootstrap/bootstrap.min.css?v=1408150834" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/prism/prism.css?v=1913393941" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/style.css?v=111706259" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/gifplayer/gifplayer.css" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/checklist.css?v=1411064234" rel="stylesheet" type="text/css" />
+
+    <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/assets/gifplayer/jquery.gifplayer.js"></script>
+    <script src="/assets/js/checklist.js" async defer></script>
+</head>
+    <body>
+        <!-- post_id: 132 -->
+
+        <div class="hidden-sm-down">
+    <nav class="navbar">
+        <div class="container-fluid">
+            <ul>
+                <li id="logo">
+                    <img src="https://avatars1.githubusercontent.com/u/924196?s=60&v=4" class="avatar">
+                    Tomas Votruba
+                </li>
+                <li class="active">
+                    <a href="/">Blog</a>
+                </li>
+                <li class="">
+                    <a href="/clusters/">Clusters</a>
+                </li>
+                <li class="">
+                    <a href="/mission/">Mission</a>
+                </li>
+                <li class="">
+                    <a href="/talks/">Talks</a>
+                </li>
+                <li class="">
+                    <a href="/contact/">Contact</a>
+                </li>
+                <li id="top-menu-search">
+                    <form method="get" action="https://www.google.com/search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction">
+                        <meta itemprop="target" content="https://www.google.com/search?q={q}"/>
+                        <input name="sitesearch" value="tomasvotruba.cz" type="hidden"/>
+                        <input itemprop="query-input" type="text" id="search-query" class="form-control" required="required" name="q" placeholder="Search..." autocomplete="off"/>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="hidden-md-up">
+    <nav class="navbar" id="mobile-menu">
+        <div class="container">
+            <a href="/" class="col-3 col-sm-3 active">
+                <em class="fas fa-book"></em>
+                <br>
+                PHP Blog
+            </a>
+            <a href="/clusters/" class="col-3 col-sm-3 ">
+                <em class="fas fa-share-alt"></em>
+                <br>
+                Clusters
+            </a>
+            <a href="/mission/" class="col-3 col-sm-3 ">
+                <em class="fas fa-heartbeat"></em>
+                <br>
+                Mission
+            </a>
+            <a href="/contact/" class="col-3 col-sm-3 ">
+                <em class="fas fa-phone"></em>
+                <br>
+                Contact
+            </a>
+        </div>
+    </nav>
+
+    <div class="hidden-md-up text-center row" id="top-menu-search-mobile">
+        <!-- inspired and taken from: https://github.com/yegor256/blog/blob/master/_layouts/default.html -->
+        <form method="get" action="https://www.google.com/search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction" class="col-md-12">
+            <meta itemprop="target" content="https://www.google.com/search?q={q}"/>
+            <input name="sitesearch" value="tomasvotruba.cz" type="hidden"/>
+            <input itemprop="query-input" type="text" id="search-query" class="form-control" required="required" name="q" placeholder="Search with Google..." autocomplete="off"/>
+        </form>
+    </div>
+</div>
+
+        <div class="mainContent">
+            <div class="container-fluid" id="post">
+                <h1 id="what-s-new-in-php-7-3-in-30-seconds-in-diffs"><a href="#what-s-new-in-php-7-3-in-30-seconds-in-diffs">What's New in PHP 7.3 in 30 Seconds in Diffs</a></h1>
+
+                <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>2 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-08-Thu">Thu, Aug 16, 2018</time>
+    </li>
+
+            <li class="list-inline-item mr-3">
+            <em class="fas fa-fw fa-comments"></em>
+            <a href="https://www.tomasvotruba.cz/blog/2018/08/16/whats-new-in-php-73-in-30-seconds-in-diffs/#disqus_thread">X</a> comments
+        </li>
+    
+            <li class="list-inline-item">
+            <em class="fas fa-fw fa-edit"></em>
+            <a href="https://github.com/TomasVotruba/tomasvotruba.cz/edit/master/source/_posts/2018/2018-08-16-whats-new-in-php-73-in-30-seconds-in-diffs.md">Typo? Fix me, please</a>
+        </li>
+    
+            <li class="list-inline-item pull-right">
+                        <a href="https://github.com/TomasVotruba/tomasvotruba.cz/tree/master/tests/Posts/Year2018/Php73" class="badge badge-success">
+                <em class="fas fa-fw fa-thumbs-up"></em> Tested
+            </a>
+        </li>
+    </ul>
+
+                
+                
+                <div class="card card-bigger">
+                    <div class="card-body">
+                        No time but eager to hear PHP news? PHP 7.3 is out in December 2018 and it brings <a href="https://github.com/php/php-src/blob/PHP-7.3/NEWS">173 changes</a>. Which are the most useful ones?
+                    </div>
+                </div>
+
+                
+                <p>From features that might be the most interesting to those lesser ones, that anybody will rarely use.</p>
+<h2 id="1-comma-after-the-last-argument"><a href="#1-comma-after-the-last-argument">1. Comma After the Last Argument</a></h2>
+<p><a href="https://wiki.php.net/rfc/trailing-comma-function-calls" class="btn btn-info btn-sm">
+<em class="fab fa-php fa-fw"></em>
+&nbsp;
+See RFC
+</a></p>
+<p>Do you know this?</p>
+<pre><code class="language-diff"> $array = [
+     1,
++    2,
+ ];</code></pre>
+<p>We'll be able to do this:</p>
+<pre><code class="language-diff"> $this-&gt;someFunction(
+     $arg,
++    $arg2,
+ );</code></pre>
+<p>But <strong>still not this</strong>:</p>
+<pre><code class="language-diff"> function someFunction(
+     $arg,
++    $arg2,
+ ) {}</code></pre>
+<p>Thanks <a href="/blog/2018/08/16/whats-new-in-php-73-in-30-seconds-in-diffs/#comment-4056622976">Jacob</a> for pointing <a href="https://wiki.php.net/rfc/trailing-comma-function-calls#wait_didn_t_we_just_vote_on_this">this difference</a> out.</p>
+<p><br></p>
+<p><em>25 seconds to go...</em></p>
+<p><br></p>
+<h2 id="2-first-and-last-array-key"><a href="#2-first-and-last-array-key">2. First and Last Array Key</a></h2>
+<p><a href="https://wiki.php.net/rfc/array_key_first_last" class="btn btn-info btn-sm">
+<em class="fab fa-php fa-fw"></em>
+&nbsp;
+See RFC
+</a></p>
+<ul>
+<li><a href="http://php.net/manual/en/function.array-key-first.php"><code>array_key_first</code></a></li>
+</ul>
+<pre><code class="language-diff"> $items = [
+     1 =&gt; 'a',
+     2 =&gt; 'b',
+ ];
+
+-reset($items);
+-$firstKey = key($items);
++$firstKey = array_key_first($items);
+ var_dump($firstKey); // 1</code></pre>
+<ul>
+<li><a href="http://php.net/manual/en/function.array-key-last.php"><code>array_key_last</code></a></li>
+</ul>
+<pre><code class="language-diff"> $items = [
+     1 =&gt; 'a',
+     2 =&gt; 'b',
+ ];
+
+-end($items);
+-$lastKey = key($items);
++$lastKey = array_key_last($items);
+ var_dump($lastKey); // 2</code></pre>
+<p>These will be handy in <a href="https://github.com/Symplify/Symplify/blob/84987acb99b68748997fe205e9e5506035a36cfc/packages/TokenRunner/src/Wrapper/FixerWrapper/ClassWrapper.php#L118-L120">coding standard</a> <a href="https://github.com/Symplify/Symplify/blob/84987acb99b68748997fe205e9e5506035a36cfc/packages/CodingStandard/src/Fixer/Strict/BlankLineAfterStrictTypesFixer.php#L59-L60">tools</a>.</p>
+<p><br></p>
+<p><em>Still 15 seconds...</em></p>
+<p><br></p>
+<h2 id="3-countable-for-risky-variables"><a href="#3-countable-for-risky-variables">3. Countable for Risky Variables</a></h2>
+<p><a href="https://wiki.php.net/rfc/is-countable" class="btn btn-info btn-sm">
+<em class="fab fa-php fa-fw"></em>
+&nbsp;
+See RFC
+</a></p>
+<p>I don't think having a variable of 2 forms is a good idea:</p>
+<pre><code class="language-php">&lt;?php
+
+$items = null; // same as "private $items;" in a class
+
+echo sprintf('There is %d items', count($items));
+// error Warning: count(): Parameter must be an array or an object that implements Countable</code></pre>
+<p>But in case of that smelly (3rd party) code, there is a help:</p>
+<ul>
+<li><a href="http://php.net/manual/en/function.is-countable.php"><code>is_countable</code></a></li>
+</ul>
+<pre><code class="language-diff"> $items = null;
+
++if (is_countable($items)) {
+-echo sprintf('There is %d items', count($items));
++     echo sprintf('There is %d items', count($items));
++}</code></pre>
+<p><em>Only 5 seconds, hurry!</em></p>
+<p><br></p>
+<h2 id="4-safer-json-parsing"><a href="#4-safer-json-parsing">4. Safer JSON Parsing</a></h2>
+<p><a href="https://wiki.php.net/rfc/json_throw_on_error" class="btn btn-info btn-sm">
+<em class="fab fa-php fa-fw"></em>
+&nbsp;
+See RFC
+</a></p>
+<pre><code class="language-diff">-json_encode($data);
++json_encode($data, JSON_THROW_ON_ERROR);</code></pre>
+<pre><code class="language-diff">-json_decode($json);
++json_decode($json, false, 512, JSON_THROW_ON_ERROR);</code></pre>
+<p>So you'll be able to do:</p>
+<pre><code class="language-php">try {
+    return json_decode($json, false, 512, JSON_THROW_ON_ERROR);
+} catch (JsonException $exception) {
+    // ...
+}</code></pre>
+<p>I've used similar technique for years thanks to <a href="https://doc.nette.org/en/2.4/json">Nette\Utils</a> and I've never complained:</p>
+<pre><code class="language-php">&lt;?php
+
+try {
+    return Nette\Utils\Json::encode($value);
+} catch (Nette\Utils\JsonException $exception) {
+    // ...
+}</code></pre>
+<p><em>...0, you made it! Congrats, now get back to pwning the world!</em></p>
+<p><br></p>
+<p>Did I miss a feature you plan to use from day 1 of your PHP 7.3? I might too, drop it in the comments!</p>
+
+                <br>
+
+                                    <div class="mt-1 mb-5 card">
+                        <div class="card-header text-center">
+                            <h3 class="text-center mt-2">
+                                <em class="fas fa-check text-success"></em>
+                                &nbsp;
+                                Travis Knowns the Code Works
+                            </h3>
+                        </div>
+
+                        <div class="card-body">
+                            
+                            <p>
+                                The code used in this post is tested daily with Travis CI. You can <a href="https://github.com/TomasVotruba/tomasvotruba.cz/tree/master/tests/Posts/Year2018/Php73">see tests on Github</a>.
+                            </p>
+
+                            <p>
+                                Thanks to tests this post:
+                                <ul>
+                                    <li>always run against the most recent dependencies</li>
+                                <li><strong>gets updates and stays relevant for many years</strong> even when new <a href="https://semver.org/#spec-item-8">major version</a> of PHP or Symfony is released</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                
+                <div class="card mb-5">
+                    <div class="card-body text-center">
+                        <a href="https://github.com/TomasVotruba/tomasvotruba.cz/edit/master/source/_posts/2018/2018-08-16-whats-new-in-php-73-in-30-seconds-in-diffs.md" class="btn btn-info btn-sm">
+                            <em class="fas fa-fw fa-edit"></em>
+                            Typo? Fix it, please
+                        </a>
+                        &nbsp;and join <a href="/thank-you">56 people</a> who build this website
+                    </div>
+                </div>
+
+                <a name="comments"></a>
+
+                <div id="disqus_thread"></div>
+
+<script type="text/javascript">
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//' + 'itsworthsharing' + '.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+            </div>
+
+            <script id="dsq-count-scr" src="https://itsworthsharing.disqus.com/count.js" async defer></script>
+        </div>
+
+        <script>
+    ga=function(){ ga.q.push(arguments) };
+    ga.q=[];
+    ga.l=+new Date;
+    ga('create', 'UA-46082345-1', 'auto');
+    ga('send','pageview');
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+<script src="/assets/prism/prism.js"></script>
+
+<script>
+    $('.gifplayer').gifplayer();
+</script>
+
+<div class="text-center mt-5" id="footer">
+    <div class="row">
+        <div class="col-12">
+            Join 17 000 PHP developers every month: <a href="/rss.xml">RSS</a>&nbsp;or&nbsp;<a href="https://twitter.com/votrubaT">@votrubaT</a>
+
+            <span class="pl-2 pr-2 hidden-sm-down">•</span>
+
+            <span class="hidden-sm-down">
+                Watch my <a href="https://github.com/tomasvotruba">open-source addiction</a>
+            </span>
+        </div>
+    </div>
+
+    <p>
+        Build by <a href="/thank-you/">56 people</a>
+
+        <span class="pl-2 pr-2">•</span>
+
+        Runs on <a href="https://www.statie.org/">Statie</a>
+
+        <span class="pl-2 pr-2">•</span>
+
+        <a href="/now/">Now</a>
+
+        <span class="hidden-sm-down">
+            <span class="pl-2 pr-2">•</span>
+            Hosted on <a href="https://github.com/tomasvotruba/tomasvotruba.cz">GitHub</a>
+        </span>
+    </p>
+</div>
+    </body>
+</html>
+
+        <meta property="og:type" content="article" />
+    <meta property="og:title" content="What&#039;s New in PHP 7.3 in 30 Seconds in Diffs" />
+    <meta property="og:description" content="No time but eager to hear PHP news? PHP 7.3 is out in December 2018 and it brings 173 changes. Which are the most useful ones?" />
+    <meta property="og:url" content="https://www.tomasvotruba.cz/blog/2018/08/16/whats-new-in-php-73-in-30-seconds-in-diffs" />
+
+        <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@votrubaT">
+    <meta name="twitter:title" content="What&#039;s New in PHP 7.3 in 30 Seconds in Diffs" />
+    <meta name="twitter:description" content="No time but eager to hear PHP news? PHP 7.3 is out in December 2018 and it brings 173 changes. Which are the most useful ones?" />

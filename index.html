@@ -1,0 +1,3807 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>PHP Lectures, Mentoring, Communities and Posts | Tomas Votruba</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    
+    <link rel="alternate" type="application/rss+xml" title="Tomas Votruba Blog RSS" href="/rss.xml">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
+
+        <link href="/assets/bootstrap/bootstrap.min.css?v=1486435465" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/prism/prism.css?v=844789187" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/style.css?v=1349769753" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/gifplayer/gifplayer.css" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/checklist.css?v=2002354159" rel="stylesheet" type="text/css" />
+
+    <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/assets/gifplayer/jquery.gifplayer.js"></script>
+    <script src="/assets/js/checklist.js" async defer></script>
+</head>
+    <body>
+        <div class="hidden-sm-down">
+    <nav class="navbar">
+        <div class="container-fluid">
+            <ul>
+                <li id="logo">
+                    <img src="https://avatars1.githubusercontent.com/u/924196?s=60&v=4" class="avatar">
+                    Tomas Votruba
+                </li>
+                <li class="active">
+                    <a href="/">Blog</a>
+                </li>
+                <li class="">
+                    <a href="/clusters/">Clusters</a>
+                </li>
+                <li class="">
+                    <a href="/mission/">Mission</a>
+                </li>
+                <li class="">
+                    <a href="/talks/">Talks</a>
+                </li>
+                <li class="">
+                    <a href="/contact/">Contact</a>
+                </li>
+                <li id="top-menu-search">
+                    <form method="get" action="https://www.google.com/search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction">
+                        <meta itemprop="target" content="https://www.google.com/search?q={q}"/>
+                        <input name="sitesearch" value="tomasvotruba.cz" type="hidden"/>
+                        <input itemprop="query-input" type="text" id="search-query" class="form-control" required="required" name="q" placeholder="Search..." autocomplete="off"/>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="hidden-md-up">
+    <nav class="navbar" id="mobile-menu">
+        <div class="container">
+            <a href="/" class="col-3 col-sm-3 active">
+                <em class="fas fa-book"></em>
+                <br>
+                PHP Blog
+            </a>
+            <a href="/clusters/" class="col-3 col-sm-3 ">
+                <em class="fas fa-share-alt"></em>
+                <br>
+                Clusters
+            </a>
+            <a href="/mission/" class="col-3 col-sm-3 ">
+                <em class="fas fa-heartbeat"></em>
+                <br>
+                Mission
+            </a>
+            <a href="/contact/" class="col-3 col-sm-3 ">
+                <em class="fas fa-phone"></em>
+                <br>
+                Contact
+            </a>
+        </div>
+    </nav>
+
+    <div class="hidden-md-up text-center row" id="top-menu-search-mobile">
+        <!-- inspired and taken from: https://github.com/yegor256/blog/blob/master/_layouts/default.html -->
+        <form method="get" action="https://www.google.com/search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction" class="col-md-12">
+            <meta itemprop="target" content="https://www.google.com/search?q={q}"/>
+            <input name="sitesearch" value="tomasvotruba.cz" type="hidden"/>
+            <input itemprop="query-input" type="text" id="search-query" class="form-control" required="required" name="q" placeholder="Search with Google..." autocomplete="off"/>
+        </form>
+    </div>
+</div>
+
+        <div id="content">
+                <div class="container-fluid" id="blog">
+        <div class="pt-5 pb-2 subline text-center">
+            <p>
+                Do you want to <strong>learn cool ways to hack PHP and learning 2x a week</strong>?<br>
+                This is the right place!
+            </p>
+        </div>
+
+        <div class="row">
+            
+            
+                            
+                                
+                                
+                
+                                    
+                                        
+                    
+                                            
+                        <article class="text-left pt-2 pb-4 col-md-12">
+                            <h2 class="firstPost">
+                                <a href="/blog/2019/01/10/9-steps-to-migrate-from-jekyll-to-statie/">
+                                    9 Steps to Migrate From Jekyll to Statie
+                                </a>
+                            </h2>
+
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>2 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2019-01-Thu">Thu, Jan 10, 2019</time>
+    </li>
+
+    
+    
+    </ul>
+
+                                                            <p class="mt-3">Jekyll is great to start for micro websites like <a href="https://gomonorepo.org/">Go Monorepo</a>. But Jekyll has one big problem - the language.
+How would you add custom Twig or Latte filter to Jekyll?
+<br><br>
+I wanted to migrate <a href="https://gomonorepo.org/">gomonorepo.org</a> and <a href="https://gophp71.org/">gophp71.org</a> from Jekyll to Statie. Can new <code>init</code> command make this piece of cake? And what needs to be done next?</p>
+                            
+                                                    </article>
+                                                                
+                                
+                                
+                
+                                    
+                                        
+                    
+                                            
+                        <article class="text-left pt-2 pb-4 col-md-6">
+                            <h2 >
+                                <a href="/blog/2019/01/07/how-to-create-your-first-php-twig-static-website-under-2-minutes-with-statie/">
+                                    How to Create Your First PHP Twig Static Website under 2 Minutes with Statie
+                                </a>
+                            </h2>
+
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>2 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2019-01-Mon">Mon, Jan 7, 2019</time>
+    </li>
+
+    
+    
+    </ul>
+
+                            
+                                                    </article>
+                                                                
+                                
+                                
+                
+                                    
+                                        
+                    
+                                            
+                        <article class="text-left pt-2 pb-4 col-md-6">
+                            <h2 >
+                                <a href="/blog/2019/01/03/how-to-complete-type-declarations-without-docblocks-with-rector/">
+                                    How to Complete Type Declarations without Docblocks with Rector
+                                </a>
+                            </h2>
+
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>6 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2019-01-Thu">Thu, Jan 3, 2019</time>
+    </li>
+
+    
+    
+    </ul>
+
+                            
+                                                    </article>
+                                                                
+                                
+                                
+                
+                                    
+                                        
+                                            <div class="col-md-12 yearLine mb-5 clearfix" id="year-2018">
+                            <br>
+                            <br>
+                            2018
+                                                                                </div>
+                    
+                                            <ul class="mt-4 list-unstyled">                        <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/12/31/your-most-favorite-posts-in-2018/">Your Most Favorite Posts in 2018</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>2 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-12-Mon">Mon, Dec 31, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/12/27/how-to-convert-all-your-symfony-service-configs-to-autodiscovery/">How To Convert All Your Symfony Service Configs to Autodiscovery</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-12-Thu">Thu, Dec 27, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/12/24/thank-you/">Thank You</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-12-Mon">Mon, Dec 24, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/12/20/introducing-symfony-flex-loader/">Introducing Symfony Flex Loader</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>2 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-12-Thu">Thu, Dec 20, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/12/17/function-create-function-is-deprecated-in-php-72-how-to-migrate/">Function create_function() is Deprecated in PHP 7.2 - How to Migrate?</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-12-Mon">Mon, Dec 17, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/12/13/kirill-smelov-s-phpstorm-tips-in-9-gifs/">Kirill Smelov's PHPStorm Tips in 9 Gifs</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>2 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-12-Thu">Thu, Dec 13, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/12/10/rocket-science-behind-migration-of-docblock-types-to-php-typehints/">The Rocket Science Behind Migration of Docblock Types to PHP Typehints</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>6 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-12-Mon">Mon, Dec 10, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/12/06/dont-learn-to-code/">Don't Learn to Code</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-12-Thu">Thu, Dec 6, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/12/03/it-bloggers-deprecate-your-posts-to-stop-spreading-legacy/">IT Bloggers, Deprecate Your Posts to Stop Spreading Legacy</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-12-Mon">Mon, Dec 3, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/11/29/how-to-manage-configuration-in-symfony-without-bundle-extension-and-configuraiton/">How to Manage Configuration in Symfony without Bundle, Extension, and Configuration?</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>6 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-11-Thu">Thu, Nov 29, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/11/26/14-tips-to-write-php-code-that-is-hard-to-maintain-and-upgrade/">14 Tips to Write PHP Code that is Hard to Maintain and Upgrade</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>9 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-11-Mon">Mon, Nov 26, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/11/22/how-to-test-monorepo-in-3-layers/">How to Test Monorepo in 3 Layers</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-11-Thu">Thu, Nov 22, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/11/19/when-you-should-use-monorepo-and-when-local-packages/">When You Should Use Monorepo and When&nbsp;Local&nbsp;Packages</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-11-Mon">Mon, Nov 19, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/11/15/how-to-get-php-74-typed-properties-to-your-code-in-few-seconds/">How to Get PHP 7.4 Typed Properties to Your Code in Few Seconds</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>5 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-11-Thu">Thu, Nov 15, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/11/12/will-autowired-arrays-finally-deprecate-tags-in-symfony-and-nette/">Will Autowired Arrays Finally Deprecate Tags in Symfony and Nette?</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-11-Mon">Mon, Nov 12, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/11/08/fatal-error-uncaught-error-operator-not-supported-for-strings-in/">Fatal error: Uncaught Error: [] operator not supported for strings in</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-11-Thu">Thu, Nov 8, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/11/05/do-you-autowire-services-in-symfony-you-can-autowire-parameters-too/">Do you Autowire Services in Symfony?<br>You can Autowire Parameters Too</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>5 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-11-Mon">Mon, Nov 5, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/11/01/how-teach-your-team-private-method-sorting-in-3-mins/">How to Teach Your Team Private Method Sorting in&nbsp;3&nbsp;mins</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-11-Thu">Thu, Nov 1, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/10/29/7-tips-to-get-the-most-out-of-travis-ci/">7 Tips to Get the Most out of Travis CI</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>5 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-10-Mon">Mon, Oct 29, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/10/25/why-ast-fixes-your-coding-standard-better-than-tokens/">Why AST Fixes your Coding Standard Better than Tokens</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>5 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-10-Thu">Thu, Oct 25, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/10/22/brief-history-of-tools-watching-and-changing-your-php-code/">Brief History of Tools Watching and Changing Your PHP Code</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>5 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-10-Mon">Mon, Oct 22, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/10/18/how-i-almost-missed-my-talk-in-php-asia-conference/">How I Almost Missed My Talk in PHP Asia Conference</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>6 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-10-Thu">Thu, Oct 18, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/10/15/what-is-your-third-door-book-review/">What is Your Third Door? - Book Review</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-10-Mon">Mon, Oct 15, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/10/11/hi-my-name-is-tom-conctat-vs-in-sprintf-vs-in-string-variables/">Hi, my name is Tom - Concat vs. Sprintf vs. In-String Variable</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-10-Thu">Thu, Oct 11, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/10/08/new-in-symplify-5-create-merge-and-split-monorepo-with-1-command/">New in Symplify 5: Create, Merge and Split Monorepo with 1 Command</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>2 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-10-Mon">Mon, Oct 8, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/10/04/new-in-symplify-5-public-method-order-and-external-final-in-coding-standard/">New in Symplify 5: Public Method Order and External Final in CodingStandard</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-10-Thu">Thu, Oct 4, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/10/01/new-in-symplify-5-generate-rich-precise-and-smart-changelog-in-seconds/">New in Symplify 5: Generate Rich, Precise and Smart Changelog in Seconds</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-10-Mon">Mon, Oct 1, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/09/27/open-source-behind-the-scenes-finding-the-rector-vision/">Open-Source Behind The Scenes - Finding the Rector Vision</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>2 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-09-Thu">Thu, Sep 27, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/09/24/new-in-symplify-5-3-news-in-easy-coding-standard-to-smoother-your-experience/">New in Symplify 5: 3 News in EasyCodingStandard to Smoother Your Experience</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>2 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-09-Mon">Mon, Sep 24, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/09/20/new-in-symplify-5-3-new-cool-features-of-package-builder/">New in Symplify 5: 3 New Cool Features of PackageBuilder</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-09-Thu">Thu, Sep 20, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/09/17/7-tips-to-write-exceptions-everyone-will-love/">7 Tips to Write Exceptions Everyone Will Love</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>6 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-09-Mon">Mon, Sep 17, 2018</time>
+    </li>
+
+    
+    
+            <li class="list-inline-item pull-right">
+                        <a href="https://github.com/TomasVotruba/tomasvotruba.cz/tree/master/tests/Posts/Year2018/Exceptions" class="badge badge-success">
+                <em class="fas fa-fw fa-thumbs-up"></em> Tested
+            </a>
+        </li>
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/09/13/your-brain-is-your-garden/">Your Brain is Your Garden</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>5 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-09-Thu">Thu, Sep 13, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/09/10/5-advices-i-would-love-to-get-before-starting-to-maintain-open-source/">5 Advices I Would Love to Get Before Starting to Maintain an Open Source</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>6 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-09-Mon">Mon, Sep 10, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/09/06/how-to-develop-multiple-symfony-applications-fast-while-keeping-the-quality/">How to Develop Multiple Symfony Applications Fast while Keeping the Quality</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-09-Thu">Thu, Sep 6, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/09/03/4-ways-to-add-global-option-or-argument-to-symfony-console-application/">4 Ways to Add Global Option or Argument to Symfony Console Application</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>6 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-09-Mon">Mon, Sep 3, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/08/30/ways-i-fucked-up-open-source-code-mock-everything-and-test-units/">Ways I Fucked Up Open Source Code: Mock Everything and Test Units</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>6 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-08-Thu">Thu, Aug 30, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/08/27/why-and-how-to-avoid-the-memory-lock/">Why and How to Avoid the Memory Lock</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>5 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-08-Mon">Mon, Aug 27, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/08/23/9-features-of-symfony-plugin-you-should-not-miss-in-gifs/">9 Features of Symfony Plugin You Should Not Miss in Gifs</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>1 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-08-Thu">Thu, Aug 23, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/08/20/painful-experience-over-solutions-extend-configuratin-in-easy-admin-bundle-with-collector/">Painful Experience over Solutions: Extend Configuration in Easy Admin Bundle</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>8 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-08-Mon">Mon, Aug 20, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/08/16/whats-new-in-php-73-in-30-seconds-in-diffs/">What's New in PHP 7.3 in 30 Seconds in Diffs</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>2 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-08-Thu">Thu, Aug 16, 2018</time>
+    </li>
+
+    
+    
+            <li class="list-inline-item pull-right">
+                        <a href="https://github.com/TomasVotruba/tomasvotruba.cz/tree/master/tests/Posts/Year2018/Php73" class="badge badge-success">
+                <em class="fas fa-fw fa-thumbs-up"></em> Tested
+            </a>
+        </li>
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/08/13/hidden-gems-of-php-packages-symfony-finder-and-spl-file-info/">Hidden Gems of PHP Packages: Symfony\Finder and SplFileInfo</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-08-Mon">Mon, Aug 13, 2018</time>
+    </li>
+
+    
+    
+            <li class="list-inline-item pull-right">
+                        <a href="https://github.com/TomasVotruba/tomasvotruba.cz/tree/master/tests/Posts/Year2018/SymfonyFinder" class="badge badge-success">
+                <em class="fas fa-fw fa-thumbs-up"></em> Tested
+            </a>
+        </li>
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/08/09/why-is-your-company-losing-money-by-not-open-sourcing-2-code-quality/">Why is Your Company Losing Money By Not Open Sourcing 2: Code Quality</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>8 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-08-Thu">Thu, Aug 9, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/08/06/stylish-and-standard-console-output-with-symfony-style/">Stylish and Standard Console Output with Symfony Style</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>5 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-08-Mon">Mon, Aug 6, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/08/02/5-gotchas-of-the-bin-file-in-php-cli-applications/">5 Gotchas of the Bin File in PHP CLI Applications</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-08-Thu">Thu, Aug 2, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/07/30/hidden-gems-of-php-packages-nette-utils/">Hidden Gems of PHP Packages: Nette\Utils</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-07-Mon">Mon, Jul 30, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/07/26/why-is-your-company-losing-money-by-not-open-sourcing-1-hiring/">Why is Your Company Losing Money by not Open Sourcing: 1. Hiring</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>6 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-07-Thu">Thu, Jul 26, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/07/23/5-signs-should-never-have-a-talk-abroad/">5 Signs You Should Never Have a Talk Abroad</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>5 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-07-Mon">Mon, Jul 23, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/07/19/how-to-make-github-and-travis-split-monorepo-to-multiple-git-repositories-for-you/">How to Make Github and Travis Split Monorepo to Multiple Git Repositories for You</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>6 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-07-Thu">Thu, Jul 19, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/07/16/new-in-statie-45-twig-support/">New in Statie 4.5: Twig Support</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-07-Mon">Mon, Jul 16, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/07/12/20-notes-from-peace-is-every-step-book/">Notes from 'Peace is Every Step' Book</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>6 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-07-Thu">Thu, Jul 12, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/07/09/6-reasons-why-doctrine-is-alive-and-kicking/">6 Reasons Why Doctrine is Alive and Kicking</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>5 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-07-Mon">Mon, Jul 9, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/07/05/how-to-convert-latte-templates-to-twig-in-27-regular-expressions/">How to Convert Latte Templates to Twig in 27 Regular Expressions</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>8 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-07-Thu">Thu, Jul 5, 2018</time>
+    </li>
+
+    
+    
+            <li class="list-inline-item pull-right">
+                        <a href="https://github.com/TomasVotruba/tomasvotruba.cz/tree/master/tests/Posts/Year2018/LatteTwig" class="badge badge-success">
+                <em class="fas fa-fw fa-thumbs-up"></em> Tested
+            </a>
+        </li>
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/07/02/cluster-more-interactive-than-book-deeper-than-post/">Cluster: More Interactive than a Book, Deeper than a Post</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-07-Mon">Mon, Jul 2, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/06/28/dont-read-books/">Don't Read Books</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>5 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-06-Thu">Thu, Jun 28, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/06/25/let-changelog-linker-generate-changelog-for-you/">Let Changelog Linker Generate CHANGELOG.md for You</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-06-Mon">Mon, Jun 25, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/06/21/open-source-is-selfish/">Open Source is Selfish</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-06-Thu">Thu, Jun 21, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/06/18/14-surprising-tip-from-selling-is-human-to-influence-others/">14 Surprising Tips from Selling is Human to Influence Others</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>7 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-06-Mon">Mon, Jun 18, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/06/14/collector-pattern-for-dummies/">Collector Pattern for Dummies</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>5 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-06-Thu">Thu, Jun 14, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/06/11/how-to-turn-mocks-from-nightmare-to-solid-kiss-tests/">How to Turn Mocks from Nightmare to Solid Kiss Tests</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>6 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-06-Mon">Mon, Jun 11, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/06/07/how-to-migrate-from-php-cs-fixer-to-easy-coding-standard/">How to Migrate From PHP CS Fixer to EasyCodingStandard in 6 Steps</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-06-Thu">Thu, Jun 7, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/06/04/how-to-migrate-from-php-code-sniffer-to-easy-coding-standard/">How to Migrate From PHP_CodeSniffer to EasyCodingStandard in 7 Steps</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-06-Mon">Mon, Jun 4, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/05/31/symfony-vs-laravel-vs-nette-which-php-framework-you-should-choose/">Symfony vs Laravel vs Nette - Which PHP Framework Should You Choose</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-05-Thu">Thu, May 31, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/05/28/build-your-first-symfony-console-application-with-dependency-injection-under-4-files/">Build Your First Symfony Console Application with Dependency Injection Under 4 Files</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-05-Mon">Mon, May 28, 2018</time>
+    </li>
+
+    
+    
+            <li class="list-inline-item pull-right">
+                        <a href="https://github.com/TomasVotruba/tomasvotruba.cz/tree/master/tests/Posts/Year2018/ConsoleDI" class="badge badge-success">
+                <em class="fas fa-fw fa-thumbs-up"></em> Tested
+            </a>
+        </li>
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/05/24/boss-vs-masseuse-way-to-add-coding-standards-to-big-project/">The Boss vs. The Masseuse Way to Add Coding Standards to a Big Project</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-05-Thu">Thu, May 24, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/05/21/is-your-code-readable-by-humans-cognitive-complexity-tells-you/">Is Your Code Readable By Humans? Cognitive Complexity Tells You</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>7 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-05-Mon">Mon, May 21, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/05/17/how-to-test-private-services-in-symfony/">How to Test Private Services in Symfony</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>5 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-05-Thu">Thu, May 17, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/05/14/how-to-load-config-with-services-in-symfony-console/">How to Load --config With Services in Symfony Console</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>7 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-05-Mon">Mon, May 14, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/05/10/rectify-turn-all-action-injects-to-constructor-injection-in-your-symfony-application/">Rectify: Turn All Action Injects to Constructor Injection in Your Symfony Application</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-05-Thu">Thu, May 10, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/05/07/why-you-should-combine-symfony-console-and-dependency-injection/">Why You Should Combine Symfony Console and Dependency Injection</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>6 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-05-Mon">Mon, May 7, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/05/03/how-do-you-treat-your-own-first-ai/">How Do You Treat Your Own First AI?</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>7 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-05-Thu">Thu, May 3, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/04/30/programming-climbing-a-huge-mountain/">Programming = Climbing a Huge Mountain</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-04-Mon">Mon, Apr 30, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/04/26/how-i-got-into-static-trap-and-made-fool-of-myself/">How I Got into Static Trap and Made Fool of Myself</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>9 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-04-Thu">Thu, Apr 26, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/04/23/how-to-slowly-turn-your-symfony-project-to-legacy-with-action-injection/">How to Slowly Turn your Symfony Project to Legacy with Action Injection</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>8 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-04-Mon">Mon, Apr 23, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/04/19/4-tips-to-get-emotions-to-your-blogging-about-programming/">4 Tips To Get Emotions to Your Blogging About Programming</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-04-Thu">Thu, Apr 19, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/04/16/5-steps-to-your-first-fixer-or-sniff-test/">5 Steps to Your First Fixer or Sniff Test</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-04-Mon">Mon, Apr 16, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/04/12/the-best-5-of-256-bloghacks-book/">The Best 5 of 256 Bloghacks Book</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>5 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-04-Thu">Thu, Apr 12, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/04/09/try-psr-12-on-your-code-today/">Try PSR-12 on Your Code Today</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-04-Mon">Mon, Apr 9, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/04/05/4-ways-to-speedup-your-symfony-development-with-packagebuilder/">4 Ways to Speedup Your Symfony Development with PackageBuilder</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>7 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-04-Thu">Thu, Apr 5, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/04/02/rectify-turn-repositories-to-services-in-symfony/">Rectify: Turn All Doctrine Repositories From Inheritance To Composition in Seconds</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-04-Mon">Mon, Apr 2, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/03/29/new-in-coding-standard-4-long-line-breaks-automated-and-3-legacy-prevention-fixers/">New in Coding Standard 4: Long Line Breaks Automated and 3 Legacy Prevention Fixers</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-03-Thu">Thu, Mar 29, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/03/26/new-in-easy-coding-standard-4-clean-symfony-standard-with-yaml-and-services/">New in Easy Coding Standard 4: Clean Symfony Standard with Yaml and Services</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>5 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-03-Mon">Mon, Mar 26, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                                                    
+                                
+                
+                                            
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/03/22/how-teaching-suicides-itself-by-killing-the-passion/">How Teaching Suicides Itself by Killing the Passion</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>2 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-03-Thu">Thu, Mar 22, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/03/19/how-to-criticize-like-a-senior-programmer/">How to Criticize like a Senior Programmer</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>7 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-03-Mon">Mon, Mar 19, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/03/15/monorepo-on-the-rise-in-php/">Monorepo on the Rise in PHP</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>2 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-03-Thu">Thu, Mar 15, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/03/12/neon-vs-yaml-and-how-to-migrate-between-them/">Neon vs. Yaml and How to Migrate Between Them</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>5 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-03-Mon">Mon, Mar 12, 2018</time>
+    </li>
+
+    
+    
+            <li class="list-inline-item pull-right">
+                        <a href="https://github.com/TomasVotruba/tomasvotruba.cz/tree/master/tests/Posts/Year2018/NeonYaml" class="badge badge-success">
+                <em class="fas fa-fw fa-thumbs-up"></em> Tested
+            </a>
+        </li>
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/03/08/why-is-collector-pattern-so-awesome/">Why is Collector Pattern so Awesome</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>7 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-03-Thu">Thu, Mar 8, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/03/05/rector-part-3-why-instant-upgrades/">Rector: Part 3 - Why Instant Upgrades</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>5 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-03-Mon">Mon, Mar 5, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/03/01/new-in-symplify-3-4-improvements-in-easy-coding-standard/">New in Symplify 3: 4 Improvements in EasyCodingStandard</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-03-Thu">Thu, Mar 1, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/02/26/rector-part-2-maturity-of-php-ecocystem-and-founding-fathers/">Rector: Part 2 - Maturity of PHP Ecosystem and Founding Fathers</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-02-Mon">Mon, Feb 26, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/02/19/rector-part-1-what-and-how/">Rector: Part 1 - What and How</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-02-Mon">Mon, Feb 19, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/02/12/sleep-shorter-to-get-62-percent-smarter/">Sleep Shorter to Get 62 % Smarter</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-02-Mon">Mon, Feb 12, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/02/05/how-to-run-symfony-processes-asynchronously/">How to Run Symfony Processes Asynchronously</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-02-Mon">Mon, Feb 5, 2018</time>
+    </li>
+
+    
+    
+            <li class="list-inline-item pull-right">
+                        <a href="https://github.com/TomasVotruba/tomasvotruba.cz/tree/master/tests/Posts/Year2018/ProcessAsync" class="badge badge-success">
+                <em class="fas fa-fw fa-thumbs-up"></em> Tested
+            </a>
+        </li>
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/01/29/how-to-deal-with-haters-in-comments-and-github/">How to Deal With Haters in Comments and Github</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-01-Mon">Mon, Jan 29, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/01/22/how-to-get-parameter-in-symfony-controller-the-clean-way/">How to Get Parameter in Symfony Controller the Clean Way</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-01-Mon">Mon, Jan 22, 2018</time>
+    </li>
+
+    
+    
+            <li class="list-inline-item pull-right">
+                        <a href="https://github.com/TomasVotruba/tomasvotruba.cz/tree/master/tests/Posts/Year2018/ParameterToSymfonyController" class="badge badge-success">
+                <em class="fas fa-fw fa-thumbs-up"></em> Tested
+            </a>
+        </li>
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/01/15/is-your-changelog-useful-or-just-boring-plain-text-and-how-to-fix-that/">Is Your CHANGELOG Useful or Just Boring Plain Text? And How to Fix That</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-01-Mon">Mon, Jan 15, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/01/08/clean-and-decoupled-controllers-commands-and-event-subscribers-once-and-for-all-with-delegator-pattern/">Clean and Decoupled Controllers, Commands and Event Subscribers Once and for All with Delegator Pattern</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>7 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-01-Mon">Mon, Jan 8, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2018/01/01/new-in-symplify-3-4-time-saving-coding-standard-checkers/">New in Symplify 3: 4 Time-saving Coding Standard Checkers</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-01-Mon">Mon, Jan 1, 2018</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/12/25/composer-local-packages-for-dummies/">Composer Local Packages for Dummies</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-12-Mon">Mon, Dec 25, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/12/17/new-in-symplify-3-doc-block-cleaner-fixer/">New in Symplify 3: DocBlock Cleaner Fixer</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-12-Sun">Sun, Dec 17, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                                                    
+                
+                                            
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/12/04/life30-what-will-you-do-when-ai-takes-over-the-world/">Life 3.0: What Will You Do When AI Takes Over the World</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-12-Mon">Mon, Dec 4, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/11/27/united-php-71-adoption-6-months-later/">United PHP 7.1 Adoption 6 Months Later</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-11-Mon">Mon, Nov 27, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/11/20/how-to-write-interesting-job-offers-for-programmers/">How to Write Interesting Jobs Offers for Programmers</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-11-Mon">Mon, Nov 20, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/11/13/7-tips-you-should-know-before-going-to-university/">7 Tips You Should Know Before Going To University</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>5 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-11-Mon">Mon, Nov 13, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                                                    
+                                
+                
+                                            
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/11/06/how-to-change-php-code-with-abstract-syntax-tree/">How to change PHP code with Abstract Syntax Tree</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-11-Mon">Mon, Nov 6, 2017</time>
+    </li>
+
+    
+    
+            <li class="list-inline-item pull-right">
+                        <a href="https://github.com/TomasVotruba/tomasvotruba.cz/tree/master/tests/Posts/Year2017/Ast" class="badge badge-success">
+                <em class="fas fa-fw fa-thumbs-up"></em> Tested
+            </a>
+        </li>
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/10/30/what-can-you-learn-from-menstruation-and-symfony-releases/">What can You Learn from Menstruation and Symfony Releases</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>5 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-10-Mon">Mon, Oct 30, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/10/23/imbox-zero/">IMbox Zero</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>2 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-10-Mon">Mon, Oct 23, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/10/16/how-to-use-repository-with-doctrine-as-service-in-symfony/">How to use Repository with Doctrine as Service in Symfony</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>6 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-10-Mon">Mon, Oct 16, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/10/09/how-to-get-the-most-valuable-feedback-you-can-get/">How to Get the Most Valuable Feedback You Can Get</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-10-Mon">Mon, Oct 9, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                                                    
+                
+                                            
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/09/25/3-non-it-books-that-help-you-to-become-better-programmer/">3 non-IT Books That Help you to Become Better Programmer</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-09-Mon">Mon, Sep 25, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/09/18/4-simple-checkers-for-coding-standard-haters-but-clean-code-lovers/">4 Simple Checkers for Coding Standard Haters but Clean Code Lovers</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>2 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-09-Mon">Mon, Sep 18, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                                                    
+                                
+                
+                                            
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/09/11/how-to-write-open-source-in-php-3-deprecating-code/">How to write Open-Source in PHP 3: Deprecating Code</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-09-Mon">Mon, Sep 11, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/09/04/how-apigen-survived-its-own-death/">How ApiGen Survived its Own Death</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>6 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-09-Mon">Mon, Sep 4, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                                                    
+                
+                                            
+                                
+                                                                    
+                
+                                            
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/08/14/how-to-apply-nette-coding-standard-in-your-project/">How to Apply Nette Coding Standard in Your Project</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>2 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-08-Mon">Mon, Aug 14, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                                                    
+                
+                                            
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/07/31/how-php-coding-standard-tools-actually-work/">How PHP Coding Standard Tools Actually Work</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-07-Mon">Mon, Jul 31, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/07/24/how-to-write-custom-fixer-for-php-cs-fixer-24/">How to Write Custom Fixer for PHP CS Fixer 2.12</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>9 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-07-Mon">Mon, Jul 24, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/07/17/how-to-write-custom-sniff-for-code-sniffer-3/">How to Write Custom Sniff for Code Sniffer 3.3</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>5 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-07-Mon">Mon, Jul 17, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/07/03/how-to-deprecate-php-package-without-leaving-anyone-behind/">How to Deprecate PHP Package Without Leaving Anyone Behind</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>5 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-07-Mon">Mon, Jul 3, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                                                    
+                
+                                            
+                                
+                                                                    
+                
+                                            
+                                
+                                                                    
+                
+                                            
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/06/05/go-php-71/">Go PHP 7.1!</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-06-Mon">Mon, Jun 5, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/06/01/thank-you-david/">Thank you David Grudl</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-06-Thu">Thu, Jun 1, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                                                    
+                
+                                            
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/05/07/how-to-refactor-to-new-dependency-injection-features-in-symfony-3-3/">How to refactor to new Dependency Injection features in Symfony 3.3</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>5 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-05-Sun">Sun, May 7, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/05/03/combine-power-of-php-code-sniffer-and-php-cs-fixer-in-3-lines/">Combine power of PHP_CodeSniffer and PHP CS Fixer in 3 lines</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>2 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-05-Wed">Wed, May 3, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/04/14/3-symfony-and-laravel-patterns-that-make-code-easy-to-extends-without-modification/">3 Symfony and Laravel Patterns that Make Code Easy to Extend Without Modification</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>5 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-04-Fri">Fri, Apr 14, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                                                    
+                
+                                            
+                                
+                                                                    
+                
+                                            
+                                
+                                                                    
+                
+                                            
+                                
+                                                                    
+                
+                                            
+                                                                    
+                                
+                
+                                            
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/02/22/fast-and-easy-way-to-learn-complex-topics/">Fast and Easy Way to Learn Complex Topics</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>2 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-02-Wed">Wed, Feb 22, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                                                    
+                
+                                            
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/02/15/minimalistic-way-to-create-your-first-nette-extension/">Minimalistic Way to Create Your First Nette Extension</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-02-Wed">Wed, Feb 15, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/02/12/drop-all-service-tags-in-your-nette-and-symfony-applications/">Drop all Service Tags in Your Nette and Symfony Applications</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-02-Sun">Sun, Feb 12, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/02/07/how-to-decouple-monolith-like-a-boss-with-composer-local-packages/">How to Decouple Monolith like a Boss with Composer Local Packages</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-02-Tue">Tue, Feb 7, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/01/31/how-monolithic-repository-in-open-source-saved-my-laziness/">How Monolithic Repository in Open Source saved my Laziness</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-01-Tue">Tue, Jan 31, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/01/28/why-I-switched-scrutinizer-for-phpstan-and-you-should-too/">Why I Switched Scrutinizer for PHPStan and You Should Too</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-01-Sat">Sat, Jan 28, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/01/20/4-emotional-reasons-why-I-quit-my-twitter/">4 Emotional and Honest Reasons Why I Quit my Twitter</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-01-Fri">Fri, Jan 20, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                                                    
+                
+                                            
+                                
+                                                                    
+                
+                                            
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2017/01/05/why-I-deleted-my-linkedin-account/">Why I deleted my LinkedIn account</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-01-Thu">Thu, Jan 5, 2017</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2016/12/24/how-to-avoid-inject-thanks-to-decorator-feature-in-nette/">How to avoid @inject thanks to Decorator feature in Nette</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>4 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2016-12-Sat">Sat, Dec 24, 2016</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                                                    
+                
+                                            
+                                
+                                                                    
+                
+                                            
+                                
+                                                                    
+                
+                                            
+                                                                    
+                                
+                
+                                            
+                                
+                                                                    
+                
+                                            
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2016/09/16/how-to-write-open-source-in-php-2-enjoy-skeletons/">How to write open-source in PHP 2: Rise value of your package with help of skeleton</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>5 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2016-09-Fri">Fri, Sep 16, 2016</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                
+                                
+                
+                                    
+                                        
+                    
+                                                                    <li class="mb-3 col-md-12">
+                            <a href="/blog/2016/09/09/how-to-write-open-source-in-php-1-create-a-repository/">How to write open-source in PHP 1: Create a repository on Github</a>
+                            <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>3 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2016-09-Fri">Fri, Sep 9, 2016</time>
+    </li>
+
+    
+    
+    </ul>
+                        </li>
+                        <hr>
+                                                                                        
+                                                                    
+                                
+                
+                                            
+                                
+                                                                    
+                
+                                            
+                                
+                                                                    
+                
+                                            
+                                
+                                                                    
+                
+                                            
+                                
+                                                                    
+                
+                                            
+                                                                    
+                                
+                
+                                            
+                                
+                                                                    
+                
+                                            
+                                
+                                                                    
+                
+                                            
+                                
+                                                                    
+                
+                                            
+                                
+                                                                    
+                
+                                            
+                                
+                                                                    
+                
+                                            
+                                
+                                                                    
+                
+                                            
+                                
+                                                                    
+                
+                                    </div>
+
+        <br>
+
+        <div class="text-center mt-4 mb-5">
+            <p>
+                <strong>Could not find post that was here before?</strong>
+            </p>
+            <p>
+                See <a href="/deprecated-posts">deprecated posts</a>
+                or <a href="/czech-posts">Czech posts</a>
+            </p>
+        </div>
+    </div>
+        </div>
+
+        <script>
+    ga=function(){ ga.q.push(arguments) };
+    ga.q=[];
+    ga.l=+new Date;
+    ga('create', 'UA-46082345-1', 'auto');
+    ga('send','pageview');
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+<script src="/assets/prism/prism.js"></script>
+
+<script>
+    $('.gifplayer').gifplayer();
+</script>
+
+<div class="text-center mt-5" id="footer">
+    <div class="row">
+        <div class="col-12">
+            Join 17 000 PHP developers every month: <a href="/rss.xml">RSS</a>&nbsp;or&nbsp;<a href="https://twitter.com/votrubaT">@votrubaT</a>
+
+            <span class="pl-2 pr-2 hidden-sm-down">•</span>
+
+            <span class="hidden-sm-down">
+                Watch my <a href="https://github.com/tomasvotruba">open-source addiction</a>
+            </span>
+        </div>
+    </div>
+
+    <p>
+        Build by <a href="/thank-you/">56 people</a>
+
+        <span class="pl-2 pr-2">•</span>
+
+        Runs on <a href="https://www.statie.org/">Statie</a>
+
+        <span class="pl-2 pr-2">•</span>
+
+        <a href="/now/">Now</a>
+
+        <span class="hidden-sm-down">
+            <span class="pl-2 pr-2">•</span>
+            Hosted on <a href="https://github.com/tomasvotruba/tomasvotruba.cz">GitHub</a>
+        </span>
+    </p>
+</div>
+    </body>
+</html>

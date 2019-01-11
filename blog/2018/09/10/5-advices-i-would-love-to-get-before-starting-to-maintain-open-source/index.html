@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>5 Advices I Would Love to Get Before Starting to Maintain an Open Source | Tomas Votruba</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    
+    <link rel="alternate" type="application/rss+xml" title="Tomas Votruba Blog RSS" href="/rss.xml">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
+
+        <link href="/assets/bootstrap/bootstrap.min.css?v=1579013880" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/prism/prism.css?v=356540197" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/style.css?v=249721598" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/gifplayer/gifplayer.css" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/checklist.css?v=1119118397" rel="stylesheet" type="text/css" />
+
+    <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/assets/gifplayer/jquery.gifplayer.js"></script>
+    <script src="/assets/js/checklist.js" async defer></script>
+</head>
+    <body>
+        <!-- post_id: 139 -->
+
+        <div class="hidden-sm-down">
+    <nav class="navbar">
+        <div class="container-fluid">
+            <ul>
+                <li id="logo">
+                    <img src="https://avatars1.githubusercontent.com/u/924196?s=60&v=4" class="avatar">
+                    Tomas Votruba
+                </li>
+                <li class="active">
+                    <a href="/">Blog</a>
+                </li>
+                <li class="">
+                    <a href="/clusters/">Clusters</a>
+                </li>
+                <li class="">
+                    <a href="/mission/">Mission</a>
+                </li>
+                <li class="">
+                    <a href="/talks/">Talks</a>
+                </li>
+                <li class="">
+                    <a href="/contact/">Contact</a>
+                </li>
+                <li id="top-menu-search">
+                    <form method="get" action="https://www.google.com/search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction">
+                        <meta itemprop="target" content="https://www.google.com/search?q={q}"/>
+                        <input name="sitesearch" value="tomasvotruba.cz" type="hidden"/>
+                        <input itemprop="query-input" type="text" id="search-query" class="form-control" required="required" name="q" placeholder="Search..." autocomplete="off"/>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="hidden-md-up">
+    <nav class="navbar" id="mobile-menu">
+        <div class="container">
+            <a href="/" class="col-3 col-sm-3 active">
+                <em class="fas fa-book"></em>
+                <br>
+                PHP Blog
+            </a>
+            <a href="/clusters/" class="col-3 col-sm-3 ">
+                <em class="fas fa-share-alt"></em>
+                <br>
+                Clusters
+            </a>
+            <a href="/mission/" class="col-3 col-sm-3 ">
+                <em class="fas fa-heartbeat"></em>
+                <br>
+                Mission
+            </a>
+            <a href="/contact/" class="col-3 col-sm-3 ">
+                <em class="fas fa-phone"></em>
+                <br>
+                Contact
+            </a>
+        </div>
+    </nav>
+
+    <div class="hidden-md-up text-center row" id="top-menu-search-mobile">
+        <!-- inspired and taken from: https://github.com/yegor256/blog/blob/master/_layouts/default.html -->
+        <form method="get" action="https://www.google.com/search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction" class="col-md-12">
+            <meta itemprop="target" content="https://www.google.com/search?q={q}"/>
+            <input name="sitesearch" value="tomasvotruba.cz" type="hidden"/>
+            <input itemprop="query-input" type="text" id="search-query" class="form-control" required="required" name="q" placeholder="Search with Google..." autocomplete="off"/>
+        </form>
+    </div>
+</div>
+
+        <div class="mainContent">
+            <div class="container-fluid" id="post">
+                <h1 id="5-advices-i-would-love-to-get-before-starting-to-maintain-an-open-source"><a href="#5-advices-i-would-love-to-get-before-starting-to-maintain-an-open-source">5 Advices I Would Love to Get Before Starting to Maintain an Open Source</a></h1>
+
+                <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>6 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-09-Mon">Mon, Sep 10, 2018</time>
+    </li>
+
+            <li class="list-inline-item mr-3">
+            <em class="fas fa-fw fa-comments"></em>
+            <a href="https://www.tomasvotruba.cz/blog/2018/09/10/5-advices-i-would-love-to-get-before-starting-to-maintain-open-source/#disqus_thread">X</a> comments
+        </li>
+    
+            <li class="list-inline-item">
+            <em class="fas fa-fw fa-edit"></em>
+            <a href="https://github.com/TomasVotruba/tomasvotruba.cz/edit/master/source/_posts/2018/2018-09-10-5-advices-i-would-love-to-get-before-starting-to-maintain-open-source.md">Typo? Fix me, please</a>
+        </li>
+    
+    </ul>
+
+                
+                
+                <div class="card card-bigger">
+                    <div class="card-body">
+                        I wasn't always confident while making public every single line of PHP code I write. I had to take many blind paths, spend a night full of stress coding in unknown waters and make a lot of over-complicated code that backfired to me months later.
+<br><br>
+They say &quot;experience cannot be passed and it must be experienced&quot; and I agree with that, but still <strong>there are some shortcuts that would speed-up my path to joyful open-source coding</strong> I have today. Here are 5 of them.
+                    </div>
+                </div>
+
+                
+                <img src="/assets/images/posts/2018/advices-open-source/father-son.jpg" class="img-thumbnail">
+<h2 id="1-be-open-to-change-any-package"><a href="#1-be-open-to-change-any-package">1. Be Open to Change any Package</a></h2>
+<p>Everything changes and when it comes to software, it's exponentially faster. How much changed the school system we have nowadays and how much changed content we absorb - mostly through the internet - every day in the last 5 years?</p>
+<p>I used Nette for as my favorite framework for many many years. Later I found out what components and packages are and I picked few packages from Nette and few from Symfony for my base stack. One package was the hearth of all my packages - Dependency injection component. Nette\DI with default autowiring was light-years ahead in 2014. But Nette didn't have any new features anymore and the software grew exponentially. Symfony 2.8 came with autowiring. Symfony 3.3 came with <a href="/blog/2017/05/07/how-to-refactor-to-new-dependency-injection-features-in-symfony-3-3/">service autodiscovery</a>.</p>
+<h3 id="share-your-doubts"><a href="#share-your-doubts">Share Your Doubts</a></h3>
+<p>I loved most of the new features in Symfony and I integrated them as packages to Nette. Since I know their both DI components by the hearth, it was easy for me. But it my lazy-brain stated itching. <strong>Why do I create, maintain and test a code that was already written in another framework?</strong></p>
+<p>It was until one afternoon I was happy to share with <a href="https://www.martinhujer.cz/">Martin Hujer</a>. I shared my itching and how I love these Symfony DI features and he asked me very simple yet powerful question:</p>
+<blockquote class="blockquote text-center">
+    Why don't you switch that component from Nette to Symfony?
+</blockquote>
+<p>I didn't know the answer and I promised to make <strong>an experiment that night</strong>. I tried it on Statie and <a href="https://github.com/Symplify/Symplify/pull/184">this PR was born</a>. I'm still happy when I see this pull-request with <code>+425 −723</code>. The best refactoring is the one where you <strong>leave less code, more readable and with better features</strong>.</p>
+<p>The experiment worked and whole Symplify and Rector are now running on Symfony DependencyInjection (+ <a href="https://github.com/symplify/packagebuilder">few cool additions</a>).</p>
+<p><strong>So if there are good reasons to switch, don't let your past preferences hold you back - just switch</strong>.</p>
+<h2 id="2-don-t-keep-every-feature-you-have"><a href="#2-don-t-keep-every-feature-you-have">2. Don't Keep Every feature You Have</a></h2>
+<p>When I started my first open-source PHP packages, called Zenify, I focused to have as many features as possible. I thought it's the way to success - all frameworks did it.</p>
+<p>Then I became <a href="https://github.com/apigen/apigen">ApiGen</a> maintainer in 2014. It had over 30 options to configure: file encoding, colors in the command line, coding style check (oh yeah), enable/disable progress bar, check for newer version and many more. First I added more features that were requested and felt great, that the package is growing in its value. <strong>But does eating more and more food make your more healthy? The more feature there was, the more difficult it was to refactoring, to test and to add new features.</strong></p>
+<h3 id="find-out-what-you-don-t-need"><a href="#find-out-what-you-don-t-need">Find Out What You Don't Need</a></h3>
+<p>I investigate Github issues of ApiGen and found out, that many features were implemented after a single request. There was a possibility that only that single person needed it so there are 300 lines of PHP untested code just because the single person wanted a feature for that one run he used ApiGen.</p>
+<blockquote class="blockquote text-center">
+    The amount of code != the value of the code.
+</blockquote>
+<p>I realized there is a lot of &quot;dead&quot; code just a few people are using. This alone would be ok but dozens of <strong>these &quot;little&quot; features made the core code unable to maintain</strong>, so tool didn't work for 95 % users.</p>
+<p>I didn't know which options are used and which are not, so <strong>I did a little experiment</strong>. I made a release candidate version without these options. If the features were really important, some would create an issue - and there were such rare cases. But <a href="https://github.com/ApiGen/ApiGen/releases/tag/v4.0.0">8 in total</a> of these features could be dropped at the spot.</p>
+<p><strong>Instead of adding more and more features, you should focus on keeping the main value fit. Take 80/20 rule - drop 20 % of the least used features to make 80 % of those most valuable grow faster.</strong></p>
+<h2 id="3-lock-to-lts-maintained-dependencies-and-green-php"><a href="#3-lock-to-lts-maintained-dependencies-and-green-php">3. Lock to LTS, Maintained Dependencies and green PHP</a></h2>
+<p>I thought supporting the oldest version is the best because that's how you get the most users. I supported PHP 5.3, 5.4, 5.5, 5.6 and 7.0. What a wide range of diversity, who cares PHP 5.3 was in End of life, were still people using it so I have to be there for them!</p>
+<p>How naive I was :) it only caused me troubles with maintaining and I taught people it's ok to use PHP versions without security fixes.
+Now I support PHP 7.1 and 7.2 and it's just a fine amount of PHP versions to maintain.</p>
+<p>You don't have to make the same mistakes as me. There are many great examples that work today:</p>
+<ul>
+<li><a href="https://github.com/sebastianbergmann/phpunit/wiki/Release-Process">Cyclic PHPUnit Release Process</a> - stick to <a href="https://www.tomasvotruba.cz/blog/2017/10/30/what-can-you-learn-from-menstruation-and-symfony-releases/"><em>menstruation</em> dependency</a></li>
+<li><a href="http://php.net/supported-versions.php">PHP.net - Supported Versions</a> - stay green on PHP</li>
+<li><a href="https://gophp71.org/">gophp71.org</a> - go with the mainstream</li>
+</ul>
+<p><strong>Go through them and suck the gold in.</strong></p>
+<p>But this can also backfire. I was so frustrated by maintaining more versions that I could manage, that I bounced to the other extreme - tried to &quot;educate&quot; people to update as early as they can. I tend to lock to the highest Symfony version, no matter if LTS or not. So until just a couple of months ago, Symplify supported only Symfony 4, not Symfony 3.4 today. I had many discussion about that, where I explained reasons like the one above. The last person who finally &quot;broke&quot; me for good was <a href="https://github.com/lchrusciel">Łukasz Chruściel</a> from Sylius when he asked:</p>
+<blockquote class="blockquote text-center">
+    "How difficult would it be to support Symfony 3.4 as well?"
+</blockquote>
+<p>I didn't know, so I made an experiment. And <a href="https://github.com/Symplify/Symplify/pull/818/files">this PR was born</a>.</p>
+<p><strong>Since then I lock to <a href="https://symfony.com/roadmap#maintained-symfony-branches">Symfony LTS</a>, not higher.</strong></p>
+<h2 id="4-all-you-need-to-maintain-is-1-repository"><a href="#4-all-you-need-to-maintain-is-1-repository">4. All You Need to Maintain is 1 Repository</a></h2>
+<p>It's very easy to create a PHP package nowadays. It's very easy to create 10 of them. When I started with Zenify, then Symplify, the package-counter could be around 20 for 2 years. I thought that only people who earn living from the open-source project <a href="/blog/2017/06/01/thank-you-david/">David Grudl</a> could maintain such a big number of packages. I had zero income from them, but I wanted them to live, so maintained them... and then I burned out.</p>
+<p>After that, I recall I was looking at Symfony repository - many packages but just repository. WTF? It took a few more months to find out, <a href="https://gomonorepo.org/">what monorepo is</a> and understand how it works and how to set it up in very very basic form.</p>
+<p>Nowadays there are <strong>projects to guide you</strong>:</p>
+<ul>
+<li><a href="https://gomonorepo.org/">GoMonorepo.org</a></li>
+<li><a href="https://github.com/symplify/monorepobuilder">Symplify\MonorepoBuilder</a> for Travis split project</li>
+<li><a href="https://github.com/shopsys/monorepo-tools">shopsys/monorepo-tools</a> for feature branch builds/Docker/Jenkins/Circle CI projects</li>
+</ul>
+<p>...so if you know YAML syntax, how to open a command line and you have a Github account, you also know how to run your own monorepo in 10 minutes even if you see it for the first time.</p>
+<p>In that time, <a href="https://phpfashion.com/prave-jsem-smazal-nette-framework">Nette went from monorepo to multirepo</a>. I didn't know if that opposite way was the right step for me but I wanted to know. <strong>So I made a small experiment</strong> - a monorepo with 2 packages. It was just awesome. 1 commit to all, instead of duplicated commits in each package.</p>
+<p><strong>I never came back.</strong></p>
+<h2 id="5-don-t-take-advise-as-granted-experiment-for-yourself"><a href="#5-don-t-take-advise-as-granted-experiment-for-yourself">5. Don't Take Advise as Granted, Experiment for Yourself</a></h2>
+<p><strong>No one knows the answer for your</strong>. The most of these fuckups above were based on the result of the experience of someone else. &quot;If he's doing this and this and he's popular, he's right.&quot; Or maybe he isn't, try it for yourself. Fail fast to learn fast what works best for your own situation.</p>
+<p>I wouldn't know how to do it right if I didn't go wrong first.</p>
+<p><br></p>
+<p>Happy growing!</p>
+
+                <br>
+
+                
+                <div class="card mb-5">
+                    <div class="card-body text-center">
+                        <a href="https://github.com/TomasVotruba/tomasvotruba.cz/edit/master/source/_posts/2018/2018-09-10-5-advices-i-would-love-to-get-before-starting-to-maintain-open-source.md" class="btn btn-info btn-sm">
+                            <em class="fas fa-fw fa-edit"></em>
+                            Typo? Fix it, please
+                        </a>
+                        &nbsp;and join <a href="/thank-you">56 people</a> who build this website
+                    </div>
+                </div>
+
+                <a name="comments"></a>
+
+                <div id="disqus_thread"></div>
+
+<script type="text/javascript">
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//' + 'itsworthsharing' + '.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+            </div>
+
+            <script id="dsq-count-scr" src="https://itsworthsharing.disqus.com/count.js" async defer></script>
+        </div>
+
+        <script>
+    ga=function(){ ga.q.push(arguments) };
+    ga.q=[];
+    ga.l=+new Date;
+    ga('create', 'UA-46082345-1', 'auto');
+    ga('send','pageview');
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+<script src="/assets/prism/prism.js"></script>
+
+<script>
+    $('.gifplayer').gifplayer();
+</script>
+
+<div class="text-center mt-5" id="footer">
+    <div class="row">
+        <div class="col-12">
+            Join 17 000 PHP developers every month: <a href="/rss.xml">RSS</a>&nbsp;or&nbsp;<a href="https://twitter.com/votrubaT">@votrubaT</a>
+
+            <span class="pl-2 pr-2 hidden-sm-down">•</span>
+
+            <span class="hidden-sm-down">
+                Watch my <a href="https://github.com/tomasvotruba">open-source addiction</a>
+            </span>
+        </div>
+    </div>
+
+    <p>
+        Build by <a href="/thank-you/">56 people</a>
+
+        <span class="pl-2 pr-2">•</span>
+
+        Runs on <a href="https://www.statie.org/">Statie</a>
+
+        <span class="pl-2 pr-2">•</span>
+
+        <a href="/now/">Now</a>
+
+        <span class="hidden-sm-down">
+            <span class="pl-2 pr-2">•</span>
+            Hosted on <a href="https://github.com/tomasvotruba/tomasvotruba.cz">GitHub</a>
+        </span>
+    </p>
+</div>
+    </body>
+</html>
+
+        <meta property="og:type" content="article" />
+    <meta property="og:title" content="5 Advices I Would Love to Get Before Starting to Maintain an Open Source" />
+    <meta property="og:description" content="I wasn&#039;t always confident while making public every single line of PHP code I write. I had to take many blind paths, spend a night full of stress coding in unknown waters and make a lot of over-complicated code that backfired to me months later.
+
+They say &amp;quot;experience cannot be passed and it must be experienced&amp;quot; and I agree with that, but still there are some shortcuts that would speed-up my path to joyful open-source coding I have today. Here are 5 of them." />
+    <meta property="og:url" content="https://www.tomasvotruba.cz/blog/2018/09/10/5-advices-i-would-love-to-get-before-starting-to-maintain-open-source" />
+
+        <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@votrubaT">
+    <meta name="twitter:title" content="5 Advices I Would Love to Get Before Starting to Maintain an Open Source" />
+    <meta name="twitter:description" content="I wasn&#039;t always confident while making public every single line of PHP code I write. I had to take many blind paths, spend a night full of stress coding in unknown waters and make a lot of over-complicated code that backfired to me months later.
+
+They say &amp;quot;experience cannot be passed and it must be experienced&amp;quot; and I agree with that, but still there are some shortcuts that would speed-up my path to joyful open-source coding I have today. Here are 5 of them." />

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>Why is Your Company Losing Money By Not Open Sourcing 2: Code Quality | Tomas Votruba</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    
+    <link rel="alternate" type="application/rss+xml" title="Tomas Votruba Blog RSS" href="/rss.xml">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
+
+        <link href="/assets/bootstrap/bootstrap.min.css?v=393554718" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/prism/prism.css?v=1448108362" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/style.css?v=1450216168" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/gifplayer/gifplayer.css" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/checklist.css?v=1711364052" rel="stylesheet" type="text/css" />
+
+    <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/assets/gifplayer/jquery.gifplayer.js"></script>
+    <script src="/assets/js/checklist.js" async defer></script>
+</head>
+    <body>
+        <!-- post_id: 130 -->
+
+        <div class="hidden-sm-down">
+    <nav class="navbar">
+        <div class="container-fluid">
+            <ul>
+                <li id="logo">
+                    <img src="https://avatars1.githubusercontent.com/u/924196?s=60&v=4" class="avatar">
+                    Tomas Votruba
+                </li>
+                <li class="active">
+                    <a href="/">Blog</a>
+                </li>
+                <li class="">
+                    <a href="/clusters/">Clusters</a>
+                </li>
+                <li class="">
+                    <a href="/mission/">Mission</a>
+                </li>
+                <li class="">
+                    <a href="/talks/">Talks</a>
+                </li>
+                <li class="">
+                    <a href="/contact/">Contact</a>
+                </li>
+                <li id="top-menu-search">
+                    <form method="get" action="https://www.google.com/search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction">
+                        <meta itemprop="target" content="https://www.google.com/search?q={q}"/>
+                        <input name="sitesearch" value="tomasvotruba.cz" type="hidden"/>
+                        <input itemprop="query-input" type="text" id="search-query" class="form-control" required="required" name="q" placeholder="Search..." autocomplete="off"/>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="hidden-md-up">
+    <nav class="navbar" id="mobile-menu">
+        <div class="container">
+            <a href="/" class="col-3 col-sm-3 active">
+                <em class="fas fa-book"></em>
+                <br>
+                PHP Blog
+            </a>
+            <a href="/clusters/" class="col-3 col-sm-3 ">
+                <em class="fas fa-share-alt"></em>
+                <br>
+                Clusters
+            </a>
+            <a href="/mission/" class="col-3 col-sm-3 ">
+                <em class="fas fa-heartbeat"></em>
+                <br>
+                Mission
+            </a>
+            <a href="/contact/" class="col-3 col-sm-3 ">
+                <em class="fas fa-phone"></em>
+                <br>
+                Contact
+            </a>
+        </div>
+    </nav>
+
+    <div class="hidden-md-up text-center row" id="top-menu-search-mobile">
+        <!-- inspired and taken from: https://github.com/yegor256/blog/blob/master/_layouts/default.html -->
+        <form method="get" action="https://www.google.com/search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction" class="col-md-12">
+            <meta itemprop="target" content="https://www.google.com/search?q={q}"/>
+            <input name="sitesearch" value="tomasvotruba.cz" type="hidden"/>
+            <input itemprop="query-input" type="text" id="search-query" class="form-control" required="required" name="q" placeholder="Search with Google..." autocomplete="off"/>
+        </form>
+    </div>
+</div>
+
+        <div class="mainContent">
+            <div class="container-fluid" id="post">
+                <h1 id="why-is-your-company-losing-money-by-not-open-sourcing-2-code-quality"><a href="#why-is-your-company-losing-money-by-not-open-sourcing-2-code-quality">Why is Your Company Losing Money By Not Open Sourcing 2: Code Quality</a></h1>
+
+                <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>8 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2018-08-Thu">Thu, Aug 9, 2018</time>
+    </li>
+
+            <li class="list-inline-item mr-3">
+            <em class="fas fa-fw fa-comments"></em>
+            <a href="https://www.tomasvotruba.cz/blog/2018/08/09/why-is-your-company-losing-money-by-not-open-sourcing-2-code-quality/#disqus_thread">X</a> comments
+        </li>
+    
+            <li class="list-inline-item">
+            <em class="fas fa-fw fa-edit"></em>
+            <a href="https://github.com/TomasVotruba/tomasvotruba.cz/edit/master/source/_posts/2018/2018-08-09-why-is-your-company-losing-money-by-not-open-sourcing-2-code-quality.md">Typo? Fix me, please</a>
+        </li>
+    
+    </ul>
+
+                
+                
+                <div class="card card-bigger">
+                    <div class="card-body">
+                        There is more high-quality code in open-source than in closed-source. Open-source code is rarely rewritten from the scratch investing loads of time and effort - <a href="https://blog.codinghorror.com/version-1-sucks-but-ship-it-anyway/">apart 1st version because it's designed to be dropped</a>. This case is not so rare in the private sector in long-term projects.
+<br><br>
+<strong>Rubber ducking. Standard-bias of public behavior. Social learning. Embodied know-how.</strong> Values natural for open-source, yet seen only in high-standard private coding. Why is that? And <strong>how to make your project benefit from these values</strong>?
+                    </div>
+                </div>
+
+                
+                <h2 id="1-cheap-standards-vs-expensive-private-few-person-based-solutions"><a href="#1-cheap-standards-vs-expensive-private-few-person-based-solutions">1. Cheap Standards vs. Expensive Private Few-Person-Based Solutions</a></h2>
+<h3 id="why-even-bother-with-standards"><a href="#why-even-bother-with-standards">Why Even Bother With Standards?</a></h3>
+<p>Standards are not just a set of rules to bully your individual approach as a programmer or as a team. Spaces and tabs are not here to make teams, although the in-group and out-group effect is strong. Standards are brought up naturally by people, who do so much repetitive work, they want to automate it. <strong>They see a pattern a small majority is using to save time from too little details and invest in values that matter for them instead</strong>. Whether it's sustainable code people will love so much they'll want to grab a beer with you or 1-minute deployment of your application.</p>
+<p>That's the reason all these PSR-2, PSR-4 etc. were created. Huge thanks to all guys from FIG - <strong>especially for <a href="https://medium.com/php-fig">monthly summaries on Medium</a></strong>.</p>
+<p>Btw, do you know <a href="https://www.php-fig.org/faqs/#what-does-psr-stand-for">what does <em>PSR</em> stand for</a>? <em>PHP Strict Rules...</em>? That's would terrible. It's <strong>PHP Standard Recommendation</strong>. Read it as:</p>
+<blockquote class="blockquote text-center">
+    "Here is a baseline for a thing you don't want to think about. You can work with it and most people will understand it without you explaining anything. Just like that."
+</blockquote>
+<p>When I talk about standards, there lays much more value beyond PSRs. That's how we get to <em>the money</em>.</p>
+<h3 id="where-is-your-company-losing-money"><a href="#where-is-your-company-losing-money">Where is Your Company Losing Money?</a></h3>
+<p>If your team start a big project, you need to resolve many <em>first-steps</em>:</p>
+<ul>
+<li>What rules should belong to coding standard?</li>
+<li>How to deploy and where?</li>
+<li>Should you use MVC or plain PHP?</li>
+<li>How to design architecture that will last over 5 years?</li>
+<li>How to make sure that after you leave, others will still understand and effectively contribute the code?</li>
+<li>etc.</li>
+</ul>
+<p><strong>You can waste thousands of company money by reinventing everything from scratch. Everything that community already solved for you.</strong></p>
+<p>By choosing a framework that is not much adopted or doesn't respect standard, <strong>naturally leads to extra pointless expenses</strong>:</p>
+<ul>
+<li>To pay somebody to teach them the framework</li>
+<li>To pay people to learn the specific non-standard behavior of the framework</li>
+<li>To pay for bugs that will be created by not following a framework that has such practices embodied in the code</li>
+<li>To pay for the eventual rewriting of your coupled code in next 10 years to a new framework the next team will choose, after the first team will leave you for a better experience - personally, I've seen a code of 8 such projects.</li>
+</ul>
+<h3 id="frameworks-teach-bad-practises"><a href="#frameworks-teach-bad-practises">Frameworks Teach Bad Practises</a></h3>
+<p>I hear you: &quot;but most PHP frameworks teach people bad practice just to vendor lock them&quot;. I <a href="https://matthiasnoback.nl/2014/10/unnecessary-contrapositions-in-the-new-symfony-best-practices/">agree</a>. <strong>But it's still easier to learn what works and what doesn't from standard frameworks. Why? The amount of paths to create a website is limited, so is the scope we have to orientate. Compared to plain PHP where you can use zillion ways to create a website.</strong></p>
+<p>It's like having parents - they bring you something good and something bad. Yet it's still better to learn from them than from no parents at all.</p>
+<h3 id="get-embodied-know-how-for-free"><a href="#get-embodied-know-how-for-free">Get Embodied Know-How For Free</a></h3>
+<p>So instead of putting money into lecturers that will teach you rarely used technologies, you can adopt standards that are natural in open-source and to a big part of the PHP community. <strong>That way the know-how is embedded into your code and you don't need a lecturer to explain it.</strong></p>
+<p>What does it mean? Imagine Symfony. Just by using this framework, you'll get access to many PSRs that Symfony uses. That allows you to use many PHP packages that support these PRSs. Instead of writing Doctrine yourself from scratch, just use it and save yourself loads of money.</p>
+<h2 id="2-how-to-get-all-services-for-your-project-for-0-a-month"><a href="#2-how-to-get-all-services-for-your-project-for-0-a-month">2. How to Get All Services for Your Project for 0 $ a Month?</a></h2>
+<p>From Travis, Github, Gitlab, CircleCI, Github Pages, to Slack, Cloudflare and many more - they give you <strong>free services for open-sourced code</strong>. They probably believe most people will start there for free. Then they grow and change to closed-source when the code base is so huge to be kept at high standards. Maybe they need to do some nasty things that people should not know.</p>
+<p>Instead, you can go vice-versa. Drop Jenkins, private Github, private Travis and all the other services and <strong>go from 5000 $ of expenses to 0 $ in one week</strong>.</p>
+<h3 id="all-about-the-money"><a href="#all-about-the-money">All About the Money</a></h3>
+<p>A reminder this is not solely about the money. You can save money for private Github and Travis just by migrating to private Gitlab that you can even host. Many friends and projects of I know work this way. But the benefit I talk about works the best in one wave with all other benefits, like embodied know-how, mentoring from experts and <a href="/blog/2018/07/26/why-is-your-company-losing-money-by-not-open-sourcing-1-hiring/">open-source hiring</a>.</p>
+<h2 id="3-how-to-pay-top-php-mentors-0"><a href="#3-how-to-pay-top-php-mentors-0">3. How to Pay Top PHP Mentors 0 $</a></h2>
+<p>Tom Preston-Werner, one of Github founders <a href="http://tom.preston-werner.com/2011/11/22/open-source-everything.html">wrote</a>:</p>
+<blockquote class="blockquote">
+    "<strong>Smart people like to hang out with other smart people. Smart developers like to hang out with smart code</strong>. When you open source useful code, you attract talent. Every time a talented developer cracks open the code to one of your projects, you win. I've had many great conversations at tech conferences about my open source code. Some of these encounters have led to ideas that directly resulted in better solutions to problems I was having with my projects. In an industry with such a huge range of creativity and productivity between developers, the right eyeballs on your code can make a big difference."
+</blockquote>
+<p>The best people don't go after money, nor powerful Docker cluster setup, nor extra 5 days of holiday. These might be important elements and their absence won't appreciate, but the best programmers strive for something extra.</p>
+<p><strong>The best programmers go for know-how, credit, and impact.</strong></p>
+<h3 id="impact-or-5-days-of-extra-holiday"><a href="#impact-or-5-days-of-extra-holiday">Impact or 5 Days of Extra Holiday?</a></h3>
+<p>Imagine this: you contribute a feature to a private project for selling cars. If you're lucky, 2 more programmers will see your code during the code review, then it gets merged and forgotten until there is a bug with your name in <code>git blame</code> line.</p>
+<p>On the other hand, <strong>if you contribute to a Symfony project, around 10-20 people on average will see your code pull-request</strong>. And if it gets merged? <strong>Your code will be downloaded to <a href="https://packagist.org/packages/symfony/http-kernel/stats">110 000+ applications every day</a></strong>.</p>
+<p>Of course, it's nonsense to compare your <em>about-to-be-open-sourced</em> project with 13-years old Symfony. Yet 10 downloads a week is a huge success compared to current zero. This number will be only growing if you continue the package development.</p>
+<p>I remember EasyCodingStandard had 3 downloads a day (my, my girlfriend and my mum ;)). Now a 1,5 year later it has over <a href="https://packagist.org/packages/symplify/easy-coding-standard/stats">500 installs a day</a>.</p>
+<h3 id="give-me-the-mentors"><a href="#give-me-the-mentors">Give Me the Mentors</a></h3>
+<p>So where do the mentors come from? They're people using your package or - and that's more common than you think - <strong>a people who love to spread their gene code into commits of your package by</strong> cleaning it up or adding their package that will help you with the code.</p>
+<p>Here are few examples of <em>win-win</em> situation I noticed on Github:</p>
+<ul>
+<li><a href="https://github.com/nikic/PHP-Parser/pull/408">Tomas Votruba fixing coding style in php-parser</a></li>
+<li><a href="https://github.com/php/php-src/pulls?q=is%3Apr+author%3Acarusogabriel+is%3Aclosed+sort%3Aupdated-desc">Gabriel Caruso and his 110 PRs to php-src</a></li>
+<li><a href="https://github.com/cakephp/cakephp/pull/9943">Ondrej Mirtes adding PHPStan to CakePHP</a></li>
+</ul>
+<p><strong>One could say that by open-sourcing a project you'll get the attention of alfa-males programmers.</strong></p>
+<p>Such programmers will give you contributions for free. They'll talk with you for free, they'll suggest you or send you features for free and that's definitely less than what your company is paying programmers for the work. Well, not for free, but <strong>for the credit that open-source project's popularity will give them back</strong>. They wouldn't do it if you'd remove their names from commits messages.</p>
+<h3 id="be-opened-to-free-fixes"><a href="#be-opened-to-free-fixes">Be Opened to Free Fixes</a></h3>
+<p>By open-sourcing, you also say: &quot;Do we have a bug? Come and fix it, please&quot;. One example for all:</p>
+<p>I was using <a href="http://naucmese.cz/">Naucmese.cz</a> a lecture from anyone to anyone portal about 5 years ago. I found a bug. 2 bugs. After the 3rd bug, I wrote them &quot;just open-source the project and I'll fix it for free&quot;. I was frustrated by those bugs that <strong>I'd be happy to invest 30 minutes of my free time to fix them and make using the application much nicer experience</strong>. If that project would be open-sourced, they'd get 2-3 hours per week of my work for free in that time. Instead, they hired me but that's another story.</p>
+<p>My approach still stands for other projects, just write me about freshly open-sourced code and I'd be happy to be your first contributor on GitHub.</p>
+<h2 id="4-the-coding-naked-man"><a href="#4-the-coding-naked-man">4. The Coding Naked Man</a></h2>
+<p>Do you know <a href="https://blog.codinghorror.com/rubber-duck-problem-solving/">rubber ducking</a>? In short: <strong>it's way of working with an invisible second person next to you that increases the quality of code you produce</strong>.</p>
+<p>I've experienced this myself in many layers:</p>
+<p>When I was working in Brno on freelance and had a small flat just for myself, I spent 1/3 of my work time playing games and watching porn.
+I wanted to stop, I wanted to focus, to code, to work, but it was extremely difficult for every single of 3 months I was there alone.
+Then I moved to coworking center into open-space and suddenly - it stopped. I began to be 200 % more productive in the first week. How was that possible? Well, obviously I was shy to watch porn and masturbate in the public so I worked that 1/3 of time, but there is more. <strong>Just by having people around me, I wanted to be like them, to work, to bring values. In such a place as coworking hub, it was standard to work and to do meaningful work</strong>. So I adapted for better just by being there.</p>
+<p>The same goes for <em>Coding Naked Man</em> principle. When I put my first code open-source (after 2 years of hiding in fear from rejection and being a fraud) on GitHub in 2010, I was super ashamed for the code. It felt like I'm putting my favorite porn on school page where every single schoolmate could see it.</p>
+<p>By simply putting the code out I realized that I can do much better with the code. But what's the most important, <strong>I started to see path what exactly can I learn</strong> just by seeing other similar projects.</p>
+<h3 id="hide-your-private-shame"><a href="#hide-your-private-shame">Hide Your Private Shame</a></h3>
+<p>You can probably see this principle work even in your company. Have you ever seen an open-source project where maintainers say, that you can use static methods, public properties, and service locators if you know why? I don't say that happens, but it's very rare.</p>
+<p>On the other hand, when I code-review private projects on such code smells, I get almost brain-washed answers like:</p>
+<ul>
+<li>&quot;we had to use it there&quot;,</li>
+<li>&quot;we know it's not optimal, but...&quot;,</li>
+<li>&quot;we didn't have time&quot;,</li>
+<li>&quot;we know we have to keep it only in that place&quot;.</li>
+</ul>
+<p>But when I ask more, I see they have no deeper idea why. They only know the 1 reason to write bad code even if they really don't have to. <strong>It's like a candy you steal but nobody knows about it</strong>. Nobody else will ever see this code, and if they'll do, you'd be already in that another company.</p>
+<p>And it's super difficult to think open while being closed. But by having code open-source, you'll adopt this mindset by natural in just a few months. After years, I can now feel if I'm hacking something the wrong way <a href="/blog/2018/04/26/how-i-got-into-static-trap-and-made-fool-of-myself/">that will hunt me down 2 years later</a> or if the code really can't be better.</p>
+<p><br><br></p>
+<p>And that's it!</p>
+<p>Happy open-sourcing</p>
+
+                <br>
+
+                
+                <div class="card mb-5">
+                    <div class="card-body text-center">
+                        <a href="https://github.com/TomasVotruba/tomasvotruba.cz/edit/master/source/_posts/2018/2018-08-09-why-is-your-company-losing-money-by-not-open-sourcing-2-code-quality.md" class="btn btn-info btn-sm">
+                            <em class="fas fa-fw fa-edit"></em>
+                            Typo? Fix it, please
+                        </a>
+                        &nbsp;and join <a href="/thank-you">56 people</a> who build this website
+                    </div>
+                </div>
+
+                <a name="comments"></a>
+
+                <div id="disqus_thread"></div>
+
+<script type="text/javascript">
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//' + 'itsworthsharing' + '.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+            </div>
+
+            <script id="dsq-count-scr" src="https://itsworthsharing.disqus.com/count.js" async defer></script>
+        </div>
+
+        <script>
+    ga=function(){ ga.q.push(arguments) };
+    ga.q=[];
+    ga.l=+new Date;
+    ga('create', 'UA-46082345-1', 'auto');
+    ga('send','pageview');
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+<script src="/assets/prism/prism.js"></script>
+
+<script>
+    $('.gifplayer').gifplayer();
+</script>
+
+<div class="text-center mt-5" id="footer">
+    <div class="row">
+        <div class="col-12">
+            Join 17 000 PHP developers every month: <a href="/rss.xml">RSS</a>&nbsp;or&nbsp;<a href="https://twitter.com/votrubaT">@votrubaT</a>
+
+            <span class="pl-2 pr-2 hidden-sm-down">•</span>
+
+            <span class="hidden-sm-down">
+                Watch my <a href="https://github.com/tomasvotruba">open-source addiction</a>
+            </span>
+        </div>
+    </div>
+
+    <p>
+        Build by <a href="/thank-you/">56 people</a>
+
+        <span class="pl-2 pr-2">•</span>
+
+        Runs on <a href="https://www.statie.org/">Statie</a>
+
+        <span class="pl-2 pr-2">•</span>
+
+        <a href="/now/">Now</a>
+
+        <span class="hidden-sm-down">
+            <span class="pl-2 pr-2">•</span>
+            Hosted on <a href="https://github.com/tomasvotruba/tomasvotruba.cz">GitHub</a>
+        </span>
+    </p>
+</div>
+    </body>
+</html>
+
+        <meta property="og:type" content="article" />
+    <meta property="og:title" content="Why is Your Company Losing Money By Not Open Sourcing 2: Code Quality" />
+    <meta property="og:description" content="There is more high-quality code in open-source than in closed-source. Open-source code is rarely rewritten from the scratch investing loads of time and effort - apart 1st version because it&#039;s designed to be dropped. This case is not so rare in the private sector in long-term projects.
+
+Rubber ducking. Standard-bias of public behavior. Social learning. Embodied know-how. Values natural for open-source, yet seen only in high-standard private coding. Why is that? And how to make your project benefit from these values?" />
+    <meta property="og:url" content="https://www.tomasvotruba.cz/blog/2018/08/09/why-is-your-company-losing-money-by-not-open-sourcing-2-code-quality" />
+
+        <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@votrubaT">
+    <meta name="twitter:title" content="Why is Your Company Losing Money By Not Open Sourcing 2: Code Quality" />
+    <meta name="twitter:description" content="There is more high-quality code in open-source than in closed-source. Open-source code is rarely rewritten from the scratch investing loads of time and effort - apart 1st version because it&#039;s designed to be dropped. This case is not so rare in the private sector in long-term projects.
+
+Rubber ducking. Standard-bias of public behavior. Social learning. Embodied know-how. Values natural for open-source, yet seen only in high-standard private coding. Why is that? And how to make your project benefit from these values?" />

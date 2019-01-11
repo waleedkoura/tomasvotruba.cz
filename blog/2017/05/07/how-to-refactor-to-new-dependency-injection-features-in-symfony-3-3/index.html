@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>How to refactor to new Dependency Injection features in Symfony 3.3 | Tomas Votruba</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    
+    <link rel="alternate" type="application/rss+xml" title="Tomas Votruba Blog RSS" href="/rss.xml">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
+
+        <link href="/assets/bootstrap/bootstrap.min.css?v=415943832" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/prism/prism.css?v=1453086847" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/style.css?v=785601127" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/gifplayer/gifplayer.css" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/checklist.css?v=339501486" rel="stylesheet" type="text/css" />
+
+    <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/assets/gifplayer/jquery.gifplayer.js"></script>
+    <script src="/assets/js/checklist.js" async defer></script>
+</head>
+    <body>
+        <!-- post_id: 38 -->
+
+        <div class="hidden-sm-down">
+    <nav class="navbar">
+        <div class="container-fluid">
+            <ul>
+                <li id="logo">
+                    <img src="https://avatars1.githubusercontent.com/u/924196?s=60&v=4" class="avatar">
+                    Tomas Votruba
+                </li>
+                <li class="active">
+                    <a href="/">Blog</a>
+                </li>
+                <li class="">
+                    <a href="/clusters/">Clusters</a>
+                </li>
+                <li class="">
+                    <a href="/mission/">Mission</a>
+                </li>
+                <li class="">
+                    <a href="/talks/">Talks</a>
+                </li>
+                <li class="">
+                    <a href="/contact/">Contact</a>
+                </li>
+                <li id="top-menu-search">
+                    <form method="get" action="https://www.google.com/search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction">
+                        <meta itemprop="target" content="https://www.google.com/search?q={q}"/>
+                        <input name="sitesearch" value="tomasvotruba.cz" type="hidden"/>
+                        <input itemprop="query-input" type="text" id="search-query" class="form-control" required="required" name="q" placeholder="Search..." autocomplete="off"/>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="hidden-md-up">
+    <nav class="navbar" id="mobile-menu">
+        <div class="container">
+            <a href="/" class="col-3 col-sm-3 active">
+                <em class="fas fa-book"></em>
+                <br>
+                PHP Blog
+            </a>
+            <a href="/clusters/" class="col-3 col-sm-3 ">
+                <em class="fas fa-share-alt"></em>
+                <br>
+                Clusters
+            </a>
+            <a href="/mission/" class="col-3 col-sm-3 ">
+                <em class="fas fa-heartbeat"></em>
+                <br>
+                Mission
+            </a>
+            <a href="/contact/" class="col-3 col-sm-3 ">
+                <em class="fas fa-phone"></em>
+                <br>
+                Contact
+            </a>
+        </div>
+    </nav>
+
+    <div class="hidden-md-up text-center row" id="top-menu-search-mobile">
+        <!-- inspired and taken from: https://github.com/yegor256/blog/blob/master/_layouts/default.html -->
+        <form method="get" action="https://www.google.com/search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction" class="col-md-12">
+            <meta itemprop="target" content="https://www.google.com/search?q={q}"/>
+            <input name="sitesearch" value="tomasvotruba.cz" type="hidden"/>
+            <input itemprop="query-input" type="text" id="search-query" class="form-control" required="required" name="q" placeholder="Search with Google..." autocomplete="off"/>
+        </form>
+    </div>
+</div>
+
+        <div class="mainContent">
+            <div class="container-fluid" id="post">
+                <h1 id="how-to-refactor-to-new-dependency-injection-features-in-symfony-3-3"><a href="#how-to-refactor-to-new-dependency-injection-features-in-symfony-3-3">How to refactor to new Dependency Injection features in Symfony 3.3</a></h1>
+
+                <ul class="list-inline post-metadata">
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-clock fa-fw"></em>
+        <strong>5 min</strong>
+    </li>
+
+    <li class="list-inline-item mr-3">
+        <em class="fas fa-calendar fa-fw"></em>
+        <time datetime="2017-05-Sun">Sun, May 7, 2017</time>
+    </li>
+
+            <li class="list-inline-item mr-3">
+            <em class="fas fa-fw fa-comments"></em>
+            <a href="https://www.tomasvotruba.cz/blog/2017/05/07/how-to-refactor-to-new-dependency-injection-features-in-symfony-3-3/#disqus_thread">X</a> comments
+        </li>
+    
+            <li class="list-inline-item">
+            <em class="fas fa-fw fa-edit"></em>
+            <a href="https://github.com/TomasVotruba/tomasvotruba.cz/edit/master/source/_posts/2017/2017-05-07-how-to-refactor-to-new-dependency-injection-features-in-symfony-3-3.md">Typo? Fix me, please</a>
+        </li>
+    
+    </ul>
+
+                
+                                    <div class="card border-success card-bigger">
+                        <div class="card-header text-white bg-success">
+                            <strong>This post was updated on December 2018</strong>
+                        </div>
+                        <div class="card-body">
+                            I've released <a href="https://github.com/Symplify/Autodiscovery">Symplify/Autodiscovery</a> package, that <strong><a href="https://github.com/Symplify/Symplify/blob/master/packages/Autodiscovery/README.md#yaml-convertor">migrates</a> old <code>service.yml</code> configs to autodiscovery format</strong> for you. <a href="/blog/2018/12/27/how-to-convert-all-your-symfony-service-configs-to-autodiscovery/">Here is how</a>.
+<br><br>
+Why do it manually? :)
+
+                        </div>
+                    </div>
+
+                    <br>
+                
+                <div class="card card-bigger">
+                    <div class="card-body">
+                        This May will be released Symfony 3.3 with many DependencyInjection improvements.
+Each of them is quite nice, <strong>but combined together - they are huge jump</strong> compare to what we have now.
+<br><br>
+Today I will show you what code can you drop and how to migrate it.
+                    </div>
+                </div>
+
+                
+                <h2 id="what-is-new"><a href="#what-is-new">What is New?</a></h2>
+<p>Symfony 3.3+ brings new that will completely <strong>change they we register services</strong>:</p>
+<ul>
+<li><a href="https://symfony.com/blog/new-in-symfony-3-3-service-autoconfiguration"><code>autoconfigure</code></a></li>
+<li><a href="https://symfony.com/blog/new-in-symfony-3-3-simpler-service-configuration"><code>_defaults</code> and <code>instanceof</code></a></li>
+<li><a href="https://symfony.com/blog/new-in-symfony-3-3-optional-class-for-named-services">named services → class services</a></li>
+<li><a href="https://github.com/symfony/symfony/pull/21289">PSR-4-based service autodiscovery</a></li>
+</ul>
+<p>You can click read post/PR in detail, but you take <strong>this shortcut to learn them</strong>...</p>
+<p><br></p>
+<blockquote class="blockquote text-center">
+    "A full code example is worth ten thousand words of explanation."
+    <footer class="blockquote-footer">Stephen P. Thomas</footer></blockquote>
+<p><br></p>
+<h2 id="refactor-service-config-in-5-steps"><a href="#refactor-service-config-in-5-steps">Refactor Service Config in 5 Steps</a></h2>
+<p>This is service config in Application in Symfony 3.2 or lower.</p>
+<p>We apply all features we can and I always add a small <code># comment</code> to the code with explanation.</p>
+<pre><code class="language-yaml"># app/config/services.yml
+services:
+    some_service:
+        class: App\SomeService
+        autowire: true
+
+    some_controller:
+        class: App\Controller\SomeController
+        autowire: true
+
+    first_repository:
+        class: App\Repository\FirstRepository
+        autowire: true
+        calls:
+            - ["setEntityManager", ["@entity_manager"]]
+    second_repository:
+        class: App\Repository\SecondRepository
+        autowire: true
+        calls:
+            - ["setEntityManager", ["@entity_manager"]]
+
+    first_command:
+        class: App\Command\FirstCommand
+        autowire: true
+        tags:
+            - { name: console.command }
+    second_command:
+        class: App\Command\SecondCommand
+        autowire: true
+        tags:
+            - { name: console.command }</code></pre>
+<h3 id="1-let-s-add-code-defaults-code"><a href="#1-let-s-add-code-defaults-code">1. Let's add <code>_defaults</code></a></h3>
+<pre><code class="language-yaml"># app/config/services.yml
+services:
+    _defaults:
+        autowire: true # all services in this config are now autowired
+
+    some_service:
+        class: App\SomeService
+
+    some_controller:
+        class: App\Controller\SomeController
+
+    first_repository:
+        class: App\Repository\FirstRepository
+        calls:
+            - ["setEntityManager", ["@entity_manager"]]
+    second_repository:
+        class: App\Repository\SecondRepository
+        calls:
+            - ["setEntityManager", ["@entity_manager"]]
+
+    first_command:
+        class: App\Command\FirstCommand
+        tags:
+            - { name: console.command }
+    second_command:
+        class: App\Command\SecondCommand
+        tags:
+            - { name: console.command }</code></pre>
+<h3 id="2-use-autoconfigure"><a href="#2-use-autoconfigure">2. Use autoconfigure</a></h3>
+<pre><code class="language-yaml"># app/config/services.yml
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true # all Symfony native tags are now added automatically
+
+    some_service:
+        class: App\SomeService
+
+    some_controller:
+        class: App\Controller\SomeController
+
+    first_repository:
+        class: App\Repository\FirstRepository
+        calls:
+            - ["setEntityManager", ["@entity_manager"]]
+    second_repository:
+        class: App\Repository\SecondRepository
+        calls:
+            - ["setEntityManager", ["@entity_manager"]]
+
+    first_command:
+        class: App\Command\FirstCommand
+    second_command:
+        class: App\Command\SecondCommand</code></pre>
+<h3 id="3-use-class-named-services"><a href="#3-use-class-named-services">3. Use Class-Named Services</a></h3>
+<pre><code class="language-yaml"># app/config/services.yml
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    App\SomeService: ~ # no more thinking about creative and unique service name
+
+    App\Controller\SomeController: ~
+
+    App\Repository\FirstRepository:
+        calls:
+            - ["setEntityManager", ["@entity_manager"]]
+    App\Repository\SecondRepository:
+        calls:
+            - ["setEntityManager", ["@entity_manager"]]
+
+    App\Command\FirstCommand: ~
+    App\Command\SecondCommand: ~</code></pre>
+<h3 id="4-use-psr-4-based-service-autodiscovery-and-registration"><a href="#4-use-psr-4-based-service-autodiscovery-and-registration">4. Use PSR-4 based service autodiscovery and registration</a></h3>
+<pre><code class="language-yaml"># app/config/services.yml
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    App\: # no more manual registration of similar groups of services
+        resource: '../'
+
+    App\Repository\FirstRepository:
+        calls:
+            - ["setEntityManager", ["@entity_manager"]]
+    App\Repository\SecondRepository:
+        calls:
+            - ["setEntityManager", ["@entity_manager"]]</code></pre>
+<h3 id="5-use-code-instanceof-code"><a href="#5-use-code-instanceof-code">5. Use <code>_instanceof</code>...</a></h3>
+<pre><code class="language-yaml"># app/config/services.yml
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    App\:
+        resource: '../'
+
+    _instanceof: # clean and explicit dependency injection to abstract services
+        App\Repository\AbstractRepository:
+            calls:
+                - ["setEntityManager", ["@entity_manager"]]</code></pre>
+<h3 id="5-or-setter-injection"><a href="#5-or-setter-injection">5. ...or Setter Injection</a></h3>
+<p>You can even remove the <code>_instanceof</code> with setter injection. First, modify the abstract repository to add the <code>@required</code> annotation to <code>setEntityManager</code>:</p>
+<pre><code class="language-php">&lt;?php
+
+namespace App\Repository;
+
+use Doctrine\ORM\EntityManagerInterface;
+
+abstract class AbstractRepository
+{
+    /**
+     * @var EntityManagerInterface
+     */
+    private $entityManager;
+
+    /**
+     * @required
+     */
+    public function setEntityManager(EntityManagerInterface $entityManager): void
+    {
+        $this-&gt;entityManager = $entityManager;
+    }
+
+    // ...
+}</code></pre>
+<p>Now, remove the <code>_instanceof</code> in your <code>services.yml</code>:</p>
+<pre><code class="language-yaml"># app/config/services.yml
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    App\:
+        resource: '../'</code></pre>
+<p>You're awesome! Now you're using all the shiny new Symfony 3.3 Dependency Injection features.</p>
+<p><br></p>
+<p><strong>What is your favorite change?</strong></p>
+
+                <br>
+
+                
+                <div class="card mb-5">
+                    <div class="card-body text-center">
+                        <a href="https://github.com/TomasVotruba/tomasvotruba.cz/edit/master/source/_posts/2017/2017-05-07-how-to-refactor-to-new-dependency-injection-features-in-symfony-3-3.md" class="btn btn-info btn-sm">
+                            <em class="fas fa-fw fa-edit"></em>
+                            Typo? Fix it, please
+                        </a>
+                        &nbsp;and join <a href="/thank-you">56 people</a> who build this website
+                    </div>
+                </div>
+
+                <a name="comments"></a>
+
+                <div id="disqus_thread"></div>
+
+<script type="text/javascript">
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//' + 'itsworthsharing' + '.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+            </div>
+
+            <script id="dsq-count-scr" src="https://itsworthsharing.disqus.com/count.js" async defer></script>
+        </div>
+
+        <script>
+    ga=function(){ ga.q.push(arguments) };
+    ga.q=[];
+    ga.l=+new Date;
+    ga('create', 'UA-46082345-1', 'auto');
+    ga('send','pageview');
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+<script src="/assets/prism/prism.js"></script>
+
+<script>
+    $('.gifplayer').gifplayer();
+</script>
+
+<div class="text-center mt-5" id="footer">
+    <div class="row">
+        <div class="col-12">
+            Join 17 000 PHP developers every month: <a href="/rss.xml">RSS</a>&nbsp;or&nbsp;<a href="https://twitter.com/votrubaT">@votrubaT</a>
+
+            <span class="pl-2 pr-2 hidden-sm-down">•</span>
+
+            <span class="hidden-sm-down">
+                Watch my <a href="https://github.com/tomasvotruba">open-source addiction</a>
+            </span>
+        </div>
+    </div>
+
+    <p>
+        Build by <a href="/thank-you/">56 people</a>
+
+        <span class="pl-2 pr-2">•</span>
+
+        Runs on <a href="https://www.statie.org/">Statie</a>
+
+        <span class="pl-2 pr-2">•</span>
+
+        <a href="/now/">Now</a>
+
+        <span class="hidden-sm-down">
+            <span class="pl-2 pr-2">•</span>
+            Hosted on <a href="https://github.com/tomasvotruba/tomasvotruba.cz">GitHub</a>
+        </span>
+    </p>
+</div>
+    </body>
+</html>
+
+        <meta property="og:type" content="article" />
+    <meta property="og:title" content="How to refactor to new Dependency Injection features in Symfony 3.3" />
+    <meta property="og:description" content="This May will be released Symfony 3.3 with many DependencyInjection improvements.
+Each of them is quite nice, but combined together - they are huge jump compare to what we have now.
+
+Today I will show you what code can you drop and how to migrate it." />
+    <meta property="og:url" content="https://www.tomasvotruba.cz/blog/2017/05/07/how-to-refactor-to-new-dependency-injection-features-in-symfony-3-3" />
+
+        <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@votrubaT">
+    <meta name="twitter:title" content="How to refactor to new Dependency Injection features in Symfony 3.3" />
+    <meta name="twitter:description" content="This May will be released Symfony 3.3 with many DependencyInjection improvements.
+Each of them is quite nice, but combined together - they are huge jump compare to what we have now.
+
+Today I will show you what code can you drop and how to migrate it." />
